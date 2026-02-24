@@ -34,6 +34,18 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[100svh] flex flex-col justify-end pb-24 px-6 md:px-12 overflow-hidden bg-background">
+      {/* Background Image - Pawel Czerwinski abstract glass */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/static/images/pawel-czerwinski-uA6x_MXI_fE-unsplash_1771968246269.jpg" 
+          alt="Abstract dark background"
+          className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
+        />
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-transparent" />
+      </div>
+
       {/* Animated Procedural Grid Background - Blueprint feel */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <motion.div 
@@ -63,10 +75,13 @@ export function Hero() {
           y: translateY,
           transformPerspective: 1000
         }}
-        className="absolute -right-1/4 -top-1/4 w-[150%] h-[150%] md:w-full md:h-full text-white pointer-events-none origin-center z-0"
+        className="absolute -right-1/4 -top-1/4 w-[150%] h-[150%] md:w-full md:h-full text-white pointer-events-none origin-center z-0 mix-blend-screen"
       >
-        <div className="relative w-full h-full opacity-20">
-           <LidtekSVG className="w-full h-full object-contain" />
+        <div className="relative w-full h-full opacity-60">
+           {/* SVG container - Using CSS filter to tint the white SVG to the primary brand color */}
+           <div className="absolute inset-0" style={{ filter: "drop-shadow(0 0 40px hsl(var(--primary) / 0.4))" }}>
+             <LidtekSVG className="w-full h-full object-contain text-primary" />
+           </div>
         </div>
       </motion.div>
       
