@@ -123,14 +123,14 @@ export function Navbar() {
             <div className={`flex items-center gap-2 border ${borderClass} rounded-full px-3 py-1.5 transition-colors duration-500 ${isDark ? 'bg-white/10' : 'bg-black/5'}`}>
               <button 
                 onClick={() => setLanguage("pt")}
-                className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "pt" ? "text-white font-black" : (isDark ? "text-white/30 hover:text-white" : "text-black/40 hover:text-black")}`}
+                className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "pt" ? (isDark ? "text-white font-black" : "text-primary font-black") : (isDark ? "text-white/30 hover:text-white" : "text-black/40 hover:text-black")}`}
               >
                 PT
               </button>
               <div className={`w-[1px] h-2 ${isDark ? "bg-white/30" : "bg-black/20"}`} />
               <button 
                 onClick={() => setLanguage("en")}
-                className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "en" ? "text-white font-black" : (isDark ? "text-white/30 hover:text-white" : "text-black/40 hover:text-black")}`}
+                className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "en" ? (isDark ? "text-white font-black" : "text-primary font-black") : (isDark ? "text-white/30 hover:text-white" : "text-black/40 hover:text-black")}`}
               >
                 EN
               </button>
