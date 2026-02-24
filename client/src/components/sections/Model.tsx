@@ -19,7 +19,7 @@ export function Model() {
           <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-black/40 mb-6">{t("model.tag")}</h2>
           <h3 className="text-4xl md:text-6xl font-display font-light text-black max-w-3xl text-balance mb-8">Método IDEAL</h3>
           <p className="text-black/60 max-w-xl font-sans text-lg italic">
-            IDEAL
+            {t("model.subtitle")}
           </p>
         </div>
 
