@@ -98,7 +98,7 @@ export function Hero() {
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
               className="italic text-white/60 font-serif block w-full"
             >
-              {t("hero.title1_italic")}.
+              tem tecnologia.
             </motion.span>
           </div>
           <motion.div 
@@ -107,8 +107,8 @@ export function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
             className="block mt-4 max-w-2xl"
           >
-            {t("hero.title2_part1")}<br />
-            {t("hero.title2_part2")}
+            A questão é:<br />
+            ela tem direção?
           </motion.div>
         </h1>
 
