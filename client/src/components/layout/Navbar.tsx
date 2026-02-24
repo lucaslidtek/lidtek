@@ -54,13 +54,13 @@ export function Navbar() {
   const borderClass = isDark ? "border-white/20" : "border-black/20";
   const logoClass = isDark ? "" : "invert";
   const glassClass = isDark 
-    ? "liquid-glass-dark border-white/5 shadow-2xl shadow-black/20" 
-    : "liquid-glass border-black/5 shadow-xl shadow-black/5";
+    ? "bg-black/40 backdrop-blur-[20px] saturate-[180%] border-white/10 shadow-2xl shadow-black/40" 
+    : "bg-white/40 backdrop-blur-[20px] saturate-[180%] border-black/5 shadow-xl shadow-black/5";
 
   return (
     <>
       <nav 
-        className={`fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-[100] px-6 py-2.5 md:py-3 md:px-8 flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] rounded-full border backdrop-blur-md ${navClass} ${glassClass}`}
+        className={`fixed top-0 left-0 right-0 md:top-6 md:left-1/2 md:-translate-x-1/2 md:w-[92%] md:max-w-7xl z-[100] px-6 py-4 md:py-3 md:px-8 flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] md:rounded-full border-b md:border backdrop-blur-md ${navClass} ${glassClass}`}
       >
         <Link href="/" className="z-50 cursor-pointer p-2 transition-transform active:scale-95" onClick={() => setIsMenuOpen(false)}>
           <img src={logoWhite} alt="Lidtek Logo" className={`h-5 md:h-7 w-auto transition-all duration-500 ${logoClass}`} />
