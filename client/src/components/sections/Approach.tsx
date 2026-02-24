@@ -58,12 +58,12 @@ export function Approach() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-              className="p-10 ios-glass hover:bg-white/90 transition-all duration-500 group relative overflow-hidden rounded-[2rem] hover:shadow-xl hover:-translate-y-2"
+              className="p-10 liquid-glass liquid-glass-interactive group rounded-[2rem]"
             >
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-primary/0 group-hover:bg-primary transition-colors duration-500" />
-              <div className="text-black/30 group-hover:text-primary transition-colors duration-500 mb-8">{feature.icon}</div>
-              <h4 className="text-xl font-medium text-black mb-4">{feature.title}</h4>
-              <p className="text-black/60 text-sm leading-relaxed font-sans">{feature.description}</p>
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-primary/0 group-hover:bg-primary transition-colors duration-500 z-10" />
+              <div className="text-black/30 group-hover:text-primary transition-colors duration-500 mb-8 relative z-10">{feature.icon}</div>
+              <h4 className="text-xl font-medium text-black mb-4 relative z-10">{feature.title}</h4>
+              <p className="text-black/60 text-sm leading-relaxed font-sans relative z-10">{feature.description}</p>
             </motion.div>
           ))}
         </div>

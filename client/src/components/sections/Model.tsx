@@ -57,7 +57,7 @@ export function Model() {
                    <div className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${hoveredIndex === i ? 'bg-primary shadow-[0_0_10px_hsl(var(--primary))] scale-150' : 'bg-transparent'}`} />
                 </div>
 
-                <div className={`mt-8 md:mt-24 transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${hoveredIndex === i ? 'translate-y-[-8px]' : ''}`}>
+                <div className={`mt-8 md:mt-24 p-8 rounded-[2rem] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${hoveredIndex === i ? 'liquid-glass-dark translate-y-[-8px]' : ''}`}>
                   <div className="relative inline-block mb-6">
                     <span className={`text-6xl font-display font-light block transition-colors duration-500 ${hoveredIndex === i ? 'text-primary' : 'text-white/10'}`}>
                       {step.step}

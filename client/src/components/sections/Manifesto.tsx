@@ -38,9 +38,10 @@ export function Manifesto() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              className="p-8 liquid-glass-dark liquid-glass-interactive rounded-[2rem]"
             >
-              <h3 className="text-xl font-medium mb-4 text-white/90">{t("manifesto.precision.title")}</h3>
-              <p className="text-white/60 leading-relaxed font-sans">
+              <h3 className="text-xl font-medium mb-4 text-white/90 relative z-10">{t("manifesto.precision.title")}</h3>
+              <p className="text-white/60 leading-relaxed font-sans relative z-10">
                 {t("manifesto.precision.desc")}
               </p>
             </motion.div>
@@ -50,9 +51,10 @@ export function Manifesto() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+              className="p-8 liquid-glass-dark liquid-glass-interactive rounded-[2rem]"
             >
-              <h3 className="text-xl font-medium mb-4 text-white/90">{t("manifesto.silent.title")}</h3>
-              <p className="text-white/60 leading-relaxed font-sans">
+              <h3 className="text-xl font-medium mb-4 text-white/90 relative z-10">{t("manifesto.silent.title")}</h3>
+              <p className="text-white/60 leading-relaxed font-sans relative z-10">
                 {t("manifesto.silent.desc")}
               </p>
             </motion.div>

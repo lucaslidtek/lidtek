@@ -41,7 +41,7 @@ export function CTA() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative px-10 py-5 bg-white text-black overflow-hidden rounded-full flex items-center gap-4 shadow-[0_0_0_rgba(255,255,255,0)] hover:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.4)] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 scale-100"
+              className="relative px-10 py-5 liquid-glass liquid-glass-interactive text-white overflow-hidden rounded-full flex items-center gap-4 hover:-translate-y-1 scale-100"
             >
               <span className="relative z-10 font-medium uppercase tracking-widest text-sm transition-colors group-hover:text-white">{t("cta.btn")}</span>
               <ArrowRight size={20} className="relative z-10 opacity-0 -ml-6 group-hover:opacity-100 group-hover:ml-0 transition-all duration-500 group-hover:text-white" weight="bold" />

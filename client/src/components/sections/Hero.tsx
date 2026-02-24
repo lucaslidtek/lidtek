@@ -90,7 +90,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 ios-glass-dark shadow-lg shadow-black/20"
+          className="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 liquid-glass-dark liquid-glass-interactive"
         >
           <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_hsl(var(--primary))]" />
           <span className="text-xs uppercase tracking-[0.2em] font-medium text-white/80">{t("hero.tag")}</span>
