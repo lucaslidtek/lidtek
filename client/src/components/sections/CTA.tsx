@@ -84,7 +84,7 @@ export function CTA() {
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </a>
             
-            <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-medium">Disponibilidade limitada para novos projetos</p>
+            <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-medium">Escalando o futuro de quem constrói o amanhã</p>
           </div>
         </motion.div>
       </div>
