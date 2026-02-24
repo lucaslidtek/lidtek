@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowDownRight } from "phosphor-react";
 import { LidtekSVG } from "@/components/ui/magic/lidtek-svg";
 import { useLanguage } from "@/hooks/use-language";
@@ -12,6 +12,12 @@ export function Hero() {
   const springConfig = { damping: 25, stiffness: 120 };
   const springX = useSpring(mouseX, springConfig);
   const springY = useSpring(mouseY, springConfig);
+
+  // Parallax and rotation for the SVG background
+  const rotateX = useTransform(springY, [-300, 800], [10, -10]);
+  const rotateY = useTransform(springX, [-300, 1500], [-10, 10]);
+  const translateX = useTransform(springX, [-300, 1500], [-30, 30]);
+  const translateY = useTransform(springY, [-300, 800], [-30, 30]);
 
   const [isMounted, setIsMounted] = useState(false);
 
@@ -50,6 +56,13 @@ export function Hero() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 0.05, scale: 1 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        style={{ 
+          rotateX, 
+          rotateY, 
+          x: translateX, 
+          y: translateY,
+          transformPerspective: 1000
+        }}
         className="absolute -right-1/4 -top-1/4 w-[150%] h-[150%] md:w-full md:h-full text-white pointer-events-none origin-center z-0"
       >
         <LidtekSVG className="w-full h-full object-contain" />
