@@ -12,7 +12,7 @@ import logoWhite from "@assets/lidtek-primary-logo_white_1771959392591.png";
 import { useLanguage } from "@/hooks/use-language";
 
 export default function Home() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <SmoothScroll>
