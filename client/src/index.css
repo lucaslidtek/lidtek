@@ -196,7 +196,6 @@
   .liquid-glass {
     @apply bg-white/40 backdrop-blur-[60px] saturate-[2.5] border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)];
     position: relative;
-    overflow: hidden;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
   }
   
@@ -223,7 +222,6 @@
   .liquid-glass-dark {
     @apply bg-black/20 backdrop-blur-[40px] saturate-[2.5] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
     position: relative;
-    overflow: hidden;
   }
 
   .liquid-glass-dark::before {
