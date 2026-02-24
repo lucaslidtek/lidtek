@@ -1,0 +1,227 @@
+PRD — SITE INSTITUCIONAL LIDTEK
+
+
+1️⃣ OBJETIVO
+
+Construir um site institucional premium que:
+
+Posicione a Lidtek como departamento de tecnologia
+
+Transmita autoridade e maturidade técnica
+
+Demonstre alto nível de execução
+
+Seja tecnicamente sofisticado
+
+Não pareça software house comum
+
+Não pareça agência
+
+Não pareça template
+
+O site deve parecer produto de alto padrão.
+
+2️⃣ DIREÇÃO ESTRATÉGICA
+
+Identidade percebida:
+
+Estrutural
+
+Tecnológica
+
+Precisa
+
+Moderna
+
+Internacional
+
+Sofisticada
+
+Silenciosamente dominante
+
+Evitar:
+
+Estética startup genérica
+
+Visual SaaS colorido demais
+
+Excesso de efeitos infantis
+
+Layout comum
+
+3️⃣ BASE VISUAL
+
+Seguir integralmente o Manual de Marca:
+
+Paleta oficial
+
+Tipografia oficial
+
+Elementos gráficos
+
+Texturas
+
+Aplicação correta do logotipo
+
+Nada fora da identidade.
+
+4️⃣ ARQUITETURA DO SITE
+Estrutura macro:
+
+Hero
+
+Seção de posicionamento / manifesto
+
+Problema de mercado
+
+Proposta estrutural
+
+Modelo de funcionamento
+
+Filtro de público
+
+CTA final
+
+Layout:
+
+Alternância claro/escuro
+
+Espaço negativo generoso
+
+Hierarquia forte
+
+Seções bem definidas
+
+5️⃣ STACK TECNOLÓGICA
+
+Obrigatório:
+
+Next.js (App Router)
+
+TypeScript
+
+Tailwind customizado
+
+Framer Motion
+
+GSAP (SVG avançado)
+
+Lenis (smooth scroll)
+
+SVG custom animado
+
+SEO estruturado
+
+Lighthouse ≥ 95
+
+Nada de CMS visual.
+Nada de builder.
+
+6️⃣ USO DO 21st.dev
+
+O projeto deve utilizar componentes e seções do:
+
+https://21st.dev/community/components
+
+Como base estrutural e de motion.
+
+Diretrizes:
+
+Usar componentes modernos como base
+
+Adaptar integralmente ao design system da Lidtek
+
+Manter nível alto de motion
+
+Manter sofisticação visual
+
+Não copiar visual bruto sem adaptação
+
+Objetivo:
+
+Elevar padrão visual ao nível internacional.
+
+7️⃣ SISTEMA DE MOTION (NÍVEL PREMIUM)
+
+Motion é parte central do projeto.
+
+Hero
+
+Split text reveal
+
+SVG animado no fundo
+
+Parallax suave
+
+Gradiente animado lento
+
+Scroll
+
+Smooth scroll com Lenis
+
+Stagger customizado
+
+Easing própria
+
+SVG
+
+Stroke-dasharray
+
+Linhas desenhando
+
+Underlines animados
+
+Microinterações
+
+Cards com profundidade
+
+Hover sofisticado
+
+Glow sutil
+
+Transições suaves
+
+Sem animação genérica.
+Sem bounce.
+Sem exagero.
+
+8️⃣ INTERAÇÕES
+
+Hover states refinados
+
+Estados ativos claros
+
+Micro feedback visual
+
+Transições suaves entre seções
+
+Nada abrupto.
+Nada pesado.
+
+9️⃣ PERFORMANCE
+
+Lighthouse mínimo 90+
+
+Animações GPU-accelerated
+
+Respeitar prefers-reduced-motion
+
+Código limpo e organizado
+
+🔟 RESULTADO ESPERADO
+
+O site deve parecer:
+
+Produto tecnológico
+
+Estrutura real
+
+Empresa madura
+
+Internacional
+
+Confiável
+
+Não apenas bonito.
+
+Mas tecnicamente impressionante.
