@@ -5,11 +5,11 @@ export function Model() {
   const { t } = useLanguage();
 
   const steps = [
-    { step: "01", title: t("model.step1.title"), desc: t("model.step1.desc") },
-    { step: "02", title: t("model.step2.title"), desc: t("model.step2.desc") },
-    { step: "03", title: t("model.step3.title"), desc: t("model.step3.desc") },
-    { step: "04", title: t("model.step4.title"), desc: t("model.step4.desc") },
-    { step: "05", title: t("model.step5.title"), desc: t("model.step5.desc") }
+    { step: "I", title: t("model.step1.title"), desc: t("model.step1.desc") },
+    { step: "D", title: t("model.step2.title"), desc: t("model.step2.desc") },
+    { step: "E", title: t("model.step3.title"), desc: t("model.step3.desc") },
+    { step: "A", title: t("model.step4.title"), desc: t("model.step4.desc") },
+    { step: "L", title: t("model.step5.title"), desc: t("model.step5.desc") }
   ];
 
   return (
@@ -18,9 +18,9 @@ export function Model() {
         <div className="mb-24 text-center flex flex-col items-center">
           <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-black/40 mb-6">{t("model.tag")}</h2>
           <h3 className="text-4xl md:text-6xl font-display font-light text-black max-w-3xl text-balance mb-8">
-            {t("model.title")}
+            Método IDEAL
           </h3>
-          <p className="text-black/60 max-w-xl font-sans text-lg">
+          <p className="text-black/60 max-w-xl font-sans text-lg italic">
             {t("model.subtitle")}
           </p>
         </div>
