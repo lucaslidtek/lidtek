@@ -11,8 +11,8 @@ export function Operations() {
 
   return (
     <section className="py-32 px-6 md:px-12 bg-white text-black border-t border-black/10 relative overflow-hidden">
-      <div className="absolute top-1/2 right-[-10%] w-[700px] h-[700px] bg-primary/[0.05] rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-[-20%] left-[10%] w-[600px] h-[600px] bg-accent/[0.03] rounded-full blur-[120px] pointer-events-none animate-pulse" />
+      <div className="absolute top-1/2 right-[-15%] w-[900px] h-[900px] bg-primary/[0.08] rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-[-30%] left-[5%] w-[800px] h-[800px] bg-accent/[0.06] rounded-full blur-[140px] pointer-events-none animate-pulse" />
       
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <motion.div

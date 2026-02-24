@@ -31,9 +31,9 @@ export function Approach() {
   return (
     <section id="approach" className="py-32 px-6 md:px-12 bg-white text-black relative border-t border-black/10 overflow-hidden">
       {/* Liquid Glass Background Elements */}
-      <div className="absolute top-0 right-[-10%] w-[600px] h-[600px] bg-primary/[0.08] rounded-full blur-[100px] pointer-events-none animate-pulse" style={{ animationDuration: '8s' }} />
-      <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-accent/[0.05] rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: '12s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(101,128,225,0.03),transparent_70%)] pointer-events-none" />
+      <div className="absolute top-[-5%] right-[-5%] w-[800px] h-[800px] bg-primary/[0.12] rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: '8s' }} />
+      <div className="absolute bottom-[-15%] left-[-10%] w-[700px] h-[700px] bg-accent/[0.08] rounded-full blur-[140px] pointer-events-none animate-pulse" style={{ animationDuration: '12s' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(101,128,225,0.05),transparent_60%)] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
