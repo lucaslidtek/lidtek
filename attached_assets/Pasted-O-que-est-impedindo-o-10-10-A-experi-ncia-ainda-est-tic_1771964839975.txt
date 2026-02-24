@@ -1,0 +1,256 @@
+O que está impedindo o 10/10
+❌ A experiência ainda é estática
+
+O site é bonito.
+Mas ele não “vive”.
+
+Um departamento de tecnologia premium deveria transmitir:
+
+Movimento.
+Sistema.
+Inteligência.
+Precisão.
+
+Hoje ele transmite:
+Estabilidade.
+
+Precisa transmitir:
+Sistema em funcionamento.
+
+❌ Falta sofisticação em microinterações
+
+Hover simples
+
+Cards estáticos
+
+Pouca profundidade visual
+
+Pouca sensação de camada
+
+Premium hoje é:
+
+Depth.
+Glass.
+Motion inteligente.
+Parallax controlado.
+SVG vivo.
+Transições suaves.
+
+❌ Hero ainda é tradicional
+
+Ele é bom.
+Mas ele é comum.
+
+Um site 10/10 hoje tem:
+
+Background com animação procedural
+
+Luz dinâmica
+
+Grid sutil animado
+
+Elementos reagindo ao scroll
+
+Interação com cursor (sutil)
+
+O hero precisa ser memorável.
+
+❌ Falta assinatura visual própria
+
+Hoje o site parece:
+“Um site muito bom.”
+
+Mas ainda não parece:
+“Isso é Lidtek.”
+
+Precisa ter algo reconhecível.
+
+Pode ser:
+
+Um padrão de linhas estruturais
+
+Um sistema de grid animado
+
+Um motion característico
+
+Um elemento que sempre aparece ao entrar numa seção
+
+Marca forte tem padrão visual repetido.
+
+❌ Fluxo ainda muito linear
+
+Hoje:
+
+Hero
+Problema
+Solução
+Método
+CTA
+
+Isso é fórmula.
+
+Você quer parecer estrutura estratégica.
+
+Precisa parecer:
+Arquitetado.
+
+🏗️ 3️⃣ O que falta para virar 10/10
+
+Agora vou ser objetivo.
+
+🔹 1. Motion System consistente
+
+Precisa definir:
+
+Velocidade padrão de transição (ex: 300ms / 600ms)
+
+Tipo de easing (cubic-bezier custom)
+
+Scroll reveal suave
+
+Elementos que desenham ao aparecer
+
+SVG sendo construído na tela
+
+Linhas que conectam blocos
+
+Não é “animação”.
+É sistema de animação.
+
+🔹 2. Hero nível flagship
+
+Sugestão técnica:
+
+Background com grid animado sutil
+
+Luz dinâmica que acompanha o mouse
+
+A seta da marca aparecendo com draw SVG
+
+Headline com split text animation (linha por linha)
+
+Subheadline fade com blur suave
+
+Botão com glow interativo
+
+Sem exagero.
+Mas com presença.
+
+🔹 3. Mais profundidade visual
+
+Hoje está flat.
+
+Adicionar:
+
+Camadas com blur leve
+
+Leve gradiente radial
+
+Shadow mais sofisticada
+
+Cards com depth no hover
+
+Microparallax no scroll
+
+Isso cria premium.
+
+🔹 4. Melhor ritmo de leitura
+
+Algumas seções estão grandes demais.
+Outras parecem blocos.
+
+Sugestão:
+
+Alternar:
+
+Dark
+Light
+Dark
+Light
+
+Com pequenas variações internas.
+
+Ritmo é UX invisível.
+
+🔹 5. Mais “sistema”, menos “blocos”
+
+Exemplo:
+
+O método IDEAL poderia:
+
+Desenhar uma linha conectando cada etapa
+
+Mostrar progressão visual real
+
+Ter interação ao passar mouse
+
+Ter destaque de etapa ativa
+
+Hoje ele é estático.
+
+🔹 6. Prova implícita
+
+Falta:
+
+Mini seção com “Como operamos”
+
+Algo que mostre maturidade operacional
+
+Indicadores discretos
+
+Linguagem de governança
+
+UX também é confiança.
+
+🔹 7. Micro UX nos botões
+
+Hoje botão parece padrão.
+
+Botão premium:
+
+Hover com leve elevação
+
+Glow suave
+
+Micro escala
+
+Transição orgânica
+
+Feedback tátil visual
+
+Departamento de tecnologia não usa botão genérico.
+
+🔹 8. Performance impecável
+
+10/10 também é:
+
+Lighthouse 95+
+
+Animação com GPU acceleration
+
+SVG otimizado
+
+Lazy loading
+
+Motion que respeita prefers-reduced-motion
+
+Premium invisível.
+
+🎯 O que é um site 10/10 para a Lidtek?
+
+Um site onde o visitante sente:
+
+Inteligência
+
+Organização
+
+Estabilidade
+
+Movimento controlado
+
+Precisão
+
+Autoridade silenciosa
+
+Não é sobre exagero visual.
+É sobre sistema.
