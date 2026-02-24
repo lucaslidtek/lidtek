@@ -17,9 +17,7 @@ export function Model() {
       <div className="max-w-7xl mx-auto w-full">
         <div className="mb-24 text-center flex flex-col items-center">
           <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-black/40 mb-6">{t("model.tag")}</h2>
-          <h3 className="text-4xl md:text-6xl font-display font-light text-black max-w-3xl text-balance mb-8">
-            Método IDEAL
-          </h3>
+          <h3 className="text-4xl md:text-6xl font-display font-light text-black max-w-3xl text-balance mb-8">Método Lidtek</h3>
           <p className="text-black/60 max-w-xl font-sans text-lg italic">
             {t("model.subtitle")}
           </p>
