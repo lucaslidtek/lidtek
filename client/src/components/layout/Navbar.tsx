@@ -60,9 +60,9 @@ export function Navbar() {
       </Link>
       
       <div className="hidden md:flex items-center gap-8 font-medium text-sm z-50">
-        <a href="#manifesto" className="hover:text-[#6580E1] transition-colors uppercase tracking-widest">{t("nav.manifesto")}</a>
-        <a href="#approach" className="hover:text-[#6580E1] transition-colors uppercase tracking-widest">{t("nav.approach")}</a>
-        <a href="#model" className="hover:text-[#6580E1] transition-colors uppercase tracking-widest">{t("nav.model")}</a>
+        <a href="#manifesto" className="hover:text-primary transition-colors uppercase tracking-widest">{t("nav.manifesto")}</a>
+        <a href="#approach" className="hover:text-primary transition-colors uppercase tracking-widest">{t("nav.approach")}</a>
+        <a href="#model" className="hover:text-primary transition-colors uppercase tracking-widest">{t("nav.model")}</a>
         
         <div className={`flex items-center gap-2 border ${borderClass} rounded-full px-3 py-1 ml-4 transition-colors duration-300 ${isDark ? 'bg-white/10' : 'bg-black/5'} backdrop-blur-md`}>
           <button 

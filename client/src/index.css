@@ -209,7 +209,7 @@
   }
 
   .liquid-glass-dark {
-    @apply bg-black/20 backdrop-blur-[40px] saturate-[2.5] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
+    @apply bg-[#243A4A]/20 backdrop-blur-[40px] saturate-[2.5] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
     position: relative;
   }
   
