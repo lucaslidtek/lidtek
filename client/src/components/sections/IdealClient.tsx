@@ -59,7 +59,7 @@ export function IdealClient() {
                 </div>
                 <div>
                   <h3 className="text-xl font-display text-white">Perfil Ideal</h3>
-                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Ready for growth</p>
+                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Pronto para o crescimento</p>
                 </div>
               </div>
               
@@ -98,7 +98,7 @@ export function IdealClient() {
                 </div>
                 <div>
                   <h3 className="text-xl font-display text-white/60">Não somos o ideal se...</h3>
-                  <p className="text-white/30 text-xs uppercase tracking-widest mt-1">Different focus</p>
+                  <p className="text-white/30 text-xs uppercase tracking-widest mt-1">Foco diferente</p>
                 </div>
               </div>
               
