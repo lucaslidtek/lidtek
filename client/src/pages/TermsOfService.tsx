@@ -24,14 +24,16 @@ export default function TermsOfService() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Link href="/" className="inline-flex items-center gap-2 text-white/40 hover:text-white transition-colors mb-12 group" data-testid="link-back-home">
-              <MoveLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              <span className="text-[10px] uppercase tracking-[0.2em] font-medium">Voltar para o Início</span>
-            </Link>
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
+              <Link href="/" className="inline-flex items-center gap-2 text-white/40 hover:text-white transition-colors group" data-testid="link-back-home">
+                <MoveLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                <span className="text-[10px] uppercase tracking-[0.2em] font-medium">Voltar para o Início</span>
+              </Link>
 
-            <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-white/5 bg-white/5 mb-6">
-              <Scale className="w-3.5 h-3.5 text-primary/60" />
-              <span className="text-[10px] uppercase tracking-[0.3em] text-white/50 font-medium">Acordo de Serviço</span>
+              <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-white/5 bg-white/5">
+                <Scale className="w-3.5 h-3.5 text-primary/60" />
+                <span className="text-[10px] uppercase tracking-[0.3em] text-white/50 font-medium">Acordo de Serviço</span>
+              </div>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-light tracking-tight mb-8 bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent italic">
