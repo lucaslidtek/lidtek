@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
+import { Link } from "wouter";
 import { Hero } from "@/components/sections/Hero";
 import { Manifesto } from "@/components/sections/Manifesto";
 import { Problem } from "@/components/sections/Problem";
@@ -65,8 +66,8 @@ export default function Home() {
                   © {new Date().getFullYear()} Lidtek. {t("footer.rights")}
                 </div>
                 <div className="flex gap-8">
-                  <a href="#" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]">Política de Privacidade</a>
-                  <a href="#" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]">Termos de Serviço</a>
+                  <Link href="/privacy-policy" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-privacy">Política de Privacidade</Link>
+                  <Link href="/terms-of-service" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-terms">Termos de Serviço</Link>
                 </div>
               </div>
             </div>
