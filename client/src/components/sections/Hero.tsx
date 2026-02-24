@@ -86,15 +86,12 @@ export function Hero() {
       </motion.div>
       
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-start gap-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        <div
           className="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 liquid-glass-dark liquid-glass-interactive"
         >
           <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_hsl(var(--primary))]" />
           <span className="text-xs uppercase tracking-[0.2em] font-medium text-white/80">{t("hero.tag")}</span>
-        </motion.div>
+        </div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-light leading-[1.1] tracking-tight text-white max-w-5xl">
           <div className="flex flex-col items-start overflow-hidden">
