@@ -28,13 +28,19 @@ export function Operations() {
 
   return (
     <section ref={ref} className="py-32 px-6 md:px-12 bg-[#F8F9FA] text-black border-t border-black/10 relative overflow-hidden">
-      <div className="absolute top-1/2 right-[-15%] w-[900px] h-[900px] bg-primary/[0.1] rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-[-30%] left-[5%] w-[800px] h-[800px] bg-accent/[0.08] rounded-full blur-[120px] pointer-events-none animate-pulse" />
+      {/* Dynamic Background Elements for Liquid Glass Visibility */}
+      <div className="absolute top-1/2 right-[-15%] w-[900px] h-[900px] bg-primary/[0.12] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[-30%] left-[5%] w-[800px] h-[800px] bg-accent/[0.1] rounded-full blur-[120px] pointer-events-none animate-pulse" />
+      
+      {/* Additional mobile-specific floating elements to enhance glass refraction */}
+      <div className="absolute top-[20%] left-[10%] w-[150px] h-[150px] bg-primary/20 rounded-full blur-[40px] md:hidden animate-bounce" style={{ animationDuration: '10s' }} />
+      <div className="absolute bottom-[20%] right-[10%] w-[200px] h-[200px] bg-accent/15 rounded-full blur-[50px] md:hidden animate-pulse" style={{ animationDuration: '7s' }} />
+      <div className="absolute top-[50%] left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/10 to-transparent md:hidden" />
       
       {/* Logo Icon as background element for Liquid Glass effect */}
       <motion.div 
         style={{ y: y1, rotate }}
-        className="absolute top-0 right-[-5%] w-[700px] h-[700px] text-primary/5 pointer-events-none z-0"
+        className="absolute top-0 right-[-5%] w-[700px] h-[700px] text-primary/8 pointer-events-none z-0 opacity-40 md:opacity-100"
       >
         <LogoIcon className="w-full h-full" />
       </motion.div>
