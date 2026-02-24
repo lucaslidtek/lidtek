@@ -33,7 +33,7 @@ export function Hero() {
   }, [mouseX, mouseY]);
 
   return (
-    <section className="relative min-h-[100svh] flex flex-col justify-end pb-12 md:pb-24 px-6 md:px-12 bg-background">
+    <section className="relative min-h-[100svh] flex flex-col justify-end pb-8 md:pb-24 px-6 md:px-12 bg-background overflow-hidden">
       {/* Background Image - Pawel Czerwinski abstract glass */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img 
@@ -75,7 +75,7 @@ export function Hero() {
           y: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : translateY,
           transformPerspective: 1000
         }}
-        className="absolute -right-1/4 -top-[10%] md:-top-[35%] w-[150%] h-[120%] md:w-full md:h-full text-white pointer-events-none origin-center z-0 mix-blend-screen overflow-hidden"
+        className="absolute -right-1/4 -top-[5%] md:-top-[35%] w-[150%] h-auto aspect-square md:w-full md:h-full text-white pointer-events-none origin-center z-0 mix-blend-screen overflow-hidden"
       >
         <div className="relative w-full h-full opacity-40 md:opacity-60">
            {/* SVG container - Using CSS filter to tint the white SVG to the primary brand color */}
@@ -85,7 +85,7 @@ export function Hero() {
         </div>
       </motion.div>
       
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-start gap-8 md:gap-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-start gap-6 md:gap-12">
         <div
           className="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 liquid-glass-dark"
         >
@@ -126,7 +126,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="flex items-center gap-4 md:gap-6 mt-8 md:mt-12 group cursor-pointer"
+          className="flex items-center gap-4 md:gap-6 mt-4 md:mt-12 group cursor-pointer"
           onClick={() => {
             document.getElementById('problem')?.scrollIntoView({ behavior: 'smooth' });
           }}
