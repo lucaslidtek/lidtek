@@ -25,8 +25,23 @@ export default function Home() {
         <Operations />
         <CTA />
         
-        <footer className="bg-black py-12 px-6 md:px-12 border-t border-white/10">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <footer className="bg-[#050505] py-12 px-6 md:px-12 relative overflow-hidden">
+          {/* Background de Alta Performance - Integrado com CTA */}
+          <div className="absolute inset-0 pointer-events-none">
+            <div 
+              className="absolute inset-0 opacity-[0.1]"
+              style={{
+                backgroundImage: `
+                  linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+                  linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)
+                `,
+                backgroundSize: '4rem 4rem',
+                maskImage: 'linear-gradient(to bottom, black, transparent)'
+              }}
+            />
+          </div>
+
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
             <img src={logoWhite} alt="Lidtek" className="h-6 w-auto opacity-50" />
             <div className="text-white/40 text-xs uppercase tracking-widest font-sans">
               © {new Date().getFullYear()} Lidtek. {t("footer.rights")}

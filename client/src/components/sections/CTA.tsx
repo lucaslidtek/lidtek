@@ -7,7 +7,7 @@ export function CTA() {
   const whatsappUrl = "https://wa.me/553496840966?text=Olá Rafael, gostaria de entender melhor como a Lidtek pode atuar como nosso departamento de tecnologia.";
 
   return (
-    <section id="contact" className="py-24 md:py-32 px-6 md:px-12 bg-[#050505] text-white relative overflow-hidden border-t border-white/5">
+    <section id="contact" className="pt-24 md:pt-32 pb-12 px-6 md:px-12 bg-[#050505] text-white relative overflow-hidden border-t border-white/5">
       {/* Background de Alta Performance - Engenharia Visual */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Grid Refinado com Perspectiva */}
