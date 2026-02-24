@@ -11,8 +11,8 @@ export function Hero() {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
-        x: (e.clientX / window.innerWidth - 0.5) * 20,
-        y: (e.clientY / window.innerHeight - 0.5) * 20,
+        x: (e.clientX / window.innerWidth - 0.5) * 40,
+        y: (e.clientY / window.innerHeight - 0.5) * 40,
       });
     };
     window.addEventListener("mousemove", handleMouseMove);
@@ -20,62 +20,53 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[100svh] flex flex-col justify-end pb-24 px-6 md:px-12 overflow-hidden bg-background">
-      {/* Background Animation - Inspired by 1Code/21st.dev style */}
+    <section className="relative min-h-[100svh] flex flex-col justify-center items-center px-6 md:px-12 overflow-hidden bg-[#050505]">
+      {/* Dynamic Background Shader Effect */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.08),transparent_70%)]" />
+        <div className="absolute inset-0 bg-grid opacity-[0.15] [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]" />
         <motion.div 
           animate={{ 
-            x: mousePosition.x * -1,
-            y: mousePosition.y * -1,
+            x: mousePosition.x * -1.2,
+            y: mousePosition.y * -1.2,
           }}
-          transition={{ type: "spring", stiffness: 50, damping: 30 }}
-          className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(var(--primary),0.05),transparent_50%)]"
-        />
-      </div>
-      
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.03 }}
-        transition={{ duration: 2, ease: "easeOut" }}
-        className="absolute -right-1/4 -top-1/4 w-[150%] h-[150%] md:w-full md:h-full text-white pointer-events-none origin-center z-0"
-      >
-        <LidtekSVG className="w-full h-full object-contain" />
-      </motion.div>
-      
-      <motion.div 
-        animate={{ 
-          x: mousePosition.x,
-          y: mousePosition.y,
-        }}
-        transition={{ type: "spring", stiffness: 30, damping: 20 }}
-        className="absolute top-1/4 right-1/4 w-[600px] h-[600px] bg-primary rounded-full blur-[120px] pointer-events-none mix-blend-screen opacity-10 z-0" 
-      />
-
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-start gap-12">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-          className="flex items-center gap-3 border border-white/[0.08] rounded-full px-4 py-1.5 backdrop-blur-md bg-white/[0.04] shadow-sm"
+          className="absolute inset-0 opacity-[0.03] text-white"
         >
-          <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(101,128,225,0.8)]" />
-          <span className="text-xs uppercase tracking-[0.2em] font-medium text-white/80">{t("hero.tag")}</span>
+          <LidtekSVG className="w-full h-full object-cover scale-150 rotate-12" />
+        </motion.div>
+      </div>
+
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-center text-center gap-8">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="px-4 py-1 border border-white/[0.08] bg-white/[0.02] backdrop-blur-xl rounded-full mb-4"
+        >
+          <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-primary/80">{t("hero.tag")}</span>
         </motion.div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-9xl font-display font-light leading-[1] tracking-tighter text-white max-w-6xl">
+        <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-display font-light leading-[0.85] tracking-tighter text-white max-w-7xl">
           <motion.span 
-            initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+            initial={{ opacity: 0, y: 100, filter: "blur(20px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
             className="block"
           >
-            {t("hero.title1")}<span className="italic text-white/40 font-light">{t("hero.title1_italic")}</span>
+            {t("hero.title1")}
           </motion.span>
           <motion.span 
-            initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+            initial={{ opacity: 0, y: 100, filter: "blur(20px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+            className="block italic text-white/30 font-extralight"
+          >
+            {t("hero.title1_italic")}
+          </motion.span>
+          <motion.span 
+            initial={{ opacity: 0, y: 100, filter: "blur(20px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
             className="block"
           >
             {t("hero.title2")}
@@ -83,37 +74,29 @@ export function Hero() {
         </h1>
 
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="flex items-center gap-6 mt-12 group cursor-pointer"
-          onClick={() => {
-            document.getElementById('problem')?.scrollIntoView({ behavior: 'smooth' });
-          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2, delay: 1.2 }}
+          className="flex flex-col items-center gap-12 mt-16"
         >
-          <motion.div 
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all duration-500 overflow-hidden relative"
+          <motion.button 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => document.getElementById('problem')?.scrollIntoView({ behavior: 'smooth' })}
+            className="group relative px-12 py-6 bg-white text-black rounded-full overflow-hidden transition-all duration-500 shadow-[0_0_40px_rgba(255,255,255,0.1)]"
           >
-            <motion.div 
-              className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20"
-            />
-            <ArrowDownRight className="w-6 h-6 group-hover:rotate-45 transition-transform duration-500" />
-          </motion.div>
-          <span className="uppercase tracking-[0.3em] text-xs font-semibold text-white/40 group-hover:text-white transition-colors duration-500">{t("hero.explore")}</span>
+            <span className="relative z-10 font-bold uppercase tracking-[0.3em] text-[10px]">{t("hero.explore")}</span>
+            <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[0.16,1,0.3,1]" />
+          </motion.button>
         </motion.div>
       </div>
       
-      {/* Scroll indicator - 21st.dev style */}
+      {/* Scroll indicator - 21st.dev kinetic style */}
       <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-      >
-        <div className="w-[1px] h-12 bg-gradient-to-b from-white/0 via-white/20 to-white/0" />
-      </motion.div>
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 w-[1px] h-24 bg-gradient-to-b from-white/0 via-primary/50 to-white/0"
+      />
     </section>
   );
 }
