@@ -75,7 +75,7 @@ export function Hero() {
           y: translateY,
           transformPerspective: 1000
         }}
-        className="absolute -right-1/4 -top-1/4 w-[150%] h-[150%] md:w-full md:h-full text-white pointer-events-none origin-center z-0 mix-blend-screen"
+        className="absolute -right-1/4 -top-[35%] w-[150%] h-[150%] md:w-full md:h-full text-white pointer-events-none origin-center z-0 mix-blend-screen"
       >
         <div className="relative w-full h-full opacity-60">
            {/* SVG container - Using CSS filter to tint the white SVG to the primary brand color */}
