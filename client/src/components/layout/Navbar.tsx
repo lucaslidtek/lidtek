@@ -78,14 +78,14 @@ export function Navbar() {
             <div className={`flex items-center gap-2 border ${borderClass} rounded-full px-3 py-1.5 transition-colors duration-500 ${isDark ? 'bg-white/10' : 'bg-black/5'}`}>
               <button 
                 onClick={() => setLanguage("pt")}
-                className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "pt" ? (isDark ? "text-white font-bold" : "text-primary font-bold") : (isDark ? "text-white/40 hover:text-white" : "opacity-40 hover:opacity-100")}`}
+                className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "pt" ? (isDark ? "text-white font-black" : "text-primary font-bold") : (isDark ? "text-white/30 hover:text-white" : "opacity-40 hover:opacity-100")}`}
               >
                 PT
               </button>
-              <div className={`w-[1px] h-2 ${isDark ? "bg-white/20" : "bg-black/20"}`} />
+              <div className={`w-[1px] h-2 ${isDark ? "bg-white/30" : "bg-black/20"}`} />
               <button 
                 onClick={() => setLanguage("en")}
-                className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "en" ? (isDark ? "text-white font-bold" : "text-primary font-bold") : (isDark ? "text-white/40 hover:text-white" : "opacity-40 hover:opacity-100")}`}
+                className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "en" ? (isDark ? "text-white font-black" : "text-primary font-bold") : (isDark ? "text-white/30 hover:text-white" : "opacity-40 hover:opacity-100")}`}
               >
                 EN
               </button>
