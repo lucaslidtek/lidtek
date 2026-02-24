@@ -59,6 +59,24 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id.replace('#', ''));
+    if (element) {
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+    setIsMenuOpen(false);
+  };
+
   const navClass = isDark ? "text-white" : "text-black";
   const borderClass = isDark ? "border-white/20" : "border-black/20";
   const logoClass = isDark ? "" : "invert";
@@ -78,9 +96,27 @@ export function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-10 font-medium text-[13px] z-50">
           <div className="flex items-center gap-8">
-            <a href="#manifesto" className="hover:text-primary transition-colors uppercase tracking-[0.15em]">{t("nav.manifesto")}</a>
-            <a href="#approach" className="hover:text-primary transition-colors uppercase tracking-[0.15em]">{t("nav.approach")}</a>
-            <a href="#model" className="hover:text-primary transition-colors uppercase tracking-[0.15em]">{t("nav.model")}</a>
+            <a 
+              href="#manifesto" 
+              onClick={(e) => handleScrollTo(e, "#manifesto")}
+              className="hover:text-primary transition-colors uppercase tracking-[0.15em]"
+            >
+              {t("nav.manifesto")}
+            </a>
+            <a 
+              href="#approach" 
+              onClick={(e) => handleScrollTo(e, "#approach")}
+              className="hover:text-primary transition-colors uppercase tracking-[0.15em]"
+            >
+              {t("nav.approach")}
+            </a>
+            <a 
+              href="#model" 
+              onClick={(e) => handleScrollTo(e, "#model")}
+              className="hover:text-primary transition-colors uppercase tracking-[0.15em]"
+            >
+              {t("nav.model")}
+            </a>
           </div>
           
           <div className="flex items-center gap-6">
@@ -148,7 +184,7 @@ export function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
                     href={item.href}
-                    onClick={() => setIsMenuOpen(false)}
+                    onClick={(e) => handleScrollTo(e, item.href)}
                     className="text-xl font-display font-light uppercase tracking-[0.2em] text-white active:text-primary transition-colors"
                   >
                     {item.label}

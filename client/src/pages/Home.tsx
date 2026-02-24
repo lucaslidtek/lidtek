@@ -15,6 +15,23 @@ import { useLanguage } from "@/hooks/use-language";
 export default function Home() {
   const { t, language } = useLanguage();
 
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id.replace('#', ''));
+    if (element) {
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <SmoothScroll>
       <main className="min-h-screen bg-background w-full overflow-x-hidden">
@@ -45,9 +62,33 @@ export default function Home() {
                 <div>
                   <h4 className="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">Menu</h4>
                   <ul className="space-y-4">
-                    <li><a href="#manifesto" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">{t("nav.manifesto")}</a></li>
-                    <li><a href="#approach" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">{t("nav.approach")}</a></li>
-                    <li><a href="#model" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">{t("nav.model")}</a></li>
+                    <li>
+                      <a 
+                        href="#manifesto" 
+                        onClick={(e) => handleScrollTo(e, "#manifesto")}
+                        className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider"
+                      >
+                        {t("nav.manifesto")}
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="#approach" 
+                        onClick={(e) => handleScrollTo(e, "#approach")}
+                        className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider"
+                      >
+                        {t("nav.approach")}
+                      </a>
+                    </li>
+                    <li>
+                      <a 
+                        href="#model" 
+                        onClick={(e) => handleScrollTo(e, "#model")}
+                        className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider"
+                      >
+                        {t("nav.model")}
+                      </a>
+                    </li>
                   </ul>
                 </div>
 
