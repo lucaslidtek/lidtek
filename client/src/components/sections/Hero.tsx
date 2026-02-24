@@ -79,7 +79,7 @@ export function Hero() {
           <span className="text-xs uppercase tracking-[0.2em] font-medium text-white/80">{t("hero.tag")}</span>
         </motion.div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-light leading-[1.1] tracking-tight text-white max-w-5xl">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-light leading-[1.1] tracking-tight text-white max-w-4xl">
           <div className="flex flex-wrap overflow-hidden">
             {t("hero.title1").split(" ").map((word, i) => (
               <motion.span 
