@@ -55,7 +55,7 @@ export function Navbar() {
 
   return (
     <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 px-6 py-4 md:px-8 flex items-center justify-between transition-all duration-500 rounded-full ${navClass} ${glassClass}`}>
-      <Link href="/" className="z-50 cursor-pointer liquid-glass-interactive rounded-full p-2">
+      <Link href="/" className="z-50 cursor-pointer p-2">
         <img src={logoWhite} alt="Lidtek Logo" className={`h-6 md:h-8 w-auto transition-all duration-300 ${logoClass}`} />
       </Link>
       
