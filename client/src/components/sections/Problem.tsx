@@ -13,10 +13,10 @@ export function Problem() {
   const y1 = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   return (
-    <section id="problem" ref={ref} className="py-32 px-6 md:px-12 bg-white text-black relative border-t border-black/10 overflow-hidden">
-      <div className="absolute top-[-15%] right-[-10%] w-[800px] h-[800px] bg-primary/[0.1] rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-[-5%] left-[-15%] w-[700px] h-[700px] bg-black/[0.05] rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-accent/[0.08] rounded-full blur-[150px] pointer-events-none animate-pulse" style={{ animationDuration: '10s' }} />
+    <section id="problem" ref={ref} className="py-32 px-6 md:px-12 bg-[#F8F9FA] text-black relative border-t border-black/10 overflow-hidden">
+      <div className="absolute top-[-15%] right-[-10%] w-[800px] h-[800px] bg-primary/[0.15] rounded-full blur-[110px] pointer-events-none" />
+      <div className="absolute bottom-[-5%] left-[-15%] w-[700px] h-[700px] bg-black/[0.08] rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/3 w-[600px] h-[600px] bg-accent/[0.12] rounded-full blur-[130px] pointer-events-none animate-pulse" style={{ animationDuration: '10s' }} />
       
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10">
         <motion.div

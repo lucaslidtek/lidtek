@@ -197,6 +197,7 @@
     @apply bg-white/40 backdrop-blur-[60px] saturate-[2.5] border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)];
     position: relative;
     overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
   }
   
   .liquid-glass::before {
@@ -208,6 +209,15 @@
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent);
     z-index: 1;
+  }
+
+  .liquid-glass::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.4), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
   }
 
   .liquid-glass-dark {
