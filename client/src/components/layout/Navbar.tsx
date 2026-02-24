@@ -49,9 +49,12 @@ export function Navbar() {
   const navClass = isDark ? "text-white" : "text-black";
   const borderClass = isDark ? "border-white/20" : "border-black/20";
   const logoClass = isDark ? "" : "invert";
+  const glassClass = isDark 
+    ? "ios-glass-dark" 
+    : "ios-glass";
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 px-6 py-6 md:px-12 flex items-center justify-between transition-colors duration-300 ${navClass}`}>
+    <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 px-6 py-4 md:px-8 flex items-center justify-between transition-all duration-500 rounded-full ${navClass} ${glassClass}`}>
       <Link href="/" className="z-50 cursor-pointer">
         <img src={logoWhite} alt="Lidtek Logo" className={`h-6 md:h-8 w-auto transition-all duration-300 ${logoClass}`} />
       </Link>
@@ -61,7 +64,7 @@ export function Navbar() {
         <a href="#approach" className="hover:text-[#6580E1] transition-colors uppercase tracking-widest">{t("nav.approach")}</a>
         <a href="#model" className="hover:text-[#6580E1] transition-colors uppercase tracking-widest">{t("nav.model")}</a>
         
-        <div className={`flex items-center gap-2 border ${borderClass} rounded-full px-3 py-1 ml-4 transition-colors duration-300`}>
+        <div className={`flex items-center gap-2 border ${borderClass} rounded-full px-3 py-1 ml-4 transition-colors duration-300 backdrop-blur-md bg-white/5`}>
           <button 
             onClick={() => setLanguage("pt")}
             className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-opacity ${language === "pt" ? "opacity-100 font-bold" : "opacity-40 hover:opacity-100"}`}
