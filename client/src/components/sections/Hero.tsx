@@ -80,23 +80,19 @@ export function Hero() {
         </motion.div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-light leading-[1.1] tracking-tight text-white max-w-5xl">
-          <div className="flex flex-wrap items-baseline overflow-hidden">
-            {t("hero.title1").split(" ").map((word, i) => (
-              <motion.span 
-                key={i}
-                initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
-                animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 + (i * 0.05) }}
-                className="mr-4"
-              >
-                {word}
-              </motion.span>
-            ))}
+          <div className="flex flex-col items-start overflow-hidden">
+            <motion.span 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            >
+              Sua empresa já
+            </motion.span>
             <motion.span 
               initial={{ opacity: 0, filter: "blur(8px)" }}
               animate={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
-              className="italic text-white/60 font-serif block w-full"
+              className="italic text-white/60 font-serif"
             >
               tem tecnologia.
             </motion.span>
@@ -105,10 +101,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-            className="block mt-4 max-w-2xl"
+            className="flex flex-col items-start mt-4"
           >
-            A questão é:<br />
-            ela tem direção?
+            <span>A questão é:</span>
+            <span>ela tem direção?</span>
           </motion.div>
         </h1>
 
