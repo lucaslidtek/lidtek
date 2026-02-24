@@ -38,10 +38,10 @@ export function IdealClient() {
               Não somos uma fábrica de software comum. Somos o braço tecnológico de empresas que entenderam que tecnologia é o alicerce do crescimento.
             </p>
 
-            <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/5 flex gap-4 items-start max-w-md">
-              <Info className="text-primary shrink-0 mt-0.5" size={18} />
-              <p className="text-xs md:text-sm text-white/40 leading-relaxed italic">
-                "Se você busca apenas um orçamento pontual ou execução sem estratégia, provavelmente não somos o modelo ideal para o seu momento."
+            <div className="relative pl-6 max-w-md group">
+              <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-white/10 group-hover:bg-primary/50 transition-colors duration-500" />
+              <p className="text-xs md:text-sm text-white/30 leading-relaxed font-light group-hover:text-white/50 transition-colors duration-500">
+                Se você busca apenas um orçamento pontual ou execução sem estratégia, provavelmente não somos o modelo ideal para o seu momento.
               </p>
             </div>
           </motion.div>
