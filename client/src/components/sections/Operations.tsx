@@ -21,7 +21,10 @@ export function Operations() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-black/40 mb-8">Governança & Estrutura</h2>
+          <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-8 flex items-center gap-3">
+            <div className="w-8 h-[1px] bg-primary/40" />
+            Governança & Estrutura
+          </h2>
           <h3 className="text-4xl md:text-5xl font-display font-light leading-tight mb-8">
             Maturidade operacional embutida no processo.
           </h3>

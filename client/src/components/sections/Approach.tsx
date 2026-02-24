@@ -38,8 +38,8 @@ export function Approach() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="relative">
-            <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-black/40 mb-4 flex items-center gap-3">
-              <div className="w-8 h-[1px] bg-black/20" />
+            <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-4 flex items-center gap-3">
+              <div className="w-8 h-[1px] bg-primary/40" />
               {t("approach.tag")}
             </h2>
             <h3 className="text-4xl md:text-6xl font-display font-light text-black max-w-2xl text-balance relative z-10">
