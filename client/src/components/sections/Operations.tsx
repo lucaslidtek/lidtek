@@ -75,7 +75,7 @@ export function Operations() {
               {/* Focal light spot under the card */}
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-accent/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
-              <CheckCircle size={24} weight="fill" className="text-primary group-hover:scale-110 transition-all duration-500 mb-6 relative z-10" />
+              <CheckCircle size={24} weight="fill" className="text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all duration-500 mb-6 relative z-10" />
               <div className="text-3xl font-display font-light mb-2 text-black transition-colors duration-500 relative z-10">{item.value}</div>
               <div className="text-sm font-medium text-black/60 group-hover:text-black/80 transition-colors duration-500 relative z-10">{item.title}</div>
             </motion.div>
