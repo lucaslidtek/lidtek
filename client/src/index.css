@@ -194,13 +194,15 @@
 
   /* Liquid Glass Styles (iOS 26) */
   .liquid-glass {
-    @apply bg-white/10 backdrop-blur-[40px] saturate-[1.8] border border-white/20 shadow-[0_8px_32px_rgba(255,255,255,0.05)];
+    @apply bg-white/20 backdrop-blur-[40px] saturate-[2] border border-white/30 shadow-[0_8px_32px_rgba(255,255,255,0.1)];
     position: relative;
+    overflow: hidden;
   }
   
   .liquid-glass-dark {
-    @apply bg-black/10 backdrop-blur-[40px] saturate-[1.8] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.2)];
+    @apply bg-black/20 backdrop-blur-[40px] saturate-[2] border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)];
     position: relative;
+    overflow: hidden;
   }
   
   .liquid-glass-interactive {
