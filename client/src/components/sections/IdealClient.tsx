@@ -119,9 +119,9 @@ export function IdealClient() {
                 ))}
               </ul>
 
-              <div className="mt-12 pt-8 border-t border-white/5 group-hover:border-white/10 transition-colors">
-                <p className="text-xs text-white/40 italic leading-relaxed text-center group-hover:text-white/60 transition-colors">
-                  "Preferimos ser transparentes agora do que entregar menos do que o seu negócio merece no futuro."
+              <div className="mt-12 pt-8 border-t border-white/5 group-hover:border-white/10 transition-colors text-center">
+                <p className="text-[11px] text-white/30 italic leading-relaxed group-hover:text-white/50 transition-colors inline-block relative px-4">
+                  Preferimos ser transparentes agora do que entregar menos do que o seu negócio merece no futuro.
                 </p>
               </div>
             </div>
