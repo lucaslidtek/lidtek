@@ -47,7 +47,7 @@ export function Manifesto() {
               className="p-6 md:p-8 liquid-glass-dark rounded-[1.5rem] md:rounded-[2rem]"
             >
               <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4 text-white/90 relative z-10">{t("manifesto.precision.title")}</h3>
-              <p className="text-sm md:text-white/60 leading-relaxed font-sans relative z-10">
+              <p className="text-sm text-white/40 leading-relaxed font-sans relative z-10">
                 {t("manifesto.precision.desc")}
               </p>
             </motion.div>
@@ -63,7 +63,7 @@ export function Manifesto() {
               className="p-6 md:p-8 liquid-glass-dark rounded-[1.5rem] md:rounded-[2rem]"
             >
               <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4 text-white/90 relative z-10">{t("manifesto.silent.title")}</h3>
-              <p className="text-sm md:text-white/60 leading-relaxed font-sans relative z-10">
+              <p className="text-sm text-white/40 leading-relaxed font-sans relative z-10">
                 {t("manifesto.silent.desc")}
               </p>
             </motion.div>
