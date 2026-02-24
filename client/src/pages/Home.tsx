@@ -42,7 +42,7 @@ export default function Home() {
                 </div>
                 
                 <div>
-                  <h4 className="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">{t("nav.manifesto") !== "Manifesto" ? "Menu" : "Menu"}</h4>
+                  <h4 className="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">Menu</h4>
                   <ul className="space-y-4">
                     <li><a href="#manifesto" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">{t("nav.manifesto")}</a></li>
                     <li><a href="#approach" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">{t("nav.approach")}</a></li>
