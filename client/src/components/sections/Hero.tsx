@@ -87,7 +87,7 @@ export function Hero() {
       
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-start gap-12">
         <div
-          className="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 liquid-glass-dark liquid-glass-interactive"
+          className="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 liquid-glass-dark"
         >
           <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_hsl(var(--primary))]" />
           <span className="text-xs uppercase tracking-[0.2em] font-medium text-white/80">{t("hero.tag")}</span>
