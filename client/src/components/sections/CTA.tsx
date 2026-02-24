@@ -70,10 +70,9 @@ export function CTA() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative px-8 md:px-12 py-4 md:py-6 bg-primary text-white overflow-hidden rounded-full flex items-center gap-3 md:gap-4 transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_30px_rgba(var(--primary),0.3)] hover:shadow-[0_20px_40px_rgba(var(--primary),0.4)] group-hover:bg-primary/90"
+              className="relative w-full max-w-sm py-5 md:py-6 bg-primary text-white overflow-hidden rounded-full flex items-center justify-center transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_30px_rgba(var(--primary),0.3)] hover:shadow-[0_20px_40px_rgba(var(--primary),0.4)] group-hover:bg-primary/90"
             >
-              <span className="relative z-10 font-bold uppercase tracking-[0.2em] text-[11px] md:text-sm">{t("cta.btn")}</span>
-              <ArrowRight size={20} className="relative z-10 transition-transform duration-500 group-hover:translate-x-2" weight="bold" />
+              <span className="relative z-10 font-bold uppercase tracking-[0.2em] text-[12px] md:text-sm">{t("cta.btn")}</span>
               <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </a>
             
