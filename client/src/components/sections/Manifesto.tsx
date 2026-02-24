@@ -70,13 +70,13 @@ export function Manifesto() {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, filter: "blur(10px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.2, delay: 0.5 }}
-            className="mt-24 pt-12 border-t border-white/10 flex justify-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-20px" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="mt-12 md:mt-24 pt-8 md:pt-12 border-t border-white/10 flex justify-center"
           >
-            <p className="text-4xl md:text-6xl font-display font-light text-white/30 italic text-center font-serif">
+            <p className="text-2xl md:text-6xl font-display font-light text-white/30 italic text-center font-serif leading-tight">
               "{t("manifesto.section_quote")}"
             </p>
           </motion.div>
