@@ -203,8 +203,8 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 20px;
+    right: 20px;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent);
     z-index: 1;
@@ -228,8 +228,8 @@
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
+    left: 20px;
+    right: 20px;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
     z-index: 1;
