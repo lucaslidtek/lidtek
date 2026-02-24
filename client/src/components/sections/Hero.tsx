@@ -33,9 +33,9 @@ export function Hero() {
   }, [mouseX, mouseY]);
 
   return (
-    <section className="relative min-h-[100svh] flex flex-col justify-end pb-24 px-6 md:px-12 overflow-hidden bg-background">
+    <section className="relative min-h-[100svh] flex flex-col justify-end pb-24 px-6 md:px-12 bg-background">
       {/* Background Image - Pawel Czerwinski abstract glass */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img 
           src="/static/images/pawel-czerwinski-uA6x_MXI_fE-unsplash_1771968246269.jpg" 
           alt="Abstract dark background"
@@ -47,7 +47,7 @@ export function Hero() {
       </div>
 
       {/* Animated Procedural Grid Background - Blueprint feel */}
-      <div className="absolute inset-0 pointer-events-none opacity-20">
+      <div className="absolute inset-0 pointer-events-none opacity-20 overflow-hidden">
         <motion.div 
           animate={{ backgroundPosition: ["0px 0px", "0px 32px"] }}
           transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
@@ -75,7 +75,7 @@ export function Hero() {
           y: translateY,
           transformPerspective: 1000
         }}
-        className="absolute -right-1/4 -top-[35%] w-[150%] h-[150%] md:w-full md:h-full text-white pointer-events-none origin-center z-0 mix-blend-screen"
+        className="absolute -right-1/4 -top-[35%] w-[150%] h-[150%] md:w-full md:h-full text-white pointer-events-none origin-center z-0 mix-blend-screen overflow-hidden"
       >
         <div className="relative w-full h-full opacity-60">
            {/* SVG container - Using CSS filter to tint the white SVG to the primary brand color */}
