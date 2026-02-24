@@ -29,19 +29,12 @@ export function CTA() {
   }, [mouseX, mouseY]);
 
   return (
-    <section id="contact" className="relative pt-24 md:pt-32 pb-24 px-6 md:px-12 bg-white border-t border-black/5 overflow-hidden">
-      {/* Background Image & Effects - Light Version */}
+    <section id="contact" className="relative pt-24 md:pt-32 pb-24 px-6 md:px-12 bg-[#F8F9FA] border-t border-black/10 overflow-hidden">
+      {/* Background Image & Effects - Liquid Glass Version */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(var(--primary-rgb),0.08),transparent_70%)] opacity-100" />
-        
-        {/* Animated Procedural Grid Background - Light Version */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <motion.div 
-            animate={{ backgroundPosition: ["0px 0px", "0px 32px"] }}
-            transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
-            className="absolute inset-0 bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:2rem_2rem]"
-          />
-        </div>
+        <div className="absolute top-[-5%] right-[-5%] w-[800px] h-[800px] bg-primary/[0.15] rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-[-15%] left-[-10%] w-[700px] h-[700px] bg-accent/[0.12] rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '12s' }} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(101,128,225,0.08),transparent_50%)]" />
       </div>
       
       {/* Dynamic light following mouse - Adapted for Light Background */}
