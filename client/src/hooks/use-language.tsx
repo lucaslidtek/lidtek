@@ -66,7 +66,7 @@ const translations = {
     "model.step5.desc": "Assumimos responsabilidade real pelo seu ecossistema tecnológico.",
     "cta.tag": "Convite Responsável",
     "cta.title": "Se sua empresa está crescendo, sua tecnologia precisa acompanhar.",
-    "cta.btn": "Inicie uma conversa responsável",
+    "cta.btn": "Falar com a Lidtek",
     "footer.rights": "Lidtek Tecnologia. Todos os direitos reservados."
   },
   en: {
@@ -121,12 +121,12 @@ const translations = {
     "model.step3.title": "Fluid Integration",
     "model.step3.desc": "Technology enters your routine naturally and without friction.",
     "model.step4.title": "Constant Evolution",
-    "model.step4.desc": "We follow your growth, adjusting the path as the business scales.",
+    "model.step4.desc": "We monitor growth, adjusting the path as the business scales.",
     "model.step5.title": "Active Leadership",
-    "model.step5.desc": "We take real responsibility for your technological ecosystem.",
+    "model.step5_desc": "We take real responsibility for your technological ecosystem.",
     "cta.tag": "Responsible Invitation",
     "cta.title": "If your company is growing, your technology needs to keep up.",
-    "cta.btn": "Start a responsible conversation",
+    "cta.btn": "Talk to Lidtek",
     "footer.rights": "Lidtek Technology. All rights reserved."
   }
 };
