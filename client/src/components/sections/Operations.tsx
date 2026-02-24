@@ -30,7 +30,7 @@ export function Operations() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
           {indicators.map((item, i) => (
             <motion.div
               key={i}
@@ -38,8 +38,11 @@ export function Operations() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-              className="group p-8 liquid-glass liquid-glass-interactive rounded-2xl"
+              className="group p-8 liquid-glass liquid-glass-interactive rounded-2xl relative"
             >
+              {/* Focal light spot under the card */}
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-accent/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              
               <CheckCircle size={24} weight="fill" className="text-black/20 group-hover:text-primary group-hover:scale-110 transition-all duration-500 mb-6 relative z-10" />
               <div className="text-3xl font-display font-light mb-2 text-black transition-colors duration-500 relative z-10">{item.value}</div>
               <div className="text-sm font-medium text-black/60 group-hover:text-black/80 transition-colors duration-500 relative z-10">{item.title}</div>

@@ -51,7 +51,7 @@ export function Approach() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {features.map((feature, i) => (
             <motion.div 
               key={i}
@@ -59,8 +59,11 @@ export function Approach() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-              className="p-10 liquid-glass liquid-glass-interactive group rounded-[2rem]"
+              className="p-10 liquid-glass liquid-glass-interactive group rounded-[2rem] relative"
             >
+              {/* Focal light spot under the card */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              
               <div className="absolute top-0 left-0 w-full h-[2px] bg-primary/0 group-hover:bg-primary transition-colors duration-500 z-10" />
               <div className="text-black/30 group-hover:text-primary transition-colors duration-500 mb-8 relative z-10">{feature.icon}</div>
               <h4 className="text-xl font-medium text-black mb-4 relative z-10">{feature.title}</h4>

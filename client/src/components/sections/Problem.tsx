@@ -52,6 +52,9 @@ export function Problem() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
               className={`group relative p-8 flex flex-col gap-2 liquid-glass liquid-glass-interactive rounded-2xl md:ml-12 ${item.highlight ? 'border-primary/40 bg-primary/10 shadow-[0_8px_32px_rgba(101,128,225,0.2)]' : ''}`}
             >
+              {/* Focal light spot under the item */}
+              <div className="absolute -bottom-2 left-10 w-32 h-6 bg-primary/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              
               <div className="absolute inset-0 border border-black/0 rounded-2xl opacity-0 group-hover:opacity-100 group-hover:border-black/5 transition-all duration-500 pointer-events-none" />
               {/* Ponto na linha */}
               <div className="absolute -left-[3.25rem] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-black/10 group-hover:bg-primary transition-colors duration-500 hidden md:block" />
