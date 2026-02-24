@@ -4,6 +4,7 @@ import { Manifesto } from "@/components/sections/Manifesto";
 import { Problem } from "@/components/sections/Problem";
 import { Approach } from "@/components/sections/Approach";
 import { Model } from "@/components/sections/Model";
+import { Operations } from "@/components/sections/Operations";
 import { CTA } from "@/components/sections/CTA";
 import { SmoothScroll } from "@/components/ui/magic/smooth-scroll";
 import logoWhite from "@assets/lidtek-primary-logo_white_1771959392591.png";
@@ -21,6 +22,7 @@ export default function Home() {
         <Manifesto />
         <Approach />
         <Model />
+        <Operations />
         <CTA />
         
         <footer className="bg-black py-12 px-6 md:px-12 border-t border-white/10">

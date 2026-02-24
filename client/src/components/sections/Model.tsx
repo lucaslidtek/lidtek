@@ -1,9 +1,16 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState } from "react";
 import { useLanguage } from "@/hooks/use-language";
 
 export function Model() {
   const { t } = useLanguage();
-
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"]
+  });
+  
   const steps = [
     { step: "I", title: t("model.step1.title"), desc: t("model.step1.desc") },
     { step: "D", title: t("model.step2.title"), desc: t("model.step2.desc") },
@@ -12,52 +19,54 @@ export function Model() {
     { step: "L", title: t("model.step5.title"), desc: t("model.step5.desc") }
   ];
 
+  const scaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
   return (
-    <section id="model" className="py-32 px-6 md:px-12 bg-white text-black border-t border-black/10">
-      <div className="max-w-7xl mx-auto w-full">
-        <div className="mb-24 text-center flex flex-col items-center">
-          <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-black/40 mb-6">{t("model.tag")}</h2>
-          <h3 className="text-4xl md:text-6xl font-display font-light text-black max-w-3xl text-balance mb-8">Nosso Método</h3>
-          <p className="text-black/60 max-w-xl font-sans text-lg italic">
+    <section id="model" className="py-40 px-6 md:px-12 bg-background text-white border-t border-white/10 relative overflow-hidden" ref={containerRef}>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="mb-32 text-center flex flex-col items-center">
+          <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-6">{t("model.tag")}</h2>
+          <h3 className="text-4xl md:text-6xl font-display font-light text-white max-w-3xl text-balance mb-8">Nosso Método</h3>
+          <p className="text-white/60 max-w-xl font-sans text-lg italic font-serif">
             {t("model.subtitle")}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-0 border-y border-black/10 divide-y md:divide-y-0 md:divide-x divide-black/10">
-          {steps.map((step, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: i * 0.15, ease: [0.215, 0.61, 0.355, 1] }}
-              className="p-10 lg:p-12 hover:bg-black/[0.04] transition-colors group relative overflow-hidden backdrop-blur-md"
-            >
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-black/0 group-hover:bg-black transition-colors duration-700" />
-              <span className="text-4xl font-display font-light text-black/10 mb-10 block group-hover:text-black/30 transition-colors duration-500">{step.step}</span>
-              <h4 className="text-xl font-medium mb-6 leading-tight">{step.title}</h4>
-              <p className="text-black/60 font-sans text-sm leading-relaxed">{step.desc}</p>
-              
+        <div className="relative">
+          <div className="absolute top-8 left-0 w-full h-[1px] bg-white/10 hidden md:block" />
+          <motion.div 
+            style={{ scaleX, transformOrigin: "left" }}
+            className="absolute top-8 left-0 w-full h-[2px] bg-primary hidden md:block z-0" 
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-12 md:gap-0 relative z-10">
+            {steps.map((step, i) => (
               <motion.div 
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.15 + 0.4 }}
-                className="absolute bottom-0 left-0 w-full h-[1px] bg-black/10 origin-left"
-              />
-              <motion.div 
-                initial={{ scaleY: 0 }}
-                whileInView={{ scaleY: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.15 + 0.6 }}
-                className="absolute bottom-0 right-0 w-[1px] h-full bg-black/10 origin-bottom hidden md:block"
-              />
-              
-              <motion.div 
-                className="absolute -bottom-1 -right-1 w-12 h-12 bg-black/5 rounded-tl-full translate-x-12 translate-y-12 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-700"
-              />
-            </motion.div>
-          ))}
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: i * 0.15, ease: [0.215, 0.61, 0.355, 1] }}
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                className="px-6 relative group cursor-default"
+              >
+                <div className="hidden md:flex absolute top-8 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full border border-white/20 bg-background items-center justify-center transition-all duration-500 z-10 group-hover:border-primary group-hover:scale-150">
+                   <div className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${hoveredIndex === i ? 'bg-primary shadow-[0_0_10px_hsl(var(--primary))] scale-150' : 'bg-transparent'}`} />
+                </div>
+
+                <div className={`mt-8 md:mt-24 transition-all duration-500 ${hoveredIndex === i ? 'translate-y-[-8px]' : ''}`}>
+                  <span className={`text-6xl font-display font-light mb-6 block transition-colors duration-500 ${hoveredIndex === i ? 'text-primary' : 'text-white/10'}`}>
+                    {step.step}
+                  </span>
+                  <h4 className="text-xl font-medium mb-4 leading-tight text-white">{step.title}</h4>
+                  <p className="text-white/50 font-sans text-sm leading-relaxed">{step.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
