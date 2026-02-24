@@ -48,6 +48,18 @@ export function Manifesto() {
               </p>
             </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="mt-24 pt-12 border-t border-black/5 flex justify-center"
+          >
+            <p className="text-4xl md:text-6xl font-display font-light text-black/20 italic text-center">
+              "{t("manifesto.section_quote")}"
+            </p>
+          </motion.div>
         </div>
       </div>
     </section>
