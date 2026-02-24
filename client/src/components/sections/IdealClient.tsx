@@ -90,37 +90,37 @@ export function IdealClient() {
             transition={{ duration: 0.8 }}
             className="relative group h-full"
           >
-            <div className="absolute -inset-0.5 bg-gradient-to-b from-red-500/10 to-transparent rounded-[2rem] blur opacity-10 group-hover:opacity-20 transition duration-1000" />
-            <div className="relative bg-[#0c0c0c] border border-white/5 rounded-[2rem] p-8 md:p-10 h-full backdrop-blur-xl">
-              <div className="flex items-center gap-4 mb-8 opacity-70">
-                <div className="p-3 bg-white/5 rounded-2xl border border-white/10">
-                  <XCircle className="text-white/40" size={24} />
+            <div className="absolute -inset-0.5 bg-gradient-to-b from-white/5 to-transparent rounded-[2rem] blur opacity-10 group-hover:opacity-20 transition duration-1000" />
+            <div className="relative bg-[#0c0c0c] border border-white/10 rounded-[2rem] p-8 md:p-10 h-full backdrop-blur-xl group-hover:border-white/20 transition-colors duration-500">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="p-3 bg-white/5 rounded-2xl border border-white/10 group-hover:border-white/20 transition-colors">
+                  <XCircle className="text-white/60" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-display text-white/60">Não somos o ideal se...</h3>
-                  <p className="text-white/30 text-xs uppercase tracking-widest mt-1">Foco diferente</p>
+                  <h3 className="text-xl font-display text-white/90">Não somos o ideal se...</h3>
+                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1 font-sans">Foco diferente</p>
                 </div>
               </div>
               
-              <ul className="space-y-5 opacity-60">
+              <ul className="space-y-5">
                 {negativeCriteria.map((item, idx) => (
                   <motion.li 
                     key={idx}
                     initial={{ opacity: 0, x: 10 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: idx * 0.1 }}
-                    className="flex gap-4 items-start"
+                    className="flex gap-4 items-start group/item"
                   >
-                    <div className="mt-2 w-1 h-1 rounded-full bg-white/20" />
-                    <span className="text-white/50 text-sm md:text-base font-light leading-relaxed">
+                    <div className="mt-2 w-1 h-1 rounded-full bg-white/30 group-hover/item:bg-white/60 transition-colors" />
+                    <span className="text-white/60 text-sm md:text-base font-light leading-relaxed group-hover/item:text-white/90 transition-colors">
                       {item}
                     </span>
                   </motion.li>
                 ))}
               </ul>
 
-              <div className="mt-12 pt-8 border-t border-white/5">
-                <p className="text-xs text-white/30 italic leading-relaxed text-center">
+              <div className="mt-12 pt-8 border-t border-white/5 group-hover:border-white/10 transition-colors">
+                <p className="text-xs text-white/40 italic leading-relaxed text-center group-hover:text-white/60 transition-colors">
                   "Preferimos ser transparentes agora do que entregar menos do que o seu negócio merece no futuro."
                 </p>
               </div>
