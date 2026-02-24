@@ -13,48 +13,53 @@ export function Model() {
   ];
 
   return (
-    <section id="model" className="py-32 px-6 md:px-12 bg-white text-black border-t border-black/10">
+    <section id="model" className="py-40 px-6 md:px-12 bg-white text-black border-t border-black/[0.05] overflow-hidden">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="mb-24 text-center flex flex-col items-center">
-          <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-black/40 mb-6">{t("model.tag")}</h2>
-          <h3 className="text-4xl md:text-6xl font-display font-light text-black max-w-3xl text-balance mb-8">Nosso Método</h3>
-          <p className="text-black/60 max-w-xl font-sans text-lg italic">
+        <div className="mb-32 text-center flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="px-4 py-1 border border-black/[0.05] bg-black/[0.02] rounded-full mb-8"
+          >
+            <h2 className="text-[10px] uppercase tracking-[0.4em] font-bold text-black/40">{t("model.tag")}</h2>
+          </motion.div>
+          <h3 className="text-5xl md:text-7xl font-display font-light text-black max-w-4xl text-balance mb-12 tracking-tighter leading-[0.9]">Nosso Método</h3>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-black/40 max-w-xl font-sans text-base italic leading-relaxed"
+          >
             {t("model.subtitle")}
-          </p>
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-0 border-y border-black/10 divide-y md:divide-y-0 md:divide-x divide-black/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-0 border border-black/[0.08] divide-y md:divide-y-0 md:divide-x divide-black/[0.08] rounded-sm overflow-hidden bg-black/[0.01]">
           {steps.map((step, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, delay: i * 0.15, ease: [0.215, 0.61, 0.355, 1] }}
-              className="p-10 lg:p-12 hover:bg-black/[0.04] transition-colors group relative overflow-hidden backdrop-blur-md"
+              transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="p-12 hover:bg-black/[0.03] transition-all duration-700 group relative overflow-hidden backdrop-blur-sm"
             >
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-black/0 group-hover:bg-black transition-colors duration-700" />
-              <span className="text-4xl font-display font-light text-black/10 mb-10 block group-hover:text-black/30 transition-colors duration-500">{step.step}</span>
-              <h4 className="text-xl font-medium mb-6 leading-tight">{step.title}</h4>
-              <p className="text-black/60 font-sans text-sm leading-relaxed">{step.desc}</p>
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
+              <span className="text-5xl font-display font-light text-black/5 mb-12 block group-hover:text-black/10 transition-all duration-700 group-hover:-translate-y-2">{step.step}</span>
+              <h4 className="text-lg font-bold mb-6 leading-tight tracking-tight">{step.title}</h4>
+              <p className="text-black/40 font-sans text-xs leading-relaxed group-hover:text-black/60 transition-colors">{step.desc}</p>
               
               <motion.div 
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.15 + 0.4 }}
-                className="absolute bottom-0 left-0 w-full h-[1px] bg-black/10 origin-left"
-              />
-              <motion.div 
-                initial={{ scaleY: 0 }}
-                whileInView={{ scaleY: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: i * 0.15 + 0.6 }}
-                className="absolute bottom-0 right-0 w-[1px] h-full bg-black/10 origin-bottom hidden md:block"
+                transition={{ duration: 1.5, delay: i * 0.1 + 0.5 }}
+                className="absolute bottom-0 left-0 w-full h-[1px] bg-black/5 origin-left"
               />
               
               <motion.div 
-                className="absolute -bottom-1 -right-1 w-12 h-12 bg-black/5 rounded-tl-full translate-x-12 translate-y-12 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-700"
+                className="absolute -bottom-2 -right-2 w-16 h-16 bg-black/[0.02] rounded-full blur-xl group-hover:bg-black/[0.05] transition-all duration-700"
               />
             </motion.div>
           ))}
