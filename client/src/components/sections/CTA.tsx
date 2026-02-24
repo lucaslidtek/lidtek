@@ -29,26 +29,26 @@ export function CTA() {
   }, [mouseX, mouseY]);
 
   return (
-    <section id="contact" className="relative pt-24 md:pt-32 pb-12 px-6 md:px-12 bg-background border-t border-white/5 overflow-hidden">
-      {/* Background Image & Effects - Matching Hero Style */}
+    <section id="contact" className="relative pt-24 md:pt-32 pb-24 px-6 md:px-12 bg-white border-t border-black/5 overflow-hidden">
+      {/* Background Image & Effects - Light Version */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(var(--primary-rgb),0.12),transparent_70%)] opacity-40" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(var(--primary-rgb),0.08),transparent_70%)] opacity-100" />
         
-        {/* Animated Procedural Grid Background - Matching Hero */}
-        <div className="absolute inset-0 opacity-10">
+        {/* Animated Procedural Grid Background - Light Version */}
+        <div className="absolute inset-0 opacity-[0.03]">
           <motion.div 
             animate={{ backgroundPosition: ["0px 0px", "0px 32px"] }}
             transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
-            className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:2rem_2rem]"
+            className="absolute inset-0 bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:2rem_2rem]"
           />
         </div>
       </div>
       
-      {/* Dynamic light following mouse - Exactly like Hero */}
+      {/* Dynamic light following mouse - Adapted for Light Background */}
       {isMounted && (
         <motion.div 
           style={{ x: springX, y: springY }}
-          className="fixed top-0 left-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen z-0" 
+          className="fixed top-0 left-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none mix-blend-multiply z-0" 
         />
       )}
 
@@ -61,30 +61,30 @@ export function CTA() {
           className="flex flex-col items-center"
         >
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-[1px] w-8 bg-primary/50" />
-            <h2 className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold text-primary/80">{t("cta.tag")}</h2>
-            <div className="h-[1px] w-8 bg-primary/50" />
+            <div className="h-[1px] w-8 bg-primary/30" />
+            <h2 className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold text-primary/60">{t("cta.tag")}</h2>
+            <div className="h-[1px] w-8 bg-primary/30" />
           </div>
 
-          <h3 className="text-4xl md:text-6xl lg:text-7xl font-display font-light tracking-tight text-white mb-10 max-w-4xl leading-[1.1]">
+          <h3 className="text-4xl md:text-6xl lg:text-7xl font-display font-light tracking-tight text-neutral-900 mb-10 max-w-4xl leading-[1.1]">
             {t("cta.title")}
           </h3>
           
           <div className="relative group">
-            <div className="absolute -inset-4 bg-primary/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="absolute -inset-4 bg-primary/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             
             <a 
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative px-8 md:px-12 py-4 md:py-5 bg-white text-black overflow-hidden rounded-full flex items-center gap-3 md:gap-4 transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(var(--primary),0.3)]"
+              className="relative px-8 md:px-12 py-4 md:py-5 bg-neutral-900 text-white overflow-hidden rounded-full flex items-center gap-3 md:gap-4 transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(var(--primary),0.2)]"
             >
               <span className="relative z-10 font-bold uppercase tracking-[0.15em] text-[10px] md:text-xs">{t("cta.btn")}</span>
               <ArrowRight size={16} className="relative z-10 transition-transform duration-500 group-hover:translate-x-1" weight="bold" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </a>
             
-            <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-white/30 font-medium">Disponibilidade limitada para novos projetos</p>
+            <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-medium">Disponibilidade limitada para novos projetos</p>
           </div>
         </motion.div>
       </div>
