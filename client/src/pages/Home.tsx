@@ -47,8 +47,6 @@ export default function Home() {
                     <li><a href="#manifesto" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">{t("nav.manifesto")}</a></li>
                     <li><a href="#approach" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">{t("nav.approach")}</a></li>
                     <li><a href="#model" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">{t("nav.model")}</a></li>
-                    <li><a href="#operations" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">{t("nav.operations")}</a></li>
-                    <li><a href="#ideal-client" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">{t("nav.ideal")}</a></li>
                   </ul>
                 </div>
 

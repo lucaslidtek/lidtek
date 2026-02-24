@@ -72,8 +72,6 @@ export function Navbar() {
             <a href="#manifesto" className="hover:text-primary transition-colors uppercase tracking-[0.15em]">{t("nav.manifesto")}</a>
             <a href="#approach" className="hover:text-primary transition-colors uppercase tracking-[0.15em]">{t("nav.approach")}</a>
             <a href="#model" className="hover:text-primary transition-colors uppercase tracking-[0.15em]">{t("nav.model")}</a>
-            <a href="#operations" className="hover:text-primary transition-colors uppercase tracking-[0.15em]">{t("nav.operations")}</a>
-            <a href="#ideal-client" className="hover:text-primary transition-colors uppercase tracking-[0.15em]">{t("nav.ideal")}</a>
           </div>
           
           <div className="flex items-center gap-6">
@@ -133,9 +131,7 @@ export function Navbar() {
                 {[
                   { href: "#manifesto", label: t("nav.manifesto") },
                   { href: "#approach", label: t("nav.approach") },
-                  { href: "#model", label: t("nav.model") },
-                  { href: "#operations", label: t("nav.operations") },
-                  { href: "#ideal-client", label: t("nav.ideal") }
+                  { href: "#model", label: t("nav.model") }
                 ].map((item, i) => (
                   <motion.a
                     key={item.href}
