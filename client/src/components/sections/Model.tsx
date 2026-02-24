@@ -46,9 +46,12 @@ export function Model() {
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                whileInView={{ 
+                  opacity: 1, 
+                  y: 0,
+                  transition: { duration: 0.8, delay: i * 0.15, ease: [0.215, 0.61, 0.355, 1] }
+                }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, delay: i * 0.15, ease: [0.215, 0.61, 0.355, 1] }}
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 className="px-0 md:px-6 relative group cursor-default"
@@ -57,16 +60,37 @@ export function Model() {
                    <div className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${hoveredIndex === i ? 'bg-primary shadow-[0_0_10px_hsl(var(--primary))] scale-150' : 'bg-transparent'}`} />
                 </div>
 
-                <div className={`mt-0 md:mt-24 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${hoveredIndex === i ? 'liquid-glass-dark md:translate-y-[-8px]' : 'bg-white/5 md:bg-transparent'}`}>
+                <motion.div 
+                  whileInView={{ 
+                    backgroundColor: typeof window !== 'undefined' && window.innerWidth < 768 ? "rgba(101,128,225,0.1)" : "transparent",
+                    transition: { delay: i * 0.2 + 0.5, duration: 0.5 }
+                  }}
+                  viewport={{ once: true }}
+                  className={`mt-0 md:mt-24 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${hoveredIndex === i ? 'liquid-glass-dark md:translate-y-[-8px]' : 'bg-white/5 md:bg-transparent'}`}
+                >
                   <div className="relative inline-block mb-4 md:mb-6">
-                    <span className={`text-4xl md:text-6xl font-display font-light block transition-colors duration-500 ${hoveredIndex === i ? 'text-primary' : 'text-white/20'}`}>
+                    <motion.span 
+                      whileInView={{ 
+                        color: typeof window !== 'undefined' && window.innerWidth < 768 ? "hsl(var(--primary))" : "rgba(255,255,255,0.2)",
+                        transition: { delay: i * 0.2 + 0.5, duration: 0.5 }
+                      }}
+                      viewport={{ once: true }}
+                      className={`text-4xl md:text-6xl font-display font-light block transition-colors duration-500 ${hoveredIndex === i ? 'text-primary' : 'text-white/20'}`}
+                    >
                       {step.step}
-                    </span>
-                    <div className={`absolute inset-0 blur-xl transition-opacity duration-500 bg-primary/30 ${hoveredIndex === i ? 'opacity-100' : 'opacity-0'} pointer-events-none`} />
+                    </motion.span>
+                    <motion.div 
+                      whileInView={{ 
+                        opacity: typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 0,
+                        transition: { delay: i * 0.2 + 0.5, duration: 0.5 }
+                      }}
+                      viewport={{ once: true }}
+                      className={`absolute inset-0 blur-xl transition-opacity duration-500 bg-primary/30 ${hoveredIndex === i ? 'opacity-100' : 'opacity-0'} pointer-events-none`} 
+                    />
                   </div>
                   <h4 className={`text-lg md:text-xl font-medium mb-3 md:mb-4 leading-tight transition-colors duration-500 ${hoveredIndex === i ? 'text-white' : 'text-white/80'}`}>{step.title}</h4>
                   <p className={`font-sans text-xs md:text-sm leading-relaxed transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${hoveredIndex === i ? 'text-white/70' : 'text-white/40'}`}>{step.desc}</p>
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
