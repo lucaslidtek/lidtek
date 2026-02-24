@@ -101,59 +101,69 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 20% 10%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --background: 0 0% 98.4%; /* #FEFBFB */
+    --foreground: 0 0% 3.1%;  /* #080808 */
+    --card: 0 0% 98.4%;
+    --card-foreground: 0 0% 3.1%;
+    --popover: 0 0% 98.4%;
+    --popover-foreground: 0 0% 3.1%;
     
+    /* Azul claro: #6580E1 */
     --primary: 227 66% 64%;
     --primary-foreground: 0 0% 100%;
     
+    /* Azul-escuro: #243A4A */
     --secondary: 206 35% 22%;
     --secondary-foreground: 0 0% 100%;
     
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 8% 46%;
-    --accent: 220 14% 96%;
-    --accent-foreground: 220 20% 10%;
+    /* Cinza: #E5E5E5 */
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 45%;
+    
+    /* Violeta: #5A4FFF */
+    --accent: 244 100% 65%;
+    --accent-foreground: 0 0% 100%;
+    
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
     --ring: 227 66% 64%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 220 33% 4%;
-    --foreground: 0 0% 98%;
+    /* Preto: #080808 */
+    --background: 0 0% 3.1%;
+    --foreground: 0 0% 98.4%;
     
-    --card: 220 25% 6%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98.4%;
     
-    --popover: 220 25% 6%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98.4%;
     
+    /* Azul claro: #6580E1 */
     --primary: 227 66% 64%;
     --primary-foreground: 0 0% 100%;
     
+    /* Azul-escuro: #243A4A */
     --secondary: 206 35% 22%;
     --secondary-foreground: 0 0% 100%;
     
-    --muted: 220 20% 12%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
     
-    --accent: 220 20% 12%;
-    --accent-foreground: 0 0% 98%;
+    /* Violeta: #5A4FFF */
+    --accent: 244 100% 65%;
+    --accent-foreground: 0 0% 100%;
     
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 220 20% 12%;
-    --input: 220 20% 12%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
     --ring: 227 66% 64%;
   }
 

@@ -20,14 +20,14 @@ export function Navbar() {
         <div className="flex items-center gap-2 border border-white/20 rounded-full px-3 py-1 ml-4">
           <button 
             onClick={() => setLanguage("pt")}
-            className={`text-[10px] uppercase tracking-tighter transition-opacity ${language === "pt" ? "opacity-100 font-bold" : "opacity-40 hover:opacity-100"}`}
+            className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-opacity ${language === "pt" ? "opacity-100 font-bold" : "opacity-40 hover:opacity-100"}`}
           >
             PT
           </button>
           <div className="w-[1px] h-2 bg-white/20" />
           <button 
             onClick={() => setLanguage("en")}
-            className={`text-[10px] uppercase tracking-tighter transition-opacity ${language === "en" ? "opacity-100 font-bold" : "opacity-40 hover:opacity-100"}`}
+            className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-opacity ${language === "en" ? "opacity-100 font-bold" : "opacity-40 hover:opacity-100"}`}
           >
             EN
           </button>
