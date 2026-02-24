@@ -52,7 +52,7 @@ export function IdealClient() {
             className="relative group h-full"
           >
             <div className="absolute -inset-0.5 bg-gradient-to-b from-primary/20 to-transparent rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000" />
-            <div className="relative bg-[#0c0c0c] border border-white/10 rounded-[2rem] p-8 md:p-10 h-full backdrop-blur-xl">
+            <div className="relative bg-white/5 backdrop-blur-[32px] saturate-[180%] border border-white/10 rounded-[2rem] p-8 md:p-10 h-full">
               <div className="flex items-center gap-4 mb-8">
                 <div className="p-3 bg-primary/10 rounded-2xl border border-primary/20">
                   <CheckCircle className="text-primary" size={24} />

@@ -73,7 +73,7 @@ export function Model() {
                     }
                   }}
                   viewport={{ once: true }}
-                  className={`mt-0 md:mt-24 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${hoveredIndex === i ? 'liquid-glass-dark md:translate-y-[-8px]' : 'bg-white/5 md:bg-transparent'}`}
+                  className={`mt-0 md:mt-24 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${hoveredIndex === i ? 'bg-black/60 backdrop-blur-[32px] saturate-[180%] border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] md:translate-y-[-8px]' : 'bg-white/5 md:bg-transparent'}`}
                 >
                   <div className="relative inline-block mb-4 md:mb-6">
                     <motion.span 

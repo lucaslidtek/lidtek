@@ -95,7 +95,7 @@ export function Approach() {
                 ease: [0.16, 1, 0.3, 1], 
                 delay: typeof window !== 'undefined' && window.innerWidth < 768 ? i * 0.05 : i * 0.1 
               }}
-              className="p-8 md:p-10 liquid-glass liquid-glass-interactive group rounded-[1.5rem] md:rounded-[2rem] relative"
+              className="p-8 md:p-10 bg-white/40 backdrop-blur-[32px] saturate-[180%] border border-white/40 group rounded-[1.5rem] md:rounded-[2rem] relative transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
             >
               {/* Focal light spot under the card */}
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
