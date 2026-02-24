@@ -4,6 +4,7 @@ import { useLanguage } from "@/hooks/use-language";
 
 export function Navbar() {
   const { language, setLanguage, t } = useLanguage();
+  const whatsappUrl = "https://wa.me/553496840966?text=Olá Rafael, gostaria de entender melhor como a Lidtek pode atuar como nosso departamento de tecnologia.";
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 mix-blend-difference px-6 py-6 md:px-12 flex items-center justify-between">
@@ -32,7 +33,12 @@ export function Navbar() {
           </button>
         </div>
 
-        <a href="#contact" className="px-5 py-2 border border-white/20 hover:border-white hover:bg-white hover:text-black transition-all rounded-full uppercase tracking-widest">
+        <a 
+          href={whatsappUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-5 py-2 border border-white/20 hover:border-white hover:bg-white hover:text-black transition-all rounded-full uppercase tracking-widest"
+        >
           {t("nav.engage")}
         </a>
       </div>

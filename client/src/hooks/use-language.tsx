@@ -10,10 +10,10 @@ interface LanguageContextType {
 
 const translations = {
   pt: {
-    "nav.manifesto": "Manifesto",
-    "nav.approach": "Abordagem",
-    "nav.model": "Modelo",
-    "nav.engage": "Engajar",
+    "nav.manifesto": "Sobre Nós",
+    "nav.approach": "Como Atuamos",
+    "nav.model": "Metodologia",
+    "nav.engage": "Contatar Rafael",
     "hero.tag": "Departamento de Tecnologia",
     "hero.title1": "Excelência em",
     "hero.title1_italic": "engenharia",
@@ -60,14 +60,14 @@ const translations = {
     "model.step4.desc": "Otimização contínua e escalonamento estratégico da tecnologia.",
     "cta.tag": "Filtro de Público",
     "cta.title": "Para quem exige supremacia técnica.",
-    "cta.btn": "Iniciar Diálogo",
+    "cta.btn": "Iniciar Diálogo via WhatsApp",
     "footer.rights": "Todos os direitos reservados."
   },
   en: {
-    "nav.manifesto": "Manifesto",
-    "nav.approach": "Approach",
-    "nav.model": "Model",
-    "nav.engage": "Engage",
+    "nav.manifesto": "About Us",
+    "nav.approach": "Our Approach",
+    "nav.model": "Methodology",
+    "nav.engage": "Contact Rafael",
     "hero.tag": "Technology Department",
     "hero.title1": "Engineering ",
     "hero.title1_italic": "excellence",
@@ -114,7 +114,7 @@ const translations = {
     "model.step4.desc": "Ongoing optimization and strategic scaling of the technology.",
     "cta.tag": "Audience Filter",
     "cta.title": "For those who demand technical supremacy.",
-    "cta.btn": "Initiate Dialogue",
+    "cta.btn": "Start WhatsApp Dialogue",
     "footer.rights": "All rights reserved."
   }
 };

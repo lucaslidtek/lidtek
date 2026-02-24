@@ -4,6 +4,7 @@ import { useLanguage } from "@/hooks/use-language";
 
 export function CTA() {
   const { t } = useLanguage();
+  const whatsappUrl = "https://wa.me/553496840966?text=Olá Rafael, gostaria de entender melhor como a Lidtek pode atuar como nosso departamento de tecnologia.";
 
   return (
     <section id="contact" className="py-40 px-6 md:px-12 bg-white text-black relative overflow-hidden">
@@ -22,11 +23,16 @@ export function CTA() {
             {t("cta.title")}
           </h3>
           
-          <button className="group relative px-8 py-4 bg-black text-white overflow-hidden rounded-sm flex items-center gap-4 hover:pr-6 transition-all duration-300">
+          <a 
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative px-8 py-4 bg-black text-white overflow-hidden rounded-sm flex items-center gap-4 hover:pr-6 transition-all duration-300"
+          >
             <span className="relative z-10 font-medium uppercase tracking-widest text-sm">{t("cta.btn")}</span>
             <ArrowRight size={16} className="relative z-10 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" weight="bold" />
             <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0" />
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>
