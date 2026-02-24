@@ -41,9 +41,9 @@ export function Hero() {
           alt="Abstract dark background"
           className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
         />
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-transparent" />
+        <div className="absolute inset-0 bg-background/60 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent" />
       </div>
 
       {/* Animated Procedural Grid Background - Blueprint feel */}
