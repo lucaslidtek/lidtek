@@ -37,7 +37,7 @@ export function Problem() {
       <motion.div 
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        className="absolute bottom-1/4 left-[10%] w-[400px] h-[400px] text-black/[0.03] pointer-events-none z-0"
+        className="absolute bottom-1/4 left-[-5%] w-[500px] h-[500px] text-black/[0.03] pointer-events-none z-0"
       >
         <LogoIcon className="w-full h-full rotate-[-15deg]" />
       </motion.div>

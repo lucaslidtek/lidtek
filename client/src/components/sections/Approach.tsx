@@ -1,9 +1,25 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Code, Database, Shield, Cpu } from "phosphor-react";
 import { useLanguage } from "@/hooks/use-language";
+import { useRef } from "react";
+
+const LogoIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 1080 942" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <path d="M542.929 686.185C539.727 682.983 534.533 682.988 531.337 686.197L279.092 939.425C273.938 944.6 265.101 940.949 265.101 933.646L265.101 784.028C265.101 781.808 266.003 779.683 267.6 778.14L501.471 552.119C506.766 547.002 502.802 539.317 495.439 539.317L7.84729 539.317C3.32465 539.317 3.01622e-05 534.375 3.03599e-05 529.853L4.07268e-05 411.269C4.09244e-05 406.747 4.2138 402.533 8.73645 402.533L419.472 402.533C421.644 402.533 423.179 403.943 424.715 405.479L796.218 776.983C797.754 778.519 798.617 780.602 798.617 782.774L798.617 922.104C798.617 929.399 789.796 933.053 784.637 927.894L542.929 686.185Z" fill="currentColor"/>
+    <path d="M537.071 255.669C540.273 258.871 545.467 258.866 548.663 255.658L800.908 2.42914C806.062 -2.7451 814.899 0.905115 814.899 8.20842L814.899 157.826C814.899 160.046 813.997 162.172 812.4 163.715L578.529 389.735C573.234 394.852 577.198 402.538 584.561 402.538L1072.15 402.538C1076.68 402.538 1080 407.479 1080 412.002L1080 530.585C1080 535.108 1075.79 539.321 1071.26 539.321L660.528 539.321C658.356 539.321 656.821 537.911 655.285 536.376L283.782 164.871C282.246 163.335 281.384 161.253 281.384 159.081L281.384 19.7508C281.384 12.4552 290.204 8.80153 295.363 13.9603L537.071 255.669Z" fill="currentColor"/>
+  </svg>
+);
 
 export function Approach() {
   const { t } = useLanguage();
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const y1 = useTransform(scrollYProgress, [0, 1], [-100, 100]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [10, -10]);
 
   const features = [
     {
@@ -29,11 +45,27 @@ export function Approach() {
   ];
 
   return (
-    <section id="approach" className="py-32 px-6 md:px-12 bg-[#F8F9FA] text-black relative border-t border-black/10 overflow-hidden">
+    <section id="approach" ref={ref} className="py-32 px-6 md:px-12 bg-[#F8F9FA] text-black relative border-t border-black/10 overflow-hidden">
       {/* Liquid Glass Background Elements */}
       <div className="absolute top-[-5%] right-[-5%] w-[800px] h-[800px] bg-primary/[0.15] rounded-full blur-[100px] pointer-events-none animate-pulse" style={{ animationDuration: '8s' }} />
       <div className="absolute bottom-[-15%] left-[-10%] w-[700px] h-[700px] bg-accent/[0.12] rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: '12s' }} />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(101,128,225,0.08),transparent_50%)] pointer-events-none" />
+      
+      {/* Logo Icon as background element for Liquid Glass effect */}
+      <motion.div 
+        style={{ y: y1, rotate }}
+        className="absolute top-1/4 left-[-10%] w-[600px] h-[600px] text-primary/5 pointer-events-none z-0"
+      >
+        <LogoIcon className="w-full h-full" />
+      </motion.div>
+
+      <motion.div 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        className="absolute bottom-0 right-[5%] w-[500px] h-[500px] text-black/[0.03] pointer-events-none z-0"
+      >
+        <LogoIcon className="w-full h-full rotate-[15deg]" />
+      </motion.div>
       
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
