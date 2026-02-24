@@ -32,7 +32,7 @@ export function IdealClient() {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-[10px] uppercase tracking-widest font-bold text-primary/80 font-sans">Ideal Fit Score</span>
+            <span className="text-[10px] uppercase tracking-widest font-bold text-primary/80 font-sans">Perfil de Parceria</span>
           </motion.div>
           <h2 className="text-4xl md:text-5xl font-display font-light text-white mb-6 tracking-tight">
             Para quem é a <span className="text-primary font-medium italic">Lidtek?</span>
