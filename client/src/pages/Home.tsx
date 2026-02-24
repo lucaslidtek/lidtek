@@ -65,8 +65,8 @@ export default function Home() {
                   © {new Date().getFullYear()} Lidtek. {t("footer.rights")}
                 </div>
                 <div className="flex gap-8">
-                  <a href="#" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]">Privacy Policy</a>
-                  <a href="#" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]">Terms of Service</a>
+                  <a href="#" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]">{t("footer.privacy")}</a>
+                  <a href="#" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]">{t("footer.terms")}</a>
                 </div>
               </div>
             </div>

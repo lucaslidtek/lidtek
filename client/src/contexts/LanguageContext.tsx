@@ -64,7 +64,9 @@ const translations = {
     'cta.tag': 'Filtro de Público',
     'cta.title': 'Para quem exige supremacia técnica.',
     'cta.btn': 'Falar com a Lidtek',
-    'footer.rights': 'Todos os direitos reservados.'
+    'footer.rights': 'Todos os direitos reservados.',
+    'footer.privacy': 'Política de Privacidade',
+    'footer.terms': 'Termos de Serviço'
   },
   en: {
     'nav.manifesto': 'Manifesto',
@@ -121,7 +123,9 @@ const translations = {
     'cta.tag': 'Audience Filter',
     'cta.title': 'For those who demand technical supremacy.',
     'cta.btn': 'Talk to Lidtek',
-    'footer.rights': 'All rights reserved.'
+    'footer.rights': 'All rights reserved.',
+    'footer.privacy': 'Privacy Policy',
+    'footer.terms': 'Terms of Service'
   }
 };
 
