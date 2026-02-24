@@ -96,7 +96,7 @@ export function Hero() {
               initial={{ opacity: 0, filter: "blur(8px)" }}
               animate={{ opacity: 1, filter: "blur(0px)" }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
-              className="italic text-white/60 font-serif"
+              className="italic text-white/60 font-serif block w-full"
             >
               {t("hero.title1_italic")}.
             </motion.span>
@@ -105,7 +105,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-            className="block mt-4"
+            className="block mt-4 max-w-md"
           >
             {t("hero.title2")}
           </motion.div>
