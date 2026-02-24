@@ -23,33 +23,50 @@ export function Manifesto() {
         
         <div className="lg:col-span-8 flex flex-col gap-12">
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ 
+              duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, 
+              ease: "easeOut" 
+            }}
             className="text-3xl md:text-5xl font-display font-light leading-[1.3] text-white/90 text-balance"
           >
             {t("manifesto.main")}<span className="font-semibold text-white">{t("manifesto.main_bold")}</span>.
           </motion.p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
-            <div
-              className="p-8 liquid-glass-dark rounded-[2rem]"
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-4 md:mt-8">
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ 
+                duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, 
+                delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.1 : 0.2 
+              }}
+              className="p-6 md:p-8 liquid-glass-dark rounded-[1.5rem] md:rounded-[2rem]"
             >
-              <h3 className="text-xl font-medium mb-4 text-white/90 relative z-10">{t("manifesto.precision.title")}</h3>
-              <p className="text-white/60 leading-relaxed font-sans relative z-10">
+              <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4 text-white/90 relative z-10">{t("manifesto.precision.title")}</h3>
+              <p className="text-sm md:text-white/60 leading-relaxed font-sans relative z-10">
                 {t("manifesto.precision.desc")}
               </p>
-            </div>
+            </motion.div>
             
-            <div
-              className="p-8 liquid-glass-dark rounded-[2rem]"
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ 
+                duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, 
+                delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.2 : 0.4 
+              }}
+              className="p-6 md:p-8 liquid-glass-dark rounded-[1.5rem] md:rounded-[2rem]"
             >
-              <h3 className="text-xl font-medium mb-4 text-white/90 relative z-10">{t("manifesto.silent.title")}</h3>
-              <p className="text-white/60 leading-relaxed font-sans relative z-10">
+              <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4 text-white/90 relative z-10">{t("manifesto.silent.title")}</h3>
+              <p className="text-sm md:text-white/60 leading-relaxed font-sans relative z-10">
                 {t("manifesto.silent.desc")}
               </p>
-            </div>
+            </motion.div>
           </div>
 
           <motion.div

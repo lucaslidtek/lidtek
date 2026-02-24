@@ -45,13 +45,17 @@ export function Model() {
             {steps.map((step, i) => (
               <motion.div 
                 key={i}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ 
                   opacity: 1, 
                   y: 0,
-                  transition: { duration: 0.8, delay: i * 0.15, ease: [0.215, 0.61, 0.355, 1] }
+                  transition: { 
+                    duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, 
+                    delay: typeof window !== 'undefined' && window.innerWidth < 768 ? i * 0.05 : i * 0.15, 
+                    ease: [0.215, 0.61, 0.355, 1] 
+                  }
                 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, margin: "-50px" }}
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 className="px-0 md:px-6 relative group cursor-default"
@@ -63,7 +67,10 @@ export function Model() {
                 <motion.div 
                   whileInView={{ 
                     backgroundColor: typeof window !== 'undefined' && window.innerWidth < 768 ? "rgba(101,128,225,0.1)" : "transparent",
-                    transition: { delay: i * 0.2 + 0.5, duration: 0.5 }
+                    transition: { 
+                      delay: typeof window !== 'undefined' && window.innerWidth < 768 ? i * 0.1 + 0.2 : i * 0.2 + 0.5, 
+                      duration: 0.3 
+                    }
                   }}
                   viewport={{ once: true }}
                   className={`mt-0 md:mt-24 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${hoveredIndex === i ? 'liquid-glass-dark md:translate-y-[-8px]' : 'bg-white/5 md:bg-transparent'}`}
@@ -72,7 +79,10 @@ export function Model() {
                     <motion.span 
                       whileInView={{ 
                         color: typeof window !== 'undefined' && window.innerWidth < 768 ? "hsl(var(--primary))" : "rgba(255,255,255,0.2)",
-                        transition: { delay: i * 0.2 + 0.5, duration: 0.5 }
+                        transition: { 
+                          delay: typeof window !== 'undefined' && window.innerWidth < 768 ? i * 0.1 + 0.2 : i * 0.2 + 0.5, 
+                          duration: 0.3 
+                        }
                       }}
                       viewport={{ once: true }}
                       className={`text-4xl md:text-6xl font-display font-light block transition-colors duration-500 ${hoveredIndex === i ? 'text-primary' : 'text-white/20'}`}
@@ -82,7 +92,10 @@ export function Model() {
                     <motion.div 
                       whileInView={{ 
                         opacity: typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 0,
-                        transition: { delay: i * 0.2 + 0.5, duration: 0.5 }
+                        transition: { 
+                          delay: typeof window !== 'undefined' && window.innerWidth < 768 ? i * 0.1 + 0.2 : i * 0.2 + 0.5, 
+                          duration: 0.3 
+                        }
                       }}
                       viewport={{ once: true }}
                       className={`absolute inset-0 blur-xl transition-opacity duration-500 bg-primary/30 ${hoveredIndex === i ? 'opacity-100' : 'opacity-0'} pointer-events-none`} 

@@ -87,11 +87,15 @@ export function Approach() {
           {features.map((feature, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-              className="p-10 liquid-glass liquid-glass-interactive group rounded-[2rem] relative"
+              viewport={{ once: true, margin: "-30px" }}
+              transition={{ 
+                duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, 
+                ease: [0.16, 1, 0.3, 1], 
+                delay: typeof window !== 'undefined' && window.innerWidth < 768 ? i * 0.05 : i * 0.1 
+              }}
+              className="p-8 md:p-10 liquid-glass liquid-glass-interactive group rounded-[1.5rem] md:rounded-[2rem] relative"
             >
               {/* Focal light spot under the card */}
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
