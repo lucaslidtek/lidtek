@@ -11,6 +11,17 @@ export function Navbar() {
   const whatsappUrl = "https://wa.me/553496840966?text=Olá Rafael, gostaria de entender melhor como a Lidtek pode atuar como nosso departamento de tecnologia.";
 
   useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const manifestoSection = document.getElementById('manifesto');
