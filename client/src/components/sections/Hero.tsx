@@ -54,7 +54,7 @@ export function Hero() {
       {/* SVG drawing animation */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 0.05, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         style={{ 
           rotateX, 
@@ -65,7 +65,9 @@ export function Hero() {
         }}
         className="absolute -right-1/4 -top-1/4 w-[150%] h-[150%] md:w-full md:h-full text-white pointer-events-none origin-center z-0"
       >
-        <LidtekSVG className="w-full h-full object-contain" />
+        <div className="relative w-full h-full opacity-20">
+           <LidtekSVG className="w-full h-full object-contain" />
+        </div>
       </motion.div>
       
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-start gap-12">
