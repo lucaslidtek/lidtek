@@ -76,7 +76,7 @@ export function Operations() {
                 ease: [0.16, 1, 0.3, 1], 
                 delay: typeof window !== 'undefined' && window.innerWidth < 768 ? i * 0.05 : i * 0.1 
               }}
-              className="group p-6 md:p-8 bg-white/40 backdrop-blur-[32px] saturate-[180%] border border-white/40 rounded-2xl relative transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
+              className="group p-6 md:p-8 liquid-glass rounded-2xl relative transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] liquid-glass-interactive"
             >
               {/* Focal light spot under the card */}
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-accent/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
