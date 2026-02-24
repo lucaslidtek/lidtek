@@ -13,7 +13,7 @@ const translations = {
     "nav.manifesto": "O que nos move",
     "nav.approach": "Nossa Atuação",
     "nav.model": "Como trabalhamos",
-    "nav.engage": "Conversar com o Rafael",
+    "nav.engage": "Falar com a Lidtek",
     "hero.tag": "Sua estrutura de tecnologia",
     "hero.title1": "Construindo a ",
     "hero.title1_italic": "base sólida",
@@ -60,14 +60,14 @@ const translations = {
     "model.step4.desc": "Acompanhamos o crescimento, ajustando a rota conforme o negócio escala.",
     "cta.tag": "Próximo Passo",
     "cta.title": "Vamos falar sobre o futuro da sua tecnologia?",
-    "cta.btn": "Chamar o Rafael no WhatsApp",
+    "cta.btn": "Falar com a Lidtek no WhatsApp",
     "footer.rights": "Lidtek Tecnologia. Todos os direitos reservados."
   },
   en: {
     "nav.manifesto": "What drives us",
     "nav.approach": "Our Approach",
     "nav.model": "How we work",
-    "nav.engage": "Talk to Rafael",
+    "nav.engage": "Talk to Lidtek",
     "hero.tag": "Your technology framework",
     "hero.title1": "Building the ",
     "hero.title1_italic": "solid foundation",
@@ -114,7 +114,7 @@ const translations = {
     "model.step4.desc": "We follow your growth, adjusting the path as the business scales.",
     "cta.tag": "Next Step",
     "cta.title": "Let's talk about the future of your technology?",
-    "cta.btn": "Call Rafael on WhatsApp",
+    "cta.btn": "Message Lidtek on WhatsApp",
     "footer.rights": "Lidtek Technology. All rights reserved."
   }
 };
