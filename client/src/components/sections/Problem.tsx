@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/hooks/use-language";
 
 export function Problem() {
+  const { t } = useLanguage();
+
   return (
     <section id="problem" className="py-32 px-6 md:px-12 bg-black text-white relative border-t border-white/10">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -10,20 +13,20 @@ export function Problem() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-white/40 mb-8">Market Reality</h2>
-          <h3 className="text-4xl md:text-6xl font-display font-light leading-tight mb-8">
-            The era of <span className="italic text-white/50">fragile</span> software is over.
+          <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-white/40 mb-8">{t("problem.tag")}</h2>
+          <h3 className="text-4xl md:text-6xl font-display font-light leading-tight mb-8 text-balance">
+            {t("problem.title")}<span className="italic text-white/50">{t("problem.title_italic")}</span>{t("problem.title_end")}
           </h3>
           <p className="text-xl text-white/60 font-sans leading-relaxed text-balance">
-            Most agencies deliver generic templates and spaghetti code that buckle under real-world pressure. They build for the launch, not for the legacy.
+            {t("problem.desc")}
           </p>
         </motion.div>
         
         <div className="space-y-6">
           {[
-            { title: "Technical Debt", desc: "Accumulated by rushing features without architectural planning." },
-            { title: "Generic Aesthetics", desc: "Templates that dilute brand authority and fail to differentiate." },
-            { title: "Scalability Failures", desc: "Systems that crash exactly when market demand peaks." }
+            { title: t("problem.debt.title"), desc: t("problem.debt.desc") },
+            { title: t("problem.generic.title"), desc: t("problem.generic.desc") },
+            { title: t("problem.scale.title"), desc: t("problem.scale.desc") }
           ].map((item, i) => (
             <motion.div 
               key={i}

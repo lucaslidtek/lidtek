@@ -1,20 +1,23 @@
 import { motion } from "framer-motion";
-
-const steps = [
-  { step: "01", title: "Audit & Architecture", desc: "We map your requirements to a scalable infrastructure." },
-  { step: "02", title: "Silent Execution", desc: "Our engineers build the core systems with military precision." },
-  { step: "03", title: "Integration", desc: "Seamless deployment into your operational ecosystem." },
-  { step: "04", title: "Continuous Dominance", desc: "Ongoing optimization and strategic scaling of the technology." }
-];
+import { useLanguage } from "@/hooks/use-language";
 
 export function Model() {
+  const { t } = useLanguage();
+
+  const steps = [
+    { step: "01", title: t("model.step1.title"), desc: t("model.step1.desc") },
+    { step: "02", title: t("model.step2.title"), desc: t("model.step2.desc") },
+    { step: "03", title: t("model.step3.title"), desc: t("model.step3.desc") },
+    { step: "04", title: t("model.step4.title"), desc: t("model.step4.desc") }
+  ];
+
   return (
     <section id="model" className="py-32 px-6 md:px-12 bg-white text-black border-t border-black/10">
       <div className="max-w-7xl mx-auto w-full">
         <div className="mb-20 text-center flex flex-col items-center">
-          <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-black/40 mb-4">Operating Model</h2>
+          <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-black/40 mb-4">{t("model.tag")}</h2>
           <h3 className="text-4xl md:text-5xl font-display font-light text-black max-w-2xl text-balance">
-            How we integrate with your brand.
+            {t("model.title")}
           </h3>
         </div>
 

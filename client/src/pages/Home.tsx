@@ -7,8 +7,11 @@ import { Model } from "@/components/sections/Model";
 import { CTA } from "@/components/sections/CTA";
 import { SmoothScroll } from "@/components/ui/magic/smooth-scroll";
 import logoWhite from "@assets/lidtek-primary-logo_white_1771959392591.png";
+import { useLanguage } from "@/hooks/use-language";
 
 export default function Home() {
+  const { t } = useLanguage();
+
   return (
     <SmoothScroll>
       <main className="min-h-screen bg-background w-full overflow-x-hidden">
@@ -24,7 +27,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <img src={logoWhite} alt="Lidtek" className="h-6 w-auto opacity-50" />
             <div className="text-white/40 text-xs uppercase tracking-widest font-sans">
-              © {new Date().getFullYear()} Lidtek. All rights reserved.
+              © {new Date().getFullYear()} Lidtek. {t("footer.rights")}
             </div>
           </div>
         </footer>
