@@ -53,7 +53,7 @@ export function Problem() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-              className={`group relative p-8 flex flex-col gap-2 liquid-glass liquid-glass-interactive rounded-2xl md:ml-12 ${item.highlight ? 'border-primary/40 bg-primary/10 shadow-[0_8px_32px_rgba(101,128,225,0.2)]' : ''}`}
+              className={`group relative p-8 flex flex-col gap-2 liquid-glass liquid-glass-interactive rounded-2xl md:ml-12 ${item.highlight ? 'ring-2 ring-primary/40 bg-primary/20 shadow-[0_12px_48px_rgba(101,128,225,0.25)]' : 'shadow-lg border-white/40'}`}
             >
               {/* Focal light spot under the item */}
               <div className="absolute -bottom-2 left-10 w-32 h-6 bg-primary/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
