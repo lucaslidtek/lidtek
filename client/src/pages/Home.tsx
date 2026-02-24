@@ -5,6 +5,7 @@ import { Problem } from "@/components/sections/Problem";
 import { Approach } from "@/components/sections/Approach";
 import { Model } from "@/components/sections/Model";
 import { Operations } from "@/components/sections/Operations";
+import { IdealClient } from "@/components/sections/IdealClient";
 import { CTA } from "@/components/sections/CTA";
 import { SmoothScroll } from "@/components/ui/magic/smooth-scroll";
 import logoWhite from "@assets/lidtek-primary-logo_white_1771959392591.png";
@@ -23,6 +24,7 @@ export default function Home() {
         <Approach />
         <Model />
         <Operations />
+        <IdealClient />
         
         <div id="footer-container" className="bg-[#050505] relative overflow-hidden">
           <CTA />
