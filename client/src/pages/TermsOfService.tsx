@@ -1,11 +1,16 @@
 import { useLanguage } from "@/hooks/use-language";
 import { Link } from "wouter";
-import { MoveLeft, Scale, FileCode, CheckCircle, Zap } from "lucide-react";
+import { Scale, FileCode, CheckCircle, Zap } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function TermsOfService() {
   const { t } = useLanguage();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#030303] text-white/90 selection:bg-primary/30 font-sans">
@@ -24,12 +29,7 @@ export default function TermsOfService() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-12">
-              <Link href="/" className="inline-flex items-center gap-2 text-white/40 hover:text-white transition-colors group" data-testid="link-back-home">
-                <MoveLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                <span className="text-[10px] uppercase tracking-[0.2em] font-medium">Voltar para o Início</span>
-              </Link>
-
+            <div className="flex mb-12">
               <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-white/5 bg-white/5">
                 <Scale className="w-3.5 h-3.5 text-primary/60" />
                 <span className="text-[10px] uppercase tracking-[0.3em] text-white/50 font-medium">Acordo de Serviço</span>
