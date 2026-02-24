@@ -80,14 +80,14 @@ export function Hero() {
         </motion.div>
 
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-light leading-[1.1] tracking-tight text-white max-w-5xl">
-          <div className="flex flex-wrap overflow-hidden">
+          <div className="flex flex-wrap items-baseline overflow-hidden">
             {t("hero.title1").split(" ").map((word, i) => (
               <motion.span 
                 key={i}
                 initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
                 animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 + (i * 0.05) }}
-                className="mr-[1.5rem]"
+                className="mr-4"
               >
                 {word}
               </motion.span>
@@ -98,14 +98,14 @@ export function Hero() {
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
               className="italic text-white/60 font-serif"
             >
-              {t("hero.title1_italic")}
+              {t("hero.title1_italic")}.
             </motion.span>
           </div>
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-            className="block"
+            className="block mt-4"
           >
             {t("hero.title2")}
           </motion.div>
