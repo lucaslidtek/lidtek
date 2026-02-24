@@ -1,9 +1,9 @@
-import { useTranslation } from "react-i18next";
+import { useLanguage } from "@/hooks/use-language";
 import { Link } from "wouter";
 import { MoveLeft } from "lucide-react";
 
 export default function PrivacyPolicy() {
-  const { t } = useTranslation();
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-[#030303] text-white/90 selection:bg-primary/30">
