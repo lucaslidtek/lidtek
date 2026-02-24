@@ -39,6 +39,21 @@ export function Model() {
               <p className="text-black/60 font-sans text-sm leading-relaxed">{step.desc}</p>
               
               <motion.div 
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.15 + 0.4 }}
+                className="absolute bottom-0 left-0 w-full h-[1px] bg-black/10 origin-left"
+              />
+              <motion.div 
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: i * 0.15 + 0.6 }}
+                className="absolute bottom-0 right-0 w-[1px] h-full bg-black/10 origin-bottom hidden md:block"
+              />
+              
+              <motion.div 
                 className="absolute -bottom-1 -right-1 w-12 h-12 bg-black/5 rounded-tl-full translate-x-12 translate-y-12 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-700"
               />
             </motion.div>

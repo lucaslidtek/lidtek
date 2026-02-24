@@ -26,17 +26,18 @@ export function Problem() {
           {[
             { title: t("problem.debt.title"), desc: t("problem.debt.desc") },
             { title: t("problem.generic.title"), desc: t("problem.generic.desc") },
-            { title: t("problem.scale.title"), desc: t("problem.scale.desc") }
+            { title: t("problem.scale.title"), desc: t("problem.scale.desc") },
+            { title: t("problem.solution.title"), desc: t("problem.solution.desc"), highlight: true }
           ].map((item, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="p-8 border border-white/10 bg-white/5 flex flex-col gap-2"
+              className={`p-8 border flex flex-col gap-2 transition-colors ${item.highlight ? 'border-primary/50 bg-primary/5' : 'border-white/10 bg-white/5'}`}
             >
-              <h4 className="text-lg font-medium tracking-wide">{item.title}</h4>
+              <h4 className={`text-lg font-medium tracking-wide ${item.highlight ? 'text-primary' : ''}`}>{item.title}</h4>
               <p className="text-sm text-white/50 font-sans">{item.desc}</p>
             </motion.div>
           ))}

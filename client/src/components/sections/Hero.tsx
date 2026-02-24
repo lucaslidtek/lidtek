@@ -11,8 +11,8 @@ export function Hero() {
       <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
       
       <motion.div 
-        initial={{ opacity: 0, scale: 0.8, rotate: -15 }}
-        animate={{ opacity: 0.03, scale: 1, rotate: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.03 }}
         transition={{ duration: 2, ease: "easeOut" }}
         className="absolute -right-1/4 -top-1/4 w-[150%] h-[150%] md:w-full md:h-full text-white pointer-events-none origin-center"
       >
