@@ -2,29 +2,26 @@ import { Link } from "wouter";
 import logoWhite from "@assets/lidtek-primary-logo_white_1771959392591.png";
 import { useLanguage } from "@/hooks/use-language";
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
   const { language, setLanguage, t } = useLanguage();
   const [isDark, setIsDark] = useState(true);
-  const whatsappUrl = "https://wa.me/553496840966?text=Olá Rafael, gostaria de entender melhor como a Lidtek pode atuar como nosso departamento de tecnologia.";
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const whatsappUrl = "https://wa.me/553496840966?text=Olá Rafael, gostaria de entender melhor como a Lidtek pode atuar como nosso departamento de tecnologia.";
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const manifestoSection = document.getElementById('manifesto');
       const modelSection = document.getElementById('model');
+      const approachSection = document.getElementById('approach');
       
       const manifestoTop = manifestoSection?.offsetTop || 0;
       const modelTop = modelSection?.offsetTop || 0;
+      const approachTop = approachSection?.offsetTop || 0;
       
       const threshold = 80;
-
-      const problemSection = document.getElementById('problem');
-      const approachSection = document.getElementById('approach');
-      
-      const approachTop = approachSection?.offsetTop || 0;
 
       if (scrollY < (manifestoTop - threshold)) {
         setIsDark(true); 
@@ -46,85 +43,126 @@ export function Navbar() {
   const borderClass = isDark ? "border-white/20" : "border-black/20";
   const logoClass = isDark ? "" : "invert";
   const glassClass = isDark 
-    ? "liquid-glass-dark" 
-    : "liquid-glass";
+    ? "liquid-glass-dark border-white/5 shadow-2xl shadow-black/20" 
+    : "liquid-glass border-black/5 shadow-xl shadow-black/5";
 
   return (
     <>
-      <nav className={`fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-[100] px-6 py-3 md:py-4 md:px-8 flex items-center justify-between transition-all duration-500 rounded-full ${navClass} ${glassClass} ${isMenuOpen ? 'rounded-b-none' : ''}`}>
-        <Link href="/" className="z-50 cursor-pointer p-2" onClick={() => setIsMenuOpen(false)}>
-          <img src={logoWhite} alt="Lidtek Logo" className={`h-5 md:h-8 w-auto transition-all duration-300 ${logoClass}`} />
+      <nav 
+        className={`fixed top-6 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-[100] px-6 py-2.5 md:py-3 md:px-8 flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] rounded-full border backdrop-blur-md ${navClass} ${glassClass}`}
+      >
+        <Link href="/" className="z-50 cursor-pointer p-2 transition-transform active:scale-95" onClick={() => setIsMenuOpen(false)}>
+          <img src={logoWhite} alt="Lidtek Logo" className={`h-5 md:h-7 w-auto transition-all duration-500 ${logoClass}`} />
         </Link>
         
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8 font-medium text-sm z-50">
-          <a href="#manifesto" className="hover:text-primary transition-colors uppercase tracking-widest">{t("nav.manifesto")}</a>
-          <a href="#approach" className="hover:text-primary transition-colors uppercase tracking-widest">{t("nav.approach")}</a>
-          <a href="#model" className="hover:text-primary transition-colors uppercase tracking-widest">{t("nav.model")}</a>
-          
-          <div className={`flex items-center gap-2 border ${borderClass} rounded-full px-3 py-1 ml-4 transition-colors duration-300 ${isDark ? 'bg-white/10' : 'bg-black/5'} backdrop-blur-md`}>
-            <button 
-              onClick={() => setLanguage("pt")}
-              className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-opacity ${language === "pt" ? "opacity-100 font-bold" : "opacity-40 hover:opacity-100"}`}
-            >
-              PT
-            </button>
-            <div className={`w-[1px] h-2 ${isDark ? "bg-white/20" : "bg-black/20"}`} />
-            <button 
-              onClick={() => setLanguage("en")}
-              className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-opacity ${language === "en" ? "opacity-100 font-bold" : "opacity-40 hover:opacity-100"}`}
-            >
-              EN
-            </button>
+        <div className="hidden md:flex items-center gap-10 font-medium text-[13px] z-50">
+          <div className="flex items-center gap-8">
+            <a href="#manifesto" className="hover:text-primary transition-colors uppercase tracking-[0.15em]">{t("nav.manifesto")}</a>
+            <a href="#approach" className="hover:text-primary transition-colors uppercase tracking-[0.15em]">{t("nav.approach")}</a>
+            <a href="#model" className="hover:text-primary transition-colors uppercase tracking-[0.15em]">{t("nav.model")}</a>
           </div>
+          
+          <div className="flex items-center gap-6">
+            <div className={`flex items-center gap-2 border ${borderClass} rounded-full px-3 py-1.5 transition-colors duration-500 ${isDark ? 'bg-white/5' : 'bg-black/5'}`}>
+              <button 
+                onClick={() => setLanguage("pt")}
+                className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "pt" ? "text-primary font-bold" : "opacity-40 hover:opacity-100"}`}
+              >
+                PT
+              </button>
+              <div className={`w-[1px] h-2 ${isDark ? "bg-white/20" : "bg-black/20"}`} />
+              <button 
+                onClick={() => setLanguage("en")}
+                className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "en" ? "text-primary font-bold" : "opacity-40 hover:opacity-100"}`}
+              >
+                EN
+              </button>
+            </div>
 
-          <a 
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`px-5 py-2 border ${borderClass} hover:border-primary hover:bg-primary hover:text-white transition-all duration-300 rounded-full uppercase tracking-widest`}
-          >
-            {t("nav.engage")}
-          </a>
+            <a 
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`px-6 py-2.5 bg-primary text-white rounded-full uppercase tracking-widest text-[11px] font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20`}
+            >
+              {t("nav.engage")}
+            </a>
+          </div>
         </div>
 
         {/* Mobile Menu Toggle */}
         <button 
-          className="md:hidden z-50 p-2"
+          className="md:hidden z-50 p-2 flex items-center justify-center w-10 h-10 rounded-full transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
-          <div className="w-6 h-5 flex flex-col justify-between items-end">
-            <span className={`h-[2px] bg-current transition-all duration-300 ${isMenuOpen ? 'w-6 translate-y-[9px] -rotate-45' : 'w-6'}`} />
-            <span className={`h-[2px] bg-current transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'w-4'}`} />
-            <span className={`h-[2px] bg-current transition-all duration-300 ${isMenuOpen ? 'w-6 -translate-y-[9px] rotate-45' : 'w-5'}`} />
+          <div className="w-5 h-4 flex flex-col justify-between items-center">
+            <span className={`h-[1.5px] bg-current transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${isMenuOpen ? 'w-5 translate-y-[7.5px] rotate-45' : 'w-5'}`} />
+            <span className={`h-[1.5px] bg-current transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${isMenuOpen ? 'opacity-0 scale-0' : 'w-5'}`} />
+            <span className={`h-[1.5px] bg-current transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] ${isMenuOpen ? 'w-5 -translate-y-[7.5px] -rotate-45' : 'w-5'}`} />
           </div>
         </button>
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 z-[90] bg-background/95 backdrop-blur-xl md:hidden transition-all duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
-        <div className="flex flex-col items-center justify-center h-full gap-8 p-6 text-center">
-          <a href="#manifesto" onClick={() => setIsMenuOpen(false)} className="text-2xl font-display uppercase tracking-widest">{t("nav.manifesto")}</a>
-          <a href="#approach" onClick={() => setIsMenuOpen(false)} className="text-2xl font-display uppercase tracking-widest">{t("nav.approach")}</a>
-          <a href="#model" onClick={() => setIsMenuOpen(false)} className="text-2xl font-display uppercase tracking-widest">{t("nav.model")}</a>
-          
-          <div className="flex items-center gap-6 mt-4">
-            <button onClick={() => { setLanguage("pt"); setIsMenuOpen(false); }} className={`text-lg ${language === "pt" ? "text-primary font-bold" : "text-white/40"}`}>PT</button>
-            <div className="w-[1px] h-4 bg-white/20" />
-            <button onClick={() => { setLanguage("en"); setIsMenuOpen(false); }} className={`text-lg ${language === "en" ? "text-primary font-bold" : "text-white/40"}`}>EN</button>
-          </div>
-
-          <a 
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 px-8 py-4 bg-primary text-background rounded-full font-bold uppercase tracking-widest"
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
+            className="fixed inset-0 z-[90] bg-background/98 backdrop-blur-2xl md:hidden"
           >
-            {t("nav.engage")}
-          </a>
-        </div>
-      </div>
+            <div className="flex flex-col items-center justify-center h-full gap-12 p-8 text-center">
+              <div className="flex flex-col gap-8">
+                {[
+                  { href: "#manifesto", label: t("nav.manifesto") },
+                  { href: "#approach", label: t("nav.approach") },
+                  { href: "#model", label: t("nav.model") }
+                ].map((item, i) => (
+                  <motion.a
+                    key={item.href}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + i * 0.1 }}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-3xl font-display font-light uppercase tracking-[0.2em] text-white active:text-primary transition-colors"
+                  >
+                    {item.label}
+                  </motion.a>
+                ))}
+              </div>
+              
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="flex items-center gap-8 mt-4"
+              >
+                <button onClick={() => { setLanguage("pt"); setIsMenuOpen(false); }} className={`text-sm tracking-widest uppercase ${language === "pt" ? "text-primary font-bold" : "text-white/40"}`}>Português</button>
+                <div className="w-[1px] h-4 bg-white/10" />
+                <button onClick={() => { setLanguage("en"); setIsMenuOpen(false); }} className={`text-sm tracking-widest uppercase ${language === "en" ? "text-primary font-bold" : "text-white/40"}`}>English</button>
+              </motion.div>
+
+              <motion.a 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5 }}
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 w-full max-w-xs px-8 py-5 bg-primary text-white rounded-full font-bold uppercase tracking-[0.2em] text-xs shadow-2xl shadow-primary/20"
+              >
+                {t("nav.engage")}
+              </motion.a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
+
