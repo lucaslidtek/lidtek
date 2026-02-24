@@ -53,7 +53,7 @@ export function Approach() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="p-8 border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors group relative overflow-hidden"
+              className="p-8 border border-white/[0.08] bg-[rgba(255,255,255,0.02)] backdrop-blur-md hover:bg-[rgba(255,255,255,0.08)] transition-colors group relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-full h-[2px] bg-primary/0 group-hover:bg-primary/100 transition-colors duration-500" />
               <div className="text-primary mb-6">{feature.icon}</div>

@@ -35,7 +35,7 @@ export function Problem() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`p-8 border flex flex-col gap-2 transition-colors ${item.highlight ? 'border-primary/50 bg-primary/5' : 'border-white/10 bg-white/5'}`}
+              className={`p-8 border flex flex-col gap-2 transition-colors backdrop-blur-md ${item.highlight ? 'border-primary/30 bg-[rgba(255,255,255,0.08)] shadow-[0_0_30px_rgba(var(--primary),0.1)]' : 'border-white/[0.08] bg-[rgba(255,255,255,0.02)]'}`}
             >
               <h4 className={`text-lg font-medium tracking-wide ${item.highlight ? 'text-primary' : ''}`}>{item.title}</h4>
               <p className="text-sm text-white/50 font-sans">{item.desc}</p>

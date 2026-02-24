@@ -31,7 +31,7 @@ export function Model() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: i * 0.15, ease: [0.215, 0.61, 0.355, 1] }}
-              className="p-10 lg:p-12 hover:bg-black/[0.02] transition-colors group relative overflow-hidden"
+              className="p-10 lg:p-12 hover:bg-black/[0.04] transition-colors group relative overflow-hidden backdrop-blur-md"
             >
               <div className="absolute top-0 left-0 w-full h-[2px] bg-black/0 group-hover:bg-black transition-colors duration-700" />
               <span className="text-4xl font-display font-light text-black/10 mb-10 block group-hover:text-black/30 transition-colors duration-500">{step.step}</span>
