@@ -23,6 +23,15 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
+      // Check if we are on the Home page.
+      // We use window.location.pathname to determine the current route.
+      // For pages other than Home (like /privacy-policy or /terms-of-service), 
+      // we want the navbar to stay in its "dark" (glassy/hero) state.
+      if (window.location.pathname !== "/") {
+        setIsDark(true);
+        return;
+      }
+
       const scrollY = window.scrollY;
       const manifestoSection = document.getElementById('manifesto');
       const modelSection = document.getElementById('model');
