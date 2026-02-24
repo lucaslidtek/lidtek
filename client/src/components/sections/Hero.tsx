@@ -105,9 +105,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-            className="block mt-4 max-w-md"
+            className="block mt-4 max-w-2xl"
           >
-            {t("hero.title2")}
+            {t("hero.title2_part1")}<br />
+            {t("hero.title2_part2")}
           </motion.div>
         </h1>
 
