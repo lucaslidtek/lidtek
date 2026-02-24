@@ -20,10 +20,10 @@ export function Operations() {
   const rotate = useTransform(scrollYProgress, [0, 1], [-5, 15]);
 
   const indicators = [
-    { title: "SLAs Nível Enterprise", value: "99.9%" },
-    { title: "Gestão de Débito Técnico", value: "Ativa" },
-    { title: "Governança de Dados", value: "Strict" },
-    { title: "Maturidade Operacional", value: "Tier 4" }
+    { title: "SLAs definidos e formalizados em contrato", value: "Controle" },
+    { title: "Roadmap contínuo com priorização clara", value: "Processo" },
+    { title: "Indicadores de performance acompanhados mensalmente", value: "Clareza" },
+    { title: "Processos auditáveis e governança documentada", value: "Auditoria" }
   ];
 
   return (
