@@ -82,7 +82,7 @@ export function Navbar() {
   const logoClass = isDark ? "" : "invert";
   const glassClass = isDark 
     ? "bg-black/40 backdrop-blur-[32px] saturate-[180%] border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]" 
-    : "bg-white/40 backdrop-blur-[32px] saturate-[180%] border-black/5 shadow-[0_8px_32px_rgba(0,0,0,0.1)]";
+    : "bg-white/70 backdrop-blur-[32px] saturate-[180%] border-black/5 shadow-[0_8px_32px_rgba(0,0,0,0.1)]";
 
   return (
     <>
