@@ -70,11 +70,11 @@ export function CTA() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative px-8 md:px-12 py-4 md:py-5 bg-neutral-900 text-white overflow-hidden rounded-full flex items-center gap-3 md:gap-4 transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(var(--primary),0.2)]"
+              className="relative px-8 md:px-12 py-4 md:py-6 bg-primary text-white overflow-hidden rounded-full flex items-center gap-3 md:gap-4 transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_30px_rgba(var(--primary),0.3)] hover:shadow-[0_20px_40px_rgba(var(--primary),0.4)] group-hover:bg-primary/90"
             >
-              <span className="relative z-10 font-bold uppercase tracking-[0.15em] text-[10px] md:text-xs">{t("cta.btn")}</span>
-              <ArrowRight size={16} className="relative z-10 transition-transform duration-500 group-hover:translate-x-1" weight="bold" />
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <span className="relative z-10 font-bold uppercase tracking-[0.2em] text-[11px] md:text-sm">{t("cta.btn")}</span>
+              <ArrowRight size={20} className="relative z-10 transition-transform duration-500 group-hover:translate-x-2" weight="bold" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </a>
             
             <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-medium">Escalando o futuro de quem constrói o amanhã</p>
