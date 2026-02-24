@@ -33,7 +33,7 @@ export function Hero() {
   }, [mouseX, mouseY]);
 
   return (
-    <section className="relative min-h-[100svh] flex flex-col justify-end pb-8 md:pb-24 px-6 md:px-12 bg-background overflow-hidden">
+    <section className="relative min-h-[100svh] flex flex-col justify-center pb-12 md:pb-24 px-6 md:px-12 bg-background overflow-hidden">
       {/* Background Image - Pawel Czerwinski abstract glass */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img 
@@ -75,7 +75,7 @@ export function Hero() {
           y: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : translateY,
           transformPerspective: 1000
         }}
-        className="absolute -right-1/4 -top-[5%] md:-top-[35%] w-[150%] h-auto aspect-square md:w-full md:h-full text-white pointer-events-none origin-center z-0 mix-blend-screen overflow-hidden"
+        className="absolute -right-1/4 top-0 md:-top-[35%] w-[150%] h-auto aspect-square md:w-full md:h-full text-white pointer-events-none origin-center z-0 mix-blend-screen overflow-hidden opacity-20 md:opacity-100"
       >
         <div className="relative w-full h-full opacity-40 md:opacity-60">
            {/* SVG container - Using CSS filter to tint the white SVG to the primary brand color */}
@@ -93,7 +93,7 @@ export function Hero() {
           <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium text-white/80">{t("hero.tag")}</span>
         </div>
 
-        <h1 className="text-4xl md:text-7xl lg:text-8xl font-display font-light leading-[1.1] tracking-tight text-white max-w-5xl">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-light leading-[1.1] tracking-tight text-white max-w-5xl">
           <div className="flex flex-col items-start overflow-hidden">
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
@@ -126,7 +126,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="flex items-center gap-4 md:gap-6 mt-4 md:mt-12 group cursor-pointer"
+          className="flex items-center gap-4 md:gap-6 mt-8 md:mt-12 group cursor-pointer"
           onClick={() => {
             document.getElementById('problem')?.scrollIntoView({ behavior: 'smooth' });
           }}
