@@ -33,13 +33,13 @@ export function Hero() {
   }, [mouseX, mouseY]);
 
   return (
-    <section className="relative min-h-[100svh] flex flex-col justify-end pb-24 px-6 md:px-12 bg-background">
+    <section className="relative min-h-[100svh] flex flex-col justify-end pb-12 md:pb-24 px-6 md:px-12 bg-background">
       {/* Background Image - Pawel Czerwinski abstract glass */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img 
           src="/static/images/pawel-czerwinski-uA6x_MXI_fE-unsplash_1771968246269.jpg" 
           alt="Abstract dark background"
-          className="w-full h-full object-cover opacity-30 mix-blend-luminosity"
+          className="w-full h-full object-cover opacity-20 md:opacity-30 mix-blend-luminosity"
         />
         <div className="absolute inset-0 bg-background/60 backdrop-blur-[1px]" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
@@ -55,11 +55,11 @@ export function Hero() {
         />
       </div>
       
-      {/* Dynamic light following mouse */}
+      {/* Dynamic light following mouse - Disabled on mobile for performance */}
       {isMounted && (
         <motion.div 
           style={{ x: springX, y: springY }}
-          className="fixed top-0 left-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen z-0" 
+          className="fixed top-0 left-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen z-0 hidden md:block" 
         />
       )}
 
@@ -69,31 +69,31 @@ export function Hero() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         style={{ 
-          rotateX, 
-          rotateY, 
-          x: translateX, 
-          y: translateY,
+          rotateX: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : rotateX, 
+          rotateY: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : rotateY, 
+          x: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : translateX, 
+          y: typeof window !== 'undefined' && window.innerWidth < 768 ? 0 : translateY,
           transformPerspective: 1000
         }}
-        className="absolute -right-1/4 -top-[35%] w-[150%] h-[150%] md:w-full md:h-full text-white pointer-events-none origin-center z-0 mix-blend-screen overflow-hidden"
+        className="absolute -right-1/4 -top-[10%] md:-top-[35%] w-[150%] h-[120%] md:w-full md:h-full text-white pointer-events-none origin-center z-0 mix-blend-screen overflow-hidden"
       >
-        <div className="relative w-full h-full opacity-60">
+        <div className="relative w-full h-full opacity-40 md:opacity-60">
            {/* SVG container - Using CSS filter to tint the white SVG to the primary brand color */}
-           <div className="absolute inset-0" style={{ filter: "drop-shadow(0 0 40px hsl(var(--primary) / 0.4))" }}>
+           <div className="absolute inset-0" style={{ filter: "drop-shadow(0 0 20px hsl(var(--primary) / 0.3))" }}>
              <LidtekSVG className="w-full h-full object-contain text-primary" />
            </div>
         </div>
       </motion.div>
       
-      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-start gap-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-start gap-8 md:gap-12">
         <div
           className="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 liquid-glass-dark"
         >
           <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_hsl(var(--primary))]" />
-          <span className="text-xs uppercase tracking-[0.2em] font-medium text-white/80">{t("hero.tag")}</span>
+          <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium text-white/80">{t("hero.tag")}</span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-light leading-[1.1] tracking-tight text-white max-w-5xl">
+        <h1 className="text-4xl md:text-7xl lg:text-8xl font-display font-light leading-[1.1] tracking-tight text-white max-w-5xl">
           <div className="flex flex-col items-start overflow-hidden">
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
@@ -126,16 +126,15 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="flex items-center gap-6 mt-12 group cursor-pointer hover:-translate-y-0.5 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+          className="flex items-center gap-4 md:gap-6 mt-8 md:mt-12 group cursor-pointer"
           onClick={() => {
             document.getElementById('problem')?.scrollIntoView({ behavior: 'smooth' });
           }}
         >
-          <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-sm group-hover:bg-primary group-hover:border-primary group-hover:text-black group-hover:scale-105 shadow-[0_0_0_hsl(var(--primary))] group-hover:shadow-[0_10px_40px_-10px_hsl(var(--primary))] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden">
-            <ArrowDownRight size={24} weight="regular" className="relative z-10 text-white group-hover:text-background transition-colors" />
-            <div className="absolute inset-0 bg-white/20 scale-0 group-hover:scale-100 rounded-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] opacity-0 group-hover:opacity-100" />
+          <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-sm group-hover:bg-primary group-hover:border-primary group-hover:text-black transition-all duration-500 relative overflow-hidden">
+            <ArrowDownRight size={20} weight="regular" className="relative z-10 text-white md:group-hover:text-background" />
           </div>
-          <span className="uppercase tracking-widest text-sm text-white/60 group-hover:text-white transition-colors duration-500 font-medium">{t("hero.explore")}</span>
+          <span className="uppercase tracking-widest text-[10px] md:text-sm text-white/60 group-hover:text-white transition-colors duration-500 font-medium">{t("hero.explore")}</span>
         </motion.div>
       </div>
     </section>
