@@ -30,14 +30,18 @@ export function Approach() {
 
   return (
     <section id="approach" className="py-32 px-6 md:px-12 bg-white text-black relative border-t border-black/10 overflow-hidden">
-      {/* Light subtle radial gradient */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
+      {/* Light subtle radial gradient - Luz sutil direcionando leitura */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-primary/[0.03] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-[800px] h-[800px] bg-black/[0.02] rounded-full blur-[100px] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div>
-            <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-black/40 mb-4">{t("approach.tag")}</h2>
-            <h3 className="text-4xl md:text-6xl font-display font-light text-black max-w-2xl text-balance">
+          <div className="relative">
+            <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-black/40 mb-4 flex items-center gap-3">
+              <div className="w-8 h-[1px] bg-black/20" />
+              {t("approach.tag")}
+            </h2>
+            <h3 className="text-4xl md:text-6xl font-display font-light text-black max-w-2xl text-balance relative z-10">
               {t("approach.title")}
             </h3>
           </div>

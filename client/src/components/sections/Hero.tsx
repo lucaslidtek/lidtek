@@ -28,12 +28,12 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[100svh] flex flex-col justify-end pb-24 px-6 md:px-12 overflow-hidden bg-background">
-      {/* Animated Procedural Grid Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-40">
+      {/* Animated Procedural Grid Background - Blueprint feel */}
+      <div className="absolute inset-0 pointer-events-none opacity-20">
         <motion.div 
-          animate={{ backgroundPosition: ["0px 0px", "0px 64px"] }}
-          transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-          className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_70%,transparent_100%)]"
+          animate={{ backgroundPosition: ["0px 0px", "0px 32px"] }}
+          transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
+          className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:2rem_2rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_0%,#000_70%,transparent_100%)]"
         />
       </div>
       
@@ -47,9 +47,9 @@ export function Hero() {
 
       {/* SVG drawing animation */}
       <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.05 }}
-        transition={{ duration: 2, ease: "easeOut" }}
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 0.05, scale: 1 }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         className="absolute -right-1/4 -top-1/4 w-[150%] h-[150%] md:w-full md:h-full text-white pointer-events-none origin-center z-0"
       >
         <LidtekSVG className="w-full h-full object-contain" />
@@ -71,8 +71,8 @@ export function Hero() {
             {t("hero.title1").split(" ").map((word, i) => (
               <motion.span 
                 key={i}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
+                animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 + (i * 0.05) }}
                 className="mr-[1.5rem]"
               >
@@ -80,9 +80,9 @@ export function Hero() {
               </motion.span>
             ))}
             <motion.span 
-              initial={{ opacity: 0, filter: "blur(10px)" }}
+              initial={{ opacity: 0, filter: "blur(8px)" }}
               animate={{ opacity: 1, filter: "blur(0px)" }}
-              transition={{ duration: 1.2, delay: 0.8 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
               className="italic text-white/60 block w-full mt-2 font-serif"
             >
               {t("hero.title1_italic")}
@@ -102,15 +102,16 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="flex items-center gap-6 mt-12 group cursor-pointer"
+          className="flex items-center gap-6 mt-12 group cursor-pointer hover:-translate-y-0.5 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
           onClick={() => {
             document.getElementById('problem')?.scrollIntoView({ behavior: 'smooth' });
           }}
         >
-          <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-sm group-hover:bg-primary group-hover:border-primary group-hover:text-black group-hover:scale-110 shadow-[0_0_0_hsl(var(--primary))] group-hover:shadow-[0_0_30px_hsl(var(--primary))] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden">
+          <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center bg-white/5 backdrop-blur-sm group-hover:bg-primary group-hover:border-primary group-hover:text-black group-hover:scale-105 shadow-[0_0_0_hsl(var(--primary))] group-hover:shadow-[0_10px_40px_-10px_hsl(var(--primary))] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] relative overflow-hidden">
             <ArrowDownRight size={24} weight="regular" className="relative z-10 text-white group-hover:text-background transition-colors" />
+            <div className="absolute inset-0 bg-white/20 scale-0 group-hover:scale-100 rounded-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] opacity-0 group-hover:opacity-100" />
           </div>
-          <span className="uppercase tracking-widest text-sm text-white/60 group-hover:text-white transition-colors duration-500">{t("hero.explore")}</span>
+          <span className="uppercase tracking-widest text-sm text-white/60 group-hover:text-white transition-colors duration-500 font-medium">{t("hero.explore")}</span>
         </motion.div>
       </div>
     </section>

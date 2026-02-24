@@ -32,7 +32,10 @@ export function Problem() {
           </p>
         </motion.div>
         
-        <motion.div style={{ y: y1 }} className="space-y-6">
+        <motion.div style={{ y: y1 }} className="space-y-6 relative">
+          {/* Linha lateral conectando (progressão) */}
+          <div className="absolute left-4 top-8 bottom-8 w-[1px] bg-gradient-to-b from-transparent via-black/10 to-transparent hidden md:block" />
+          
           {[
             { title: t("problem.debt.title"), desc: t("problem.debt.desc") },
             { title: t("problem.generic.title"), desc: t("problem.generic.desc") },
@@ -44,11 +47,15 @@ export function Problem() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`p-8 border flex flex-col gap-2 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl backdrop-blur-md rounded-2xl ${item.highlight ? 'border-primary/20 bg-primary/5 shadow-lg shadow-primary/10' : 'border-black/[0.08] bg-white/50 hover:bg-white'}`}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
+              className={`group relative p-8 border flex flex-col gap-2 transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-xl backdrop-blur-md rounded-2xl md:ml-12 ${item.highlight ? 'border-primary/20 bg-primary/5 shadow-lg shadow-primary/10' : 'border-black/[0.08] bg-white/50 hover:bg-white'}`}
             >
-              <h4 className={`text-lg font-medium tracking-wide ${item.highlight ? 'text-primary' : 'text-black'}`}>{item.title}</h4>
-              <p className="text-sm text-black/60 font-sans">{item.desc}</p>
+              <div className="absolute inset-0 border border-black/0 rounded-2xl opacity-0 group-hover:opacity-100 group-hover:border-black/5 transition-all duration-500 pointer-events-none" />
+              {/* Ponto na linha */}
+              <div className="absolute -left-[3.25rem] top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-black/10 group-hover:bg-primary transition-colors duration-500 hidden md:block" />
+              
+              <h4 className={`text-lg font-medium tracking-wide relative z-10 ${item.highlight ? 'text-primary' : 'text-black'}`}>{item.title}</h4>
+              <p className="text-sm text-black/60 font-sans relative z-10">{item.desc}</p>
             </motion.div>
           ))}
         </motion.div>

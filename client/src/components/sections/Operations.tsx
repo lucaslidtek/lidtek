@@ -34,12 +34,12 @@ export function Operations() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="p-8 border border-black/5 bg-black/[0.02] rounded-2xl hover:bg-black/[0.04] transition-colors"
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
+              className="group p-8 border border-black/5 bg-black/[0.02] rounded-2xl hover:bg-white hover:border-black/10 hover:shadow-[0_10px_40px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-1 transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
             >
-              <CheckCircle size={24} weight="fill" className="text-primary mb-6" />
-              <div className="text-3xl font-display font-light mb-2">{item.value}</div>
-              <div className="text-sm font-medium text-black/60">{item.title}</div>
+              <CheckCircle size={24} weight="fill" className="text-black/20 group-hover:text-primary group-hover:scale-110 transition-all duration-500 mb-6" />
+              <div className="text-3xl font-display font-light mb-2 text-black transition-colors duration-500">{item.value}</div>
+              <div className="text-sm font-medium text-black/60 group-hover:text-black/80 transition-colors duration-500">{item.title}</div>
             </motion.div>
           ))}
         </div>

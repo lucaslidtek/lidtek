@@ -57,12 +57,16 @@ export function Model() {
                    <div className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${hoveredIndex === i ? 'bg-primary shadow-[0_0_10px_hsl(var(--primary))] scale-150' : 'bg-transparent'}`} />
                 </div>
 
-                <div className={`mt-8 md:mt-24 transition-all duration-500 ${hoveredIndex === i ? 'translate-y-[-8px]' : ''}`}>
-                  <span className={`text-6xl font-display font-light mb-6 block transition-colors duration-500 ${hoveredIndex === i ? 'text-primary' : 'text-white/10'}`}>
-                    {step.step}
-                  </span>
-                  <h4 className="text-xl font-medium mb-4 leading-tight text-white">{step.title}</h4>
-                  <p className="text-white/50 font-sans text-sm leading-relaxed">{step.desc}</p>
+                <div className={`mt-8 md:mt-24 transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${hoveredIndex === i ? 'translate-y-[-8px]' : ''}`}>
+                  <div className="relative inline-block mb-6">
+                    <span className={`text-6xl font-display font-light block transition-colors duration-500 ${hoveredIndex === i ? 'text-primary' : 'text-white/10'}`}>
+                      {step.step}
+                    </span>
+                    {/* Sutil glow na letra no hover */}
+                    <div className={`absolute inset-0 blur-xl transition-opacity duration-500 bg-primary/30 ${hoveredIndex === i ? 'opacity-100' : 'opacity-0'} pointer-events-none`} />
+                  </div>
+                  <h4 className={`text-xl font-medium mb-4 leading-tight transition-colors duration-500 ${hoveredIndex === i ? 'text-white' : 'text-white/80'}`}>{step.title}</h4>
+                  <p className={`font-sans text-sm leading-relaxed transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${hoveredIndex === i ? 'text-white/70' : 'text-white/40'}`}>{step.desc}</p>
                 </div>
               </motion.div>
             ))}
