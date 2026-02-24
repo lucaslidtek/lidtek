@@ -65,21 +65,18 @@ export function Problem() {
           ].map((item, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ 
                 opacity: 1, 
                 y: 0,
-                boxShadow: (typeof window !== 'undefined' && window.innerWidth < 768 && item.highlight) 
-                  ? '0 12px 48px rgba(101,128,225,0.25)' 
-                  : 'none',
                 transition: { 
-                  duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.6, 
-                  ease: [0.16, 1, 0.3, 1], 
-                  delay: typeof window !== 'undefined' && window.innerWidth < 768 ? i * 0.05 : i * 0.1 
+                  duration: 0.4, 
+                  ease: [0.215, 0.61, 0.355, 1], 
+                  delay: i * 0.05 
                 }
               }}
-              viewport={{ once: true, margin: "-30px" }}
-              className={`group relative p-6 md:p-8 flex flex-col gap-2 liquid-glass liquid-glass-interactive rounded-2xl md:ml-12 ${item.highlight ? 'ring-2 ring-primary/40 bg-primary/20 md:shadow-[0_12px_48px_rgba(101,128,225,0.25)]' : 'shadow-lg border-white/40'}`}
+              viewport={{ once: true, margin: "-20px" }}
+              className={`group relative p-6 md:p-8 flex flex-col gap-2 liquid-glass liquid-glass-interactive rounded-2xl md:ml-12 ${item.highlight ? 'ring-2 ring-primary bg-primary/10 shadow-[0_20px_50px_rgba(101,128,225,0.15)]' : 'shadow-sm border-white/40'}`}
             >
               <h4 className={`text-base md:text-lg font-medium tracking-wide relative z-10 ${item.highlight ? 'text-primary' : 'text-black'}`}>{item.title}</h4>
               <p className="text-xs md:text-sm text-black/60 font-sans relative z-10">{item.desc}</p>
