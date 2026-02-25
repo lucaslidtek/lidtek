@@ -87,13 +87,13 @@ export function Approach() {
           {features.map((feature, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-30px" }}
+              initial={{ opacity: 0.01, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ 
-                duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, 
-                ease: [0.16, 1, 0.3, 1], 
-                delay: typeof window !== 'undefined' && window.innerWidth < 768 ? i * 0.05 : i * 0.1 
+                duration: 0.4, 
+                delay: i * 0.1,
+                ease: "easeOut"
               }}
               className="p-8 md:p-10 bg-white/40 backdrop-blur-[32px] saturate-[180%] border border-white/40 group rounded-[1.5rem] md:rounded-[2rem] relative transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
             >
