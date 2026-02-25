@@ -68,16 +68,8 @@ export function Operations() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 relative">
           {indicators.map((item, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0.01, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ 
-                duration: 0.4, 
-                delay: i * 0.1,
-                ease: "easeOut"
-              }}
               className="group p-6 md:p-8 liquid-glass rounded-2xl relative transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] liquid-glass-interactive"
             >
               {/* Focal light spot under the card */}
@@ -86,7 +78,7 @@ export function Operations() {
               <CheckCircle size={24} weight="fill" className="text-primary/60 group-hover:text-primary group-hover:scale-110 transition-all duration-500 mb-6 relative z-10" />
               <div className="text-3xl font-display font-light mb-2 text-black transition-colors duration-500 relative z-10">{item.value}</div>
               <div className="text-sm font-medium text-black/60 group-hover:text-black/80 transition-colors duration-500 relative z-10">{item.title}</div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

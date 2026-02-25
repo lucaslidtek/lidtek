@@ -85,16 +85,8 @@ export function Approach() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
           {features.map((feature, i) => (
-            <motion.div 
+            <div 
               key={i}
-              initial={{ opacity: 0.01, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ 
-                duration: 0.4, 
-                delay: i * 0.1,
-                ease: "easeOut"
-              }}
               className="p-8 md:p-10 bg-white/40 backdrop-blur-[32px] saturate-[180%] border border-white/40 group rounded-[1.5rem] md:rounded-[2rem] relative transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
             >
               {/* Focal light spot under the card */}
@@ -103,7 +95,7 @@ export function Approach() {
               <div className="text-primary md:text-black/30 md:group-hover:text-primary transition-colors duration-500 mb-8 relative z-10">{feature.icon}</div>
               <h4 className="text-xl font-medium text-black mb-4 relative z-10">{feature.title}</h4>
               <p className="text-black/60 text-sm leading-relaxed font-sans relative z-10">{feature.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
