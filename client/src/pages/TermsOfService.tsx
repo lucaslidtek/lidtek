@@ -32,16 +32,16 @@ export default function TermsOfService() {
             <div className="flex mb-12">
               <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-white/5 bg-white/5">
                 <Scale className="w-3.5 h-3.5 text-primary/60" />
-                <span className="text-[10px] uppercase tracking-[0.3em] text-white/50 font-medium">Acordo de Serviço</span>
+                <span className="text-[10px] uppercase tracking-[0.3em] text-white/50 font-medium">{t("terms.tag")}</span>
               </div>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-light tracking-tight mb-8 bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent italic">
-              Termos de <span className="font-normal not-italic">Serviço</span>
+              {t("terms.title1")}<span className="font-normal not-italic">{t("terms.title2")}</span>
             </h1>
             
             <p className="text-xl text-white/40 font-light max-w-2xl mb-20 leading-relaxed">
-              Regras e responsabilidades que sustentam nossa parceria técnica e o compromisso com a excelência operacional.
+              {t("terms.desc")}
             </p>
           </motion.div>
 
@@ -59,12 +59,14 @@ export default function TermsOfService() {
                     <div className="w-8 h-8 rounded bg-white/5 flex items-center justify-center border border-white/10">
                       <Zap className="w-4 h-4 text-white/60" />
                     </div>
-                    <h2 className="text-sm uppercase tracking-[0.2em] text-white font-medium">1. Atuação</h2>
+                    <h2 className="text-sm uppercase tracking-[0.2em] text-white font-medium">{t("terms.s1.title")}</h2>
                   </div>
                 </div>
                 <div className="md:w-2/3 space-y-4 text-white/50 font-light leading-relaxed text-lg">
                   <p>
-                    Ao utilizar as soluções da <span className="text-white/80">Lidtek</span>, você estabelece um acordo de conformidade com nossos padrões técnicos. Nossos serviços são desenhados para otimização e maturidade tecnológica, exigindo uso responsável da infraestrutura fornecida.
+                    {t("terms.s1.desc").split("Lidtek").map((part, i, arr) => 
+                      i === arr.length - 1 ? part : <span key={i}>{part}<span className="text-white/80">Lidtek</span></span>
+                    )}
                   </p>
                 </div>
               </div>
@@ -78,12 +80,12 @@ export default function TermsOfService() {
                     <div className="w-8 h-8 rounded bg-white/5 flex items-center justify-center border border-white/10">
                       <FileCode className="w-4 h-4 text-white/60" />
                     </div>
-                    <h2 className="text-sm uppercase tracking-[0.2em] text-white font-medium">2. Propriedade</h2>
+                    <h2 className="text-sm uppercase tracking-[0.2em] text-white font-medium">{t("terms.s2.title")}</h2>
                   </div>
                 </div>
                 <div className="md:w-2/3 space-y-4 text-white/50 font-light leading-relaxed text-lg">
                   <p>
-                    Toda arquitetura de software, metodologias de engenharia e ativos digitais desenvolvidos pela Lidtek são protegidos por direitos de propriedade intelectual. A licença de uso é concedida especificamente para a operação do cliente, conforme definido em contrato.
+                    {t("terms.s2.desc")}
                   </p>
                 </div>
               </div>
@@ -97,12 +99,12 @@ export default function TermsOfService() {
                     <div className="w-8 h-8 rounded bg-white/5 flex items-center justify-center border border-white/10">
                       <CheckCircle className="w-4 h-4 text-white/60" />
                     </div>
-                    <h2 className="text-sm uppercase tracking-[0.2em] text-white font-medium">3. Performance</h2>
+                    <h2 className="text-sm uppercase tracking-[0.2em] text-white font-medium">{t("terms.s3.title")}</h2>
                   </div>
                 </div>
                 <div className="md:w-2/3 space-y-4 text-white/50 font-light leading-relaxed text-lg">
                   <p>
-                    Nos comprometemos com a alta disponibilidade e integridade das soluções. A responsabilidade da Lidtek limita-se ao escopo técnico da engenharia contratada, garantindo que o software funcione como uma fundação sólida para o crescimento do seu negócio.
+                    {t("terms.s3.desc")}
                   </p>
                 </div>
               </div>
@@ -111,15 +113,15 @@ export default function TermsOfService() {
             <section className="pt-16 border-t border-white/5 mt-8">
               <div className="bg-gradient-to-br from-white/5 to-white/[0.02] rounded-2xl p-8 md:p-12 border border-white/10 relative overflow-hidden group">
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.02),transparent)] opacity-0 group-hover:opacity-100 transition-opacity" />
-                <h3 className="text-2xl font-light mb-4 relative z-10">Parceria Estruturada</h3>
+                <h3 className="text-2xl font-light mb-4 relative z-10">{t("terms.cta.title")}</h3>
                 <p className="text-white/40 font-light mb-8 relative z-10 max-w-md text-lg">
-                  Nossos termos refletem nossa postura de departamento de tecnologia premium: clareza, rigor e foco no resultado.
+                  {t("terms.cta.desc")}
                 </p>
                 <Link 
-                  href="/#cta" 
+                  href="/#contact" 
                   className="inline-flex items-center px-6 py-3 bg-white text-black text-[10px] uppercase tracking-[0.2em] font-bold rounded-sm hover:bg-white/90 transition-colors relative z-10"
                 >
-                  Falar com a Lidtek
+                  {t("cta.btn")}
                 </Link>
               </div>
             </section>
@@ -128,7 +130,7 @@ export default function TermsOfService() {
       </div>
 
       <footer className="py-12 border-t border-white/5 text-center">
-        <p className="text-[10px] uppercase tracking-[0.3em] text-white/20">© {new Date().getFullYear()} Lidtek Tecnologia. Todos os direitos reservados.</p>
+        <p className="text-[10px] uppercase tracking-[0.3em] text-white/20">© {new Date().getFullYear()} {t("footer.rights")}</p>
       </footer>
     </div>
   );

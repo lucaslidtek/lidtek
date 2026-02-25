@@ -32,16 +32,16 @@ export default function PrivacyPolicy() {
             <div className="flex mb-12">
               <div className="inline-flex items-center gap-3 px-3 py-1 rounded-full border border-white/5 bg-white/5">
                 <Shield className="w-3.5 h-3.5 text-primary/60" />
-                <span className="text-[10px] uppercase tracking-[0.3em] text-white/50 font-medium">Segurança e Dados</span>
+                <span className="text-[10px] uppercase tracking-[0.3em] text-white/50 font-medium">{t("privacy.tag")}</span>
               </div>
             </div>
 
             <h1 className="text-5xl md:text-7xl font-light tracking-tight mb-8 bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent italic">
-              Política de <span className="font-normal not-italic">Privacidade</span>
+              {t("privacy.title1")}<span className="font-normal not-italic">{t("privacy.title2")}</span>
             </h1>
             
             <p className="text-xl text-white/40 font-light max-w-2xl mb-20 leading-relaxed">
-              Transparência e proteção técnica são as bases da nossa operação. Entenda como cuidamos da sua integridade digital.
+              {t("privacy.desc")}
             </p>
           </motion.div>
 
@@ -59,12 +59,14 @@ export default function PrivacyPolicy() {
                     <div className="w-8 h-8 rounded bg-white/5 flex items-center justify-center border border-white/10">
                       <Lock className="w-4 h-4 text-white/60" />
                     </div>
-                    <h2 className="text-sm uppercase tracking-[0.2em] text-white font-medium">1. Governança</h2>
+                    <h2 className="text-sm uppercase tracking-[0.2em] text-white font-medium">{t("privacy.s1.title")}</h2>
                   </div>
                 </div>
                 <div className="md:w-2/3 space-y-4 text-white/50 font-light leading-relaxed text-lg">
                   <p>
-                    A <span className="text-white/80">Lidtek</span> opera sob os mais rigorosos padrões de engenharia de dados. Esta política detalha o tratamento de informações em conformidade com as melhores práticas de governança tecnológica.
+                    {t("privacy.s1.desc").split("Lidtek").map((part, i, arr) => 
+                      i === arr.length - 1 ? part : <span key={i}>{part}<span className="text-white/80">Lidtek</span></span>
+                    )}
                   </p>
                 </div>
               </div>
@@ -78,12 +80,12 @@ export default function PrivacyPolicy() {
                     <div className="w-8 h-8 rounded bg-white/5 flex items-center justify-center border border-white/10">
                       <Eye className="w-4 h-4 text-white/60" />
                     </div>
-                    <h2 className="text-sm uppercase tracking-[0.2em] text-white font-medium">2. Coleta Técnica</h2>
+                    <h2 className="text-sm uppercase tracking-[0.2em] text-white font-medium">{t("privacy.s2.title")}</h2>
                   </div>
                 </div>
                 <div className="md:w-2/3 space-y-4 text-white/50 font-light leading-relaxed text-lg">
                   <p>
-                    Coletamos apenas dados essenciais para a performance dos nossos sistemas. Informações de contato corporativo e logs técnicos são processados exclusivamente para garantir a estabilidade e segurança das soluções entregues.
+                    {t("privacy.s2.desc")}
                   </p>
                 </div>
               </div>
@@ -97,12 +99,12 @@ export default function PrivacyPolicy() {
                     <div className="w-8 h-8 rounded bg-white/5 flex items-center justify-center border border-white/10">
                       <FileText className="w-4 h-4 text-white/60" />
                     </div>
-                    <h2 className="text-sm uppercase tracking-[0.2em] text-white font-medium">3. Segurança Ativa</h2>
+                    <h2 className="text-sm uppercase tracking-[0.2em] text-white font-medium">{t("privacy.s3.title")}</h2>
                   </div>
                 </div>
                 <div className="md:w-2/3 space-y-4 text-white/50 font-light leading-relaxed text-lg">
                   <p>
-                    Implementamos criptografia de ponta e protocolos de acesso restrito. Seus dados não são apenas armazenados, são blindados por nossa arquitetura de segurança invisível, permitindo que sua operação flua sem riscos.
+                    {t("privacy.s3.desc")}
                   </p>
                 </div>
               </div>
@@ -111,9 +113,9 @@ export default function PrivacyPolicy() {
             <section className="pt-16 border-t border-white/5 mt-8">
               <div className="bg-white/5 rounded-2xl p-8 md:p-12 border border-white/10 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[80px] -mr-32 -mt-32 rounded-full group-hover:bg-primary/10 transition-colors" />
-                <h3 className="text-2xl font-light mb-4 relative z-10">Dúvidas sobre Proteção?</h3>
+                <h3 className="text-2xl font-light mb-4 relative z-10">{t("privacy.cta.title")}</h3>
                 <p className="text-white/40 font-light mb-8 relative z-10 max-w-md">
-                  Nossa equipe de engenharia está à disposição para detalhar nossos protocolos de segurança.
+                  {t("privacy.cta.desc")}
                 </p>
                 <a 
                   href="mailto:contato@lidtek.com.br" 
@@ -128,7 +130,7 @@ export default function PrivacyPolicy() {
       </div>
 
       <footer className="py-12 border-t border-white/5 text-center">
-        <p className="text-[10px] uppercase tracking-[0.3em] text-white/20">© {new Date().getFullYear()} Lidtek Tecnologia. Todos os direitos reservados.</p>
+        <p className="text-[10px] uppercase tracking-[0.3em] text-white/20">© {new Date().getFullYear()} {t("footer.rights")}</p>
       </footer>
     </div>
   );
