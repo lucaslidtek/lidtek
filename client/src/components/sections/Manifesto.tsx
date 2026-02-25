@@ -30,7 +30,7 @@ export function Manifesto() {
               duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, 
               ease: "easeOut" 
             }}
-            className="text-3xl md:text-5xl font-display font-light leading-[1.3] text-white/90 text-balance"
+            className="text-2xl sm:text-3xl md:text-5xl font-display font-light leading-[1.3] text-white/90 text-balance"
           >
             {t("manifesto.main")}<span className="font-semibold text-white">{t("manifesto.main_bold")}</span>.
           </motion.p>

@@ -45,7 +45,7 @@ export function Problem() {
             <div className="w-8 h-[1px] bg-primary/40" />
             {t("problem.tag")}
           </h2>
-          <h3 className="text-3xl md:text-6xl font-display font-light leading-tight mb-6 md:mb-8 text-balance">
+          <h3 className="text-2xl sm:text-3xl md:text-6xl font-display font-light leading-tight mb-6 md:mb-8 text-balance">
             {t("problem.title")}<span className="italic font-serif text-black/50">{t("problem.title_italic")}</span>{t("problem.title_end")}
           </h3>
           <p className="text-lg md:text-xl text-black/60 font-sans leading-relaxed text-balance">

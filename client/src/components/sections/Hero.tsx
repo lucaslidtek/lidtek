@@ -93,7 +93,7 @@ export function Hero() {
           <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium text-white/80">{t("hero.tag")}</span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-light leading-[1.1] tracking-tight text-white max-w-5xl">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-light leading-[1.1] tracking-tight text-white max-w-5xl">
           <div className="flex flex-col items-start overflow-hidden">
             <motion.span 
               initial={{ opacity: 0, y: 20 }}
