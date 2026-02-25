@@ -148,7 +148,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const t = (key: string) => {
-    return translations[language][key as keyof typeof translations['en']] || key;
+    const lang = language as Language;
+    const translationSet = translations[lang];
+    return (translationSet as any)[key] || key;
   };
 
   return (
