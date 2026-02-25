@@ -40,6 +40,7 @@ export function Hero() {
           src="/static/images/pawel-czerwinski-uA6x_MXI_fE-unsplash_1771968246269.jpg" 
           alt="Abstract dark background"
           className="w-full h-full object-cover opacity-20 md:opacity-30 mix-blend-luminosity"
+          fetchpriority="high"
         />
         <div className="absolute inset-0 bg-background/60 backdrop-blur-[1px]" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />

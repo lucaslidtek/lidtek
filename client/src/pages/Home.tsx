@@ -51,7 +51,7 @@ export default function Home() {
             <div className="max-w-7xl mx-auto relative z-10">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                 <div className="col-span-1 md:col-span-2">
-                  <img src={logoWhite} alt="Lidtek" className="h-8 w-auto mb-6 opacity-90" />
+                  <img src={logoWhite} alt="Lidtek" className="h-8 w-auto mb-6 opacity-90" loading="lazy" width="128" height="32" />
                   <p className="text-white/50 text-sm max-w-sm leading-relaxed font-sans">
                     {language === "pt" 
                       ? "Transformamos a complexidade tecnológica em vantagem competitiva. Sua consultoria de elite para operações digitais e desenvolvimento de produto."
