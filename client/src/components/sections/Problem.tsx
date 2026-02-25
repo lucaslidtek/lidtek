@@ -53,7 +53,20 @@ export function Problem() {
           </p>
         </motion.div>
         
-        <div className="space-y-4 md:space-y-6 relative">
+        <motion.div 
+          className="space-y-4 md:space-y-6 relative"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.15
+              }
+            }
+          }}
+        >
           {/* Linha lateral conectando (progressão) */}
           <div className="absolute left-4 top-8 bottom-8 w-[1px] bg-gradient-to-b from-transparent via-black/10 to-transparent hidden md:block" />
           
@@ -63,15 +76,24 @@ export function Problem() {
             { title: t("problem.scale.title"), desc: t("problem.scale.desc") },
             { title: t("problem.solution.title"), desc: t("problem.solution.desc"), highlight: true }
           ].map((item, i) => (
-            <div 
+            <motion.div 
               key={i}
+              variants={{
+                hidden: { opacity: 0.01, x: 40 },
+                visible: { 
+                  opacity: 1, 
+                  x: 0,
+                  transition: { type: "spring", stiffness: 80, damping: 20 }
+                }
+              }}
+              style={{ willChange: "transform, opacity" }}
               className={`group relative p-6 md:p-8 flex flex-col gap-2 bg-white/40 backdrop-blur-[32px] saturate-[180%] border border-white/40 rounded-2xl md:ml-12 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] ${item.highlight ? 'ring-2 ring-primary bg-primary/10 shadow-[0_20px_50px_rgba(101,128,225,0.15)]' : 'shadow-sm'}`}
             >
               <h4 className={`text-base md:text-lg font-medium tracking-wide relative z-10 ${item.highlight ? 'text-primary' : 'text-black'}`}>{item.title}</h4>
               <p className="text-xs md:text-sm text-black/60 font-sans relative z-10">{item.desc}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
