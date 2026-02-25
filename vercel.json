@@ -2,23 +2,20 @@
     "version": 2,
     "builds": [
         {
-            "src": "package.json",
+            "src": "server/index.ts",
             "use": "@vercel/node",
             "config": {
                 "includeFiles": [
-                    "dist/public/**"
+                    "dist/**",
+                    "client/**"
                 ]
             }
         }
     ],
-    "rewrites": [
+    "routes": [
         {
-            "source": "/api/(.*)",
-            "destination": "server/api-entry.ts"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/api-fallback.ts"
+            "src": "/(.*)",
+            "dest": "server/index.ts"
         }
     ]
 }
