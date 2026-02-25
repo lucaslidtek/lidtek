@@ -92,7 +92,17 @@ export function Navbar() {
       <nav 
         className={`fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-[100] px-6 py-2.5 md:py-3 md:px-8 flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] rounded-full border backdrop-blur-md ${navClass} ${glassClass}`}
       >
-        <Link href="/" className="z-50 cursor-pointer p-2 transition-transform active:scale-95" onClick={() => setIsMenuOpen(false)}>
+        <Link 
+          href="/" 
+          className="z-50 cursor-pointer p-2 transition-transform active:scale-95" 
+          onClick={(e) => {
+            setIsMenuOpen(false);
+            if (window.location.pathname === '/') {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
+        >
           <img src={logoWhite} alt="Lidtek Logo" className={`h-5 md:h-7 w-auto transition-all duration-500 ${logoClass}`} />
         </Link>
         
