@@ -103,10 +103,14 @@ export default function Home() {
               </div>
 
               <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div className="text-white/20 text-[10px] uppercase tracking-[0.2em] font-sans">
-                  © {new Date().getFullYear()} Lidtek. {t("footer.rights")}
+                <div className="text-white/20 text-[10px] uppercase tracking-[0.2em] font-sans text-center md:text-left">
+                  © {new Date().getFullYear()} Lidtek. {language === "pt" ? "Todos os direitos reservados." : "All rights reserved."}
+                  <div className="flex gap-4 justify-center md:hidden mt-4">
+                    <Link href="/privacy-policy" className="text-white/40 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-privacy-mobile">Política de Privacidade</Link>
+                    <Link href="/terms-of-service" className="text-white/40 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-terms-mobile">Termos de Serviço</Link>
+                  </div>
                 </div>
-                <div className="flex gap-8">
+                <div className="hidden md:flex gap-8">
                   <Link href="/privacy-policy" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-privacy">Política de Privacidade</Link>
                   <Link href="/terms-of-service" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-terms">Termos de Serviço</Link>
                 </div>
