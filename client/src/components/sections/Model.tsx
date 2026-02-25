@@ -77,28 +77,22 @@ export function Model() {
                 >
                   <div className="relative inline-block mb-4 md:mb-6">
                     <motion.span 
-                      whileInView={{ 
-                        color: typeof window !== 'undefined' && window.innerWidth < 768 ? "hsl(var(--primary))" : "rgba(255,255,255,0.2)",
-                        transition: { 
-                          delay: typeof window !== 'undefined' && window.innerWidth < 768 ? i * 0.1 + 0.2 : i * 0.2 + 0.5, 
-                          duration: 0.3 
-                        }
+                      animate={{ 
+                        color: hoveredIndex === i || (typeof window !== 'undefined' && window.innerWidth < 768) 
+                          ? "hsl(var(--primary))" 
+                          : "rgba(255,255,255,0.2)"
                       }}
-                      viewport={{ once: true }}
-                      className={`text-4xl md:text-6xl font-display font-light block transition-colors duration-500 ${hoveredIndex === i ? 'text-primary' : 'text-white/20'}`}
+                      transition={{ duration: 0.3 }}
+                      className="text-4xl md:text-6xl font-display font-light block"
                     >
                       {step.step}
                     </motion.span>
                     <motion.div 
-                      whileInView={{ 
-                        opacity: typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : 0,
-                        transition: { 
-                          delay: typeof window !== 'undefined' && window.innerWidth < 768 ? i * 0.1 + 0.2 : i * 0.2 + 0.5, 
-                          duration: 0.3 
-                        }
+                      animate={{ 
+                        opacity: hoveredIndex === i || (typeof window !== 'undefined' && window.innerWidth < 768) ? 1 : 0
                       }}
-                      viewport={{ once: true }}
-                      className={`absolute inset-0 blur-xl transition-opacity duration-500 bg-primary/30 ${hoveredIndex === i ? 'opacity-100' : 'opacity-0'} pointer-events-none`} 
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 blur-xl bg-primary/30 pointer-events-none" 
                     />
                   </div>
                   <h4 className={`text-lg md:text-xl font-medium mb-3 md:mb-4 leading-tight transition-colors duration-500 ${hoveredIndex === i ? 'text-white' : 'text-white/80'}`}>{step.title}</h4>
