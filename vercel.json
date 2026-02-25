@@ -3,11 +3,12 @@
     "builds": [
         {
             "src": "package.json",
-            "use": "@vercel/node"
-        },
-        {
-            "src": "client/index.html",
-            "use": "@vercel/static"
+            "use": "@vercel/node",
+            "config": {
+                "includeFiles": [
+                    "dist/public/**"
+                ]
+            }
         }
     ],
     "rewrites": [
@@ -17,7 +18,7 @@
         },
         {
             "source": "/(.*)",
-            "destination": "/client/index.html"
+            "destination": "/api-fallback.ts"
         }
     ]
 }
