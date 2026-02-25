@@ -3,6 +3,7 @@ import logoWhite from "@assets/lidtek-primary-logo_white_1771959392591.png";
 import { useLanguage } from "@/hooks/use-language";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 export function Navbar() {
   const { language, setLanguage, t } = useLanguage();
@@ -134,21 +135,35 @@ export function Navbar() {
           
           <div className="flex items-center gap-6">
             <div className={`flex items-center gap-2 border ${borderClass} rounded-full px-3 py-1.5 transition-colors duration-500 ${isDark ? 'bg-white/10' : 'bg-black/5'}`}>
-              <button 
-                onClick={() => setLanguage("pt")}
-                className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "pt" ? (isDark ? "text-white font-black" : "text-primary font-black") : (isDark ? "text-white/30 hover:text-white" : "text-black/40 hover:text-black")}`}
-                aria-label="Mudar idioma para Português"
-              >
-                PT
-              </button>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button 
+                    onClick={() => setLanguage("pt")}
+                    className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "pt" ? (isDark ? "text-white font-black" : "text-primary font-black") : (isDark ? "text-white/30 hover:text-white" : "text-black/40 hover:text-black")}`}
+                    aria-label="Mudar idioma para Português"
+                  >
+                    PT
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="text-[10px] tracking-widest uppercase font-medium bg-[#111] text-white/90 border border-white/10 mt-2">
+                  <p>Mudar idioma para Português</p>
+                </TooltipContent>
+              </Tooltip>
               <div className={`w-[1px] h-2 ${isDark ? "bg-white/30" : "bg-black/20"}`} />
-              <button 
-                onClick={() => setLanguage("en")}
-                className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "en" ? (isDark ? "text-white font-black" : "text-primary font-black") : (isDark ? "text-white/30 hover:text-white" : "text-black/40 hover:text-black")}`}
-                aria-label="Change language to English"
-              >
-                EN
-              </button>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button 
+                    onClick={() => setLanguage("en")}
+                    className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "en" ? (isDark ? "text-white font-black" : "text-primary font-black") : (isDark ? "text-white/30 hover:text-white" : "text-black/40 hover:text-black")}`}
+                    aria-label="Change language to English"
+                  >
+                    EN
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent side="bottom" className="text-[10px] tracking-widest uppercase font-medium bg-[#111] text-white/90 border border-white/10 mt-2">
+                  <p>Change language to English</p>
+                </TooltipContent>
+              </Tooltip>
             </div>
 
             <a 
