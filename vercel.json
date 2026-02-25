@@ -4,16 +4,20 @@
         {
             "src": "package.json",
             "use": "@vercel/node"
+        },
+        {
+            "src": "client/index.html",
+            "use": "@vercel/static"
         }
     ],
     "rewrites": [
         {
-            "source": "/(api/.*)",
-            "destination": "server/index.ts"
+            "source": "/api/(.*)",
+            "destination": "server/api-entry.ts"
         },
         {
             "source": "/(.*)",
-            "destination": "/index.html"
+            "destination": "/client/index.html"
         }
     ]
 }
