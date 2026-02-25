@@ -7,11 +7,7 @@ export function Manifesto() {
   return (
     <section id="manifesto" className="py-32 px-6 md:px-12 bg-background text-white min-h-screen flex items-center relative overflow-hidden">
       <div className="absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay pointer-events-none" />
-      
-      {/* Dynamic colorful background specifically enhanced for mobile */}
-      <div className="absolute top-[10%] md:top-1/2 left-[-20%] md:left-1/4 w-[500px] md:w-[800px] h-[500px] md:h-[800px] bg-primary/30 md:bg-primary/10 rounded-full blur-[120px] md:blur-[150px] -translate-y-1/2 pointer-events-none" />
-      <div className="absolute bottom-[20%] right-[-20%] md:bottom-1/4 md:right-1/4 w-[400px] md:w-[600px] h-[400px] md:h-[600px] bg-blue-500/20 md:bg-blue-500/10 rounded-full blur-[100px] md:blur-[120px] pointer-events-none" />
-      <div className="absolute top-[60%] left-[-10%] w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-indigo-500/20 md:bg-indigo-500/5 rounded-full blur-[90px] md:blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -translate-y-1/2 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 relative z-10">
         <div className="lg:col-span-4">
@@ -36,7 +32,7 @@ export function Manifesto() {
             }}
             className="text-2xl sm:text-3xl md:text-5xl font-display font-light leading-[1.3] text-white/90 text-balance"
           >
-            {t("manifesto.main")}<span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-indigo-400">{t("manifesto.main_bold")}</span>.
+            {t("manifesto.main")}<span className="font-semibold text-white">{t("manifesto.main_bold")}</span>.
           </motion.p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-4 md:mt-8">
@@ -48,9 +44,8 @@ export function Manifesto() {
                 duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, 
                 delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.1 : 0.2 
               }}
-              className="p-6 md:p-8 liquid-glass-dark rounded-[1.5rem] md:rounded-[2rem] border border-white/5 md:border-transparent relative overflow-hidden"
+              className="p-6 md:p-8 liquid-glass-dark rounded-[1.5rem] md:rounded-[2rem]"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/15 to-transparent opacity-50 md:opacity-20 pointer-events-none" />
               <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4 text-white/90 relative z-10">{t("manifesto.precision.title")}</h3>
               <p className="text-sm text-white/60 leading-relaxed font-sans relative z-10">
                 {t("manifesto.precision.desc")}
@@ -65,9 +60,8 @@ export function Manifesto() {
                 duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, 
                 delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.2 : 0.4 
               }}
-              className="p-6 md:p-8 liquid-glass-dark rounded-[1.5rem] md:rounded-[2rem] border border-white/5 md:border-transparent relative overflow-hidden"
+              className="p-6 md:p-8 liquid-glass-dark rounded-[1.5rem] md:rounded-[2rem]"
             >
-              <div className="absolute inset-0 bg-gradient-to-tl from-blue-500/15 to-transparent opacity-50 md:opacity-20 pointer-events-none" />
               <h3 className="text-lg md:text-xl font-medium mb-3 md:mb-4 text-white/90 relative z-10">{t("manifesto.silent.title")}</h3>
               <p className="text-sm text-white/60 leading-relaxed font-sans relative z-10">
                 {t("manifesto.silent.desc")}
