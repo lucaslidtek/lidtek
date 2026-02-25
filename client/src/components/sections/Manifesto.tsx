@@ -88,8 +88,8 @@ export function Manifesto() {
             className="mt-12 md:mt-24 pt-8 md:pt-12 border-t border-primary/10 flex justify-center relative"
           >
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-[1px] bg-primary/30 blur-[0.5px]" />
-            <p className="text-2xl md:text-6xl font-display font-light text-white/30 italic text-center font-serif leading-tight">
-              <span className="text-primary/30">"</span>{t("manifesto.section_quote")}<span className="text-primary/30">"</span>
+            <p className="text-2xl md:text-6xl font-display font-light text-white/80 italic text-center font-serif leading-tight drop-shadow-sm">
+              <span className="text-primary/80">"</span>{t("manifesto.section_quote")}<span className="text-primary/80">"</span>
             </p>
           </motion.div>
         </div>
