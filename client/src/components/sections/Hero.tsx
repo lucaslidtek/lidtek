@@ -33,7 +33,7 @@ export function Hero() {
   }, [mouseX, mouseY]);
 
   return (
-    <section className="relative min-h-[100vh] md:min-h-[100svh] flex flex-col justify-center pt-32 pb-20 md:py-0 md:pb-24 px-6 md:px-12 bg-background overflow-hidden">
+    <section className="relative min-h-[100vh] md:min-h-[100svh] flex flex-col justify-center py-20 px-6 md:px-12 bg-background overflow-hidden">
       {/* Background Image - Pawel Czerwinski abstract glass */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img 
