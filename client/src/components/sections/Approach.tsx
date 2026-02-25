@@ -100,7 +100,6 @@ export function Approach() {
               {/* Focal light spot under the card */}
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-primary/0 group-hover:bg-primary transition-colors duration-500 z-10" />
               <div className="text-primary md:text-black/30 md:group-hover:text-primary transition-colors duration-500 mb-8 relative z-10">{feature.icon}</div>
               <h4 className="text-xl font-medium text-black mb-4 relative z-10">{feature.title}</h4>
               <p className="text-black/60 text-sm leading-relaxed font-sans relative z-10">{feature.description}</p>
