@@ -137,6 +137,7 @@ export function Navbar() {
               <button 
                 onClick={() => setLanguage("pt")}
                 className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "pt" ? (isDark ? "text-white font-black" : "text-primary font-black") : (isDark ? "text-white/30 hover:text-white" : "text-black/40 hover:text-black")}`}
+                aria-label="Mudar idioma para Português"
               >
                 PT
               </button>
@@ -144,6 +145,7 @@ export function Navbar() {
               <button 
                 onClick={() => setLanguage("en")}
                 className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "en" ? (isDark ? "text-white font-black" : "text-primary font-black") : (isDark ? "text-white/30 hover:text-white" : "text-black/40 hover:text-black")}`}
+                aria-label="Change language to English"
               >
                 EN
               </button>
@@ -211,9 +213,9 @@ export function Navbar() {
                 transition={{ delay: 0.4 }}
                 className="flex items-center gap-6 mt-2"
               >
-                <button onClick={() => { setLanguage("pt"); setIsMenuOpen(false); }} className={`text-[11px] tracking-widest uppercase ${language === "pt" ? "text-primary font-bold" : "text-white/40"}`}>Português</button>
+                <button onClick={() => { setLanguage("pt"); setIsMenuOpen(false); }} className={`text-[11px] tracking-widest uppercase ${language === "pt" ? "text-primary font-bold" : "text-white/40"}`} aria-label="Mudar idioma para Português">Português</button>
                 <div className="w-[1px] h-3 bg-white/10" />
-                <button onClick={() => { setLanguage("en"); setIsMenuOpen(false); }} className={`text-[11px] tracking-widest uppercase ${language === "en" ? "text-primary font-bold" : "text-white/40"}`}>English</button>
+                <button onClick={() => { setLanguage("en"); setIsMenuOpen(false); }} className={`text-[11px] tracking-widest uppercase ${language === "en" ? "text-primary font-bold" : "text-white/40"}`} aria-label="Change language to English">English</button>
               </motion.div>
 
               <motion.a 

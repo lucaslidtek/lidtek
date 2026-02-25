@@ -95,9 +95,9 @@ export default function Home() {
                 <div>
                   <h4 className="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">{t("footer.social")}</h4>
                   <ul className="space-y-4">
-                    <li><a href="https://linkedin.com/company/lidtek" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">LinkedIn</a></li>
-                    <li><a href="https://instagram.com/lidtek" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">Instagram</a></li>
-                    <li><a href="https://wa.me/553496840966" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">WhatsApp</a></li>
+                    <li><a href="https://linkedin.com/company/lidtek" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider" aria-label="Visitar página do LinkedIn da Lidtek">LinkedIn</a></li>
+                    <li><a href="https://instagram.com/lidtek" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider" aria-label="Visitar perfil do Instagram da Lidtek">Instagram</a></li>
+                    <li><a href="https://wa.me/553496840966" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider" aria-label="Entrar em contato via WhatsApp">WhatsApp</a></li>
                   </ul>
                 </div>
               </div>
