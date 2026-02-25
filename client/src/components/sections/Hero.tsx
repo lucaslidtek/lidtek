@@ -5,7 +5,7 @@ import { LidtekSVG } from "@/components/ui/magic/lidtek-svg";
 import { useLanguage } from "@/hooks/use-language";
 
 export function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   
@@ -100,7 +100,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             >
-              {t("hero.title.line1")}
+              {language === 'pt' ? 'Sua empresa já' : 'Your company already'}
             </motion.span>
             <motion.span 
               initial={{ opacity: 0, filter: "blur(8px)" }}
@@ -108,7 +108,7 @@ export function Hero() {
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
               className="italic text-white/60 font-serif"
             >
-              {t("hero.title.line2")}
+              {language === 'pt' ? 'tem tecnologia.' : 'has technology.'}
             </motion.span>
           </div>
           <motion.div 
@@ -117,8 +117,8 @@ export function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
             className="flex flex-col items-start mt-4"
           >
-            <span>{t("hero.title.line3")}</span>
-            <span>{t("hero.title.line4")}</span>
+            <span>{language === 'pt' ? 'A questão é:' : 'The question is:'}</span>
+            <span>{language === 'pt' ? 'ela tem direção?' : 'does it have direction?'}</span>
           </motion.div>
         </h1>
 

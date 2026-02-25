@@ -148,10 +148,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const t = (key: string) => {
-    const lang = language as Language;
-    const translationSet = translations[lang];
-    // Use type assertion to avoid TypeScript errors with dynamic keys
-    return (translationSet as Record<string, string>)[key] || key;
+    // Force a fresh lookup on every call
+    const currentLang = language;
+    const translationSet = translations[currentLang as keyof typeof translations] as any;
+    const result = translationSet[key];
+    console.log(`Translating ${key} in ${currentLang}:`, result);
+    return result || key;
   };
 
   return (
