@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { CheckCircle } from "phosphor-react";
 import { useRef } from "react";
+import { useLanguage } from "@/hooks/use-language";
 
 const LogoIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 1080 942" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
@@ -10,6 +11,7 @@ const LogoIcon = ({ className }: { className?: string }) => (
 );
 
 export function Operations() {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -20,10 +22,10 @@ export function Operations() {
   const rotate = useTransform(scrollYProgress, [0, 1], [-5, 15]);
 
   const indicators = [
-    { title: "SLAs definidos e formalizados em contrato", value: "Controle" },
-    { title: "Roadmap contínuo com priorização clara", value: "Processo" },
-    { title: "Indicadores de performance acompanhados mensalmente", value: "Clareza" },
-    { title: "Processos auditáveis e governança documentada", value: "Auditoria" }
+    { title: t("operations.ind1.title"), value: t("operations.ind1.value") },
+    { title: t("operations.ind2.title"), value: t("operations.ind2.value") },
+    { title: t("operations.ind3.title"), value: t("operations.ind3.value") },
+    { title: t("operations.ind4.title"), value: t("operations.ind4.value") }
   ];
 
   return (
@@ -54,13 +56,13 @@ export function Operations() {
         >
           <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-8 flex items-center gap-3">
             <div className="w-8 h-[1px] bg-primary/40" />
-            Governança & Estrutura
+            {t("operations.tag")}
           </h2>
           <h3 className="text-4xl md:text-5xl font-display font-light leading-tight mb-8">
-            Maturidade operacional embutida no processo.
+            {t("operations.title")}
           </h3>
           <p className="text-xl text-black/60 font-sans leading-relaxed">
-            Não entregamos apenas código. Entregamos um departamento de tecnologia estruturado, com governança clara e processos auditáveis.
+            {t("operations.desc")}
           </p>
         </motion.div>
 

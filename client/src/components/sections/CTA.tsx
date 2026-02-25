@@ -4,8 +4,11 @@ import { useLanguage } from "@/hooks/use-language";
 import { useEffect, useState } from "react";
 
 export function CTA() {
-  const { t } = useLanguage();
-  const whatsappUrl = "https://wa.me/553496840966?text=Olá Rafael, gostaria de entender melhor como a Lidtek pode atuar como nosso departamento de tecnologia.";
+  const { t, language } = useLanguage();
+  const whatsappText = language === 'pt' 
+    ? "Olá Rafael, gostaria de entender melhor como a Lidtek pode atuar como nosso departamento de tecnologia."
+    : "Hello Rafael, I would like to understand better how Lidtek can act as our technology department.";
+  const whatsappUrl = `https://wa.me/553496840966?text=${encodeURIComponent(whatsappText)}`;
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -76,7 +79,7 @@ export function CTA() {
               <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </a>
             
-            <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-medium">Escalando o futuro de quem constrói o amanhã</p>
+            <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-medium">{t("cta.footer")}</p>
           </div>
         </motion.div>
       </div>

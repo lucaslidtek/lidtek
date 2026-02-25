@@ -6,17 +6,17 @@ export function IdealClient() {
   const { t } = useLanguage();
 
   const positiveCriteria = [
-    "Crescem e precisam de direção tecnológica",
-    "Querem previsibilidade, não improviso",
-    "Enxergam tecnologia como estrutura estratégica",
-    "Valorizam governança e maturidade operacional"
+    t("ideal.pro.item1"),
+    t("ideal.pro.item2"),
+    t("ideal.pro.item3"),
+    t("ideal.pro.item4")
   ];
 
   const negativeCriteria = [
-    "Buscam apenas um orçamento pontual",
-    "Execução sem visão de longo prazo",
-    "Tecnologia como custo, não investimento",
-    "Processos sem documentação ou estratégia"
+    t("ideal.con.item1"),
+    t("ideal.con.item2"),
+    t("ideal.con.item3"),
+    t("ideal.con.item4")
   ];
 
   return (
@@ -32,13 +32,13 @@ export function IdealClient() {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6"
           >
             <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-[10px] uppercase tracking-widest font-bold text-primary/80 font-sans">Perfil de Parceria</span>
+            <span className="text-[10px] uppercase tracking-widest font-bold text-primary/80 font-sans">{t("ideal.tag")}</span>
           </motion.div>
           <h2 className="text-4xl md:text-5xl font-display font-light text-white mb-6 tracking-tight">
-            Para quem é a <span className="text-primary font-medium italic">Lidtek?</span>
+            {t("ideal.title1")} <span className="text-primary font-medium italic">{t("ideal.title2")}</span>
           </h2>
           <p className="text-white/40 text-lg font-light max-w-2xl mx-auto">
-            Não somos uma fábrica de software comum. Somos o braço tecnológico de empresas que buscam maturidade e escala.
+            {t("ideal.desc")}
           </p>
         </div>
 
@@ -58,8 +58,8 @@ export function IdealClient() {
                   <CheckCircle className="text-primary" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-display text-white">Perfil Ideal</h3>
-                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1">Pronto para o crescimento</p>
+                  <h3 className="text-xl font-display text-white">{t("ideal.pro.title")}</h3>
+                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1">{t("ideal.pro.tag")}</p>
                 </div>
               </div>
               
@@ -97,8 +97,8 @@ export function IdealClient() {
                   <XCircle className="text-white/60" size={24} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-display text-white/90">Não somos o ideal se...</h3>
-                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1 font-sans">Foco diferente</p>
+                  <h3 className="text-xl font-display text-white/90">{t("ideal.con.title")}</h3>
+                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1 font-sans">{t("ideal.con.tag")}</p>
                 </div>
               </div>
               
@@ -121,7 +121,7 @@ export function IdealClient() {
 
               <div className="mt-12 pt-8 border-t border-white/5 group-hover:border-white/10 transition-colors text-center">
                 <p className="text-[11px] text-white/30 italic leading-relaxed group-hover:text-white/50 transition-colors inline-block relative px-4">
-                  Preferimos ser transparentes agora do que entregar menos do que o seu negócio merece no futuro.
+                  {t("ideal.con.footer")}
                 </p>
               </div>
             </div>

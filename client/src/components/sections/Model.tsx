@@ -28,7 +28,7 @@ export function Model() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="mb-16 md:mb-32 text-center flex flex-col items-center">
           <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-6">{t("model.tag")}</h2>
-          <h3 className="text-3xl md:text-6xl font-display font-light text-white max-w-3xl text-balance mb-6 md:mb-8">Nosso Método</h3>
+          <h3 className="text-3xl md:text-6xl font-display font-light text-white max-w-3xl text-balance mb-6 md:mb-8">{t("model.method")}</h3>
           <p className="text-white/60 max-w-xl font-sans text-base md:text-lg italic font-serif">
             {t("model.subtitle")}
           </p>

@@ -60,7 +60,7 @@ export default function Home() {
                 </div>
                 
                 <div>
-                  <h4 className="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">Menu</h4>
+                  <h4 className="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">{t("footer.menu")}</h4>
                   <ul className="space-y-4">
                     <li>
                       <a 
@@ -93,7 +93,7 @@ export default function Home() {
                 </div>
 
                 <div>
-                  <h4 className="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">Social</h4>
+                  <h4 className="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">{t("footer.social")}</h4>
                   <ul className="space-y-4">
                     <li><a href="https://linkedin.com/company/lidtek" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">LinkedIn</a></li>
                     <li><a href="https://instagram.com/lidtek" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider">Instagram</a></li>
@@ -106,13 +106,13 @@ export default function Home() {
                 <div className="text-white/20 text-[10px] uppercase tracking-[0.2em] font-sans text-center md:text-left">
                   © {new Date().getFullYear()} Lidtek. {language === "pt" ? "Todos os direitos reservados." : "All rights reserved."}
                   <div className="flex gap-4 justify-center md:hidden mt-4">
-                    <Link href="/privacy-policy" className="text-white/40 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-privacy-mobile">Política de Privacidade</Link>
-                    <Link href="/terms-of-service" className="text-white/40 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-terms-mobile">Termos de Serviço</Link>
+                    <Link href="/privacy-policy" className="text-white/40 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-privacy-mobile">{t("footer.privacy")}</Link>
+                    <Link href="/terms-of-service" className="text-white/40 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-terms-mobile">{t("footer.terms")}</Link>
                   </div>
                 </div>
                 <div className="hidden md:flex gap-8">
-                  <Link href="/privacy-policy" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-privacy">Política de Privacidade</Link>
-                  <Link href="/terms-of-service" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-terms">Termos de Serviço</Link>
+                  <Link href="/privacy-policy" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-privacy">{t("footer.privacy")}</Link>
+                  <Link href="/terms-of-service" className="text-white/20 hover:text-white/40 transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-terms">{t("footer.terms")}</Link>
                 </div>
               </div>
             </div>
