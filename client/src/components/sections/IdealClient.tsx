@@ -33,7 +33,7 @@ export function IdealClient() {
           <h3 className="text-4xl md:text-5xl font-display font-light text-white mb-6 tracking-tight">
             {t("ideal.title1")} <span className="text-primary font-medium italic">{t("ideal.title2")}</span>
           </h3>
-          <p className="text-white/40 text-lg font-light max-w-2xl mx-auto">
+          <p className="text-white/70 text-lg font-light max-w-2xl mx-auto">
             {t("ideal.desc")}
           </p>
         </div>
@@ -55,7 +55,7 @@ export function IdealClient() {
                 </div>
                 <div>
                   <h3 className="text-xl font-display text-white">{t("ideal.pro.title")}</h3>
-                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1">{t("ideal.pro.tag")}</p>
+                  <p className="text-white/70 text-xs uppercase tracking-widest mt-1">{t("ideal.pro.tag")}</p>
                 </div>
               </div>
 
@@ -69,7 +69,7 @@ export function IdealClient() {
                     className="flex gap-4 items-start group/item"
                   >
                     <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary/40 group-hover/item:bg-primary transition-colors" />
-                    <span className="text-white/70 text-sm md:text-base font-light leading-relaxed group-hover/item:text-white transition-colors">
+                    <span className="text-white/90 text-sm md:text-base font-light leading-relaxed group-hover/item:text-white transition-colors">
                       {item}
                     </span>
                   </motion.li>
@@ -94,7 +94,7 @@ export function IdealClient() {
                 </div>
                 <div>
                   <h3 className="text-xl font-display text-white/90">{t("ideal.con.title")}</h3>
-                  <p className="text-white/40 text-xs uppercase tracking-widest mt-1 font-sans">{t("ideal.con.tag")}</p>
+                  <p className="text-white/70 text-xs uppercase tracking-widest mt-1 font-sans">{t("ideal.con.tag")}</p>
                 </div>
               </div>
 
@@ -108,7 +108,7 @@ export function IdealClient() {
                     className="flex gap-4 items-start group/item"
                   >
                     <div className="mt-2 w-1 h-1 rounded-full bg-white/30 group-hover/item:bg-white/60 transition-colors" />
-                    <span className="text-white/60 text-sm md:text-base font-light leading-relaxed group-hover/item:text-white/90 transition-colors">
+                    <span className="text-white/80 text-sm md:text-base font-light leading-relaxed group-hover/item:text-white transition-colors">
                       {item}
                     </span>
                   </motion.li>
@@ -116,7 +116,7 @@ export function IdealClient() {
               </ul>
 
               <div className="mt-12 pt-8 border-t border-white/5 group-hover:border-white/10 transition-colors text-center">
-                <p className="text-[11px] text-white/30 italic leading-relaxed group-hover:text-white/50 transition-colors inline-block relative px-4">
+                <p className="text-[12px] text-white/50 italic leading-relaxed group-hover:text-white/80 transition-colors inline-block relative px-4">
                   {t("ideal.con.footer")}
                 </p>
               </div>
