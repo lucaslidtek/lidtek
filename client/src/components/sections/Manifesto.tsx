@@ -81,7 +81,7 @@ export function Manifesto() {
             className="mt-12 md:mt-24 pt-8 md:pt-12 border-t border-primary/10 flex justify-center relative"
           >
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-[1px] bg-primary/30 blur-[0.5px]" />
-            <p className="text-2xl md:text-5xl lg:text-[3.5rem] font-display font-light text-white/80 italic text-center font-serif leading-tight drop-shadow-sm md:max-w-5xl mx-auto w-full px-4">
+            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-light text-white/80 italic text-center font-serif leading-tight drop-shadow-sm md:max-w-4xl mx-auto w-full px-4">
               <span className="text-primary/80">"</span>
               {t("manifesto.section_quote").split('. ').map((part, i, arr) => (
                 <span key={i}>
