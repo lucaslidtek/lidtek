@@ -1,11 +1,11 @@
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { ArrowRight } from "phosphor-react";
+
 import { useLanguage } from "@/hooks/use-language";
 import { useEffect, useState } from "react";
 
 export function CTA() {
   const { t, language } = useLanguage();
-  const whatsappText = language === 'pt' 
+  const whatsappText = language === 'pt'
     ? "Olá Rafael, gostaria de entender melhor como a Lidtek pode atuar como nosso departamento de tecnologia."
     : "Hello Rafael, I would like to understand better how Lidtek can act as our technology department.";
   const whatsappUrl = `https://wa.me/553496840966?text=${encodeURIComponent(whatsappText)}`;
@@ -23,7 +23,7 @@ export function CTA() {
     setIsMounted(true);
     const handleMouseMove = (e: MouseEvent) => {
       // Calculate relative to the window to match Hero's fixed light behavior
-      mouseX.set(e.clientX - 300); 
+      mouseX.set(e.clientX - 300);
       mouseY.set(e.clientY - 300);
     };
 
@@ -39,12 +39,12 @@ export function CTA() {
         <div className="absolute bottom-[-15%] left-[-10%] w-[700px] h-[700px] bg-accent/[0.12] rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '12s' }} />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(101,128,225,0.08),transparent_50%)]" />
       </div>
-      
+
       {/* Dynamic light following mouse - Adapted for Light Background */}
       {isMounted && (
-        <motion.div 
+        <motion.div
           style={{ x: springX, y: springY }}
-          className="fixed top-0 left-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none mix-blend-multiply z-0" 
+          className="fixed top-0 left-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none mix-blend-multiply z-0"
         />
       )}
 
@@ -65,11 +65,11 @@ export function CTA() {
           <h3 className="text-4xl md:text-6xl lg:text-7xl font-display font-light tracking-tight text-neutral-900 mb-10 max-w-4xl leading-[1.1]">
             {t("cta.title")}
           </h3>
-          
+
           <div className="relative group">
             <div className="absolute -inset-4 bg-primary/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            
-            <a 
+
+            <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -78,7 +78,7 @@ export function CTA() {
               <span className="relative z-10 font-bold uppercase tracking-[0.2em] text-[12px] md:text-sm">{t("cta.btn")}</span>
               <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </a>
-            
+
             <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-medium">{t("cta.footer")}</p>
           </div>
         </motion.div>
