@@ -35,7 +35,7 @@ export function Model() {
 
   const { scrollYProgress } = useScroll({
     target: lineRef,
-    offset: ["start end", "center center"]
+    offset: ["start end", "end center"]
   });
 
   // Calculate percentage of progress based on columns (0 to 1 for full width)
@@ -102,7 +102,19 @@ export function Model() {
           </p>
         </div>
 
-        <div className="relative" ref={lineRef}>
+        <div className="relative pl-6 md:pl-0" ref={lineRef}>
+          {/* Mobile Vertical Progress Line (visible only on mobile) */}
+          <div className="absolute top-8 bottom-8 left-[10px] w-[2px] md:hidden overflow-hidden rounded-full z-0">
+            <div className="absolute inset-0 w-full h-full bg-white/10" />
+            <motion.div
+              style={{
+                scaleY: smoothProgress,
+                transformOrigin: "top"
+              }}
+              className="absolute top-0 left-0 w-full h-full bg-primary z-0 shadow-[0_0_10px_rgba(var(--primary-rgb),0.3)]"
+            />
+          </div>
+
           {/* Progress Line Wrapper with precise transparent gaps centered at each column (10%, 30%, 50%, 70%, 90%) */}
           <div
             className="absolute top-8 left-0 w-full h-[2px] hidden md:block overflow-visible"
@@ -137,8 +149,12 @@ export function Model() {
             {steps.map((step, i) => {
               const columnCenter = 0.1 + (i * 0.2);
               // Active if either hovered OR progress is past this dot's center
-              // Todas as letras anteriores ao hover devem acender; LIGAÇÃO baseada no scroll fora do hover
-              const isActive = effectiveProgress >= (columnCenter - 0.01);
+              // For mobile, effectiveProgress is mapped 0-1 across the entire container scroll
+              // A tighter offset ensures the icon correctly hits the card's middle before activating
+              const offset = typeof window !== 'undefined' && window.innerWidth < 768 ? 0.05 : 0;
+              const isActive = effectiveProgress >= (columnCenter - 0.01 + offset);
+              const isMobileHighlighted = typeof window !== 'undefined' && window.innerWidth < 768 && isActive;
+              const isCardHighlighted = hoveredIndex === i || isMobileHighlighted;
 
               return (
                 <motion.div
@@ -154,9 +170,17 @@ export function Model() {
                     }
                   }}
                   viewport={{ once: true, margin: "-50px" }}
-                  onMouseEnter={() => setHoveredIndex(i)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                  className="px-0 md:px-6 relative group cursor-default"
+                  onMouseEnter={() => {
+                    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+                      setHoveredIndex(i);
+                    }
+                  }}
+                  onMouseLeave={() => {
+                    if (typeof window !== 'undefined' && window.innerWidth >= 768) {
+                      setHoveredIndex(null);
+                    }
+                  }}
+                  className="px-0 md:px-6 relative cursor-default"
                 >
                   <div className="hidden md:flex absolute top-8 left-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center z-20 w-8 h-8 pointer-events-none">
                     <div className="w-8 h-8 flex items-center justify-center">
@@ -164,21 +188,28 @@ export function Model() {
                     </div>
                   </div>
 
+                  {/* Mobile Logo Indicator */}
+                  <div className="flex md:hidden absolute top-[40px] -left-[22px] items-center justify-center z-20 w-5 h-5 pointer-events-none">
+                    <div className="w-5 h-5 flex items-center justify-center bg-background rounded-full p-[2px]">
+                      <LogoIcon active={isActive} />
+                    </div>
+                  </div>
+
                   <motion.div
                     whileInView={{
-                      backgroundColor: typeof window !== 'undefined' && window.innerWidth < 768 ? "rgba(101,128,225,0.1)" : "transparent",
+                      backgroundColor: typeof window !== 'undefined' && window.innerWidth < 768 && isCardHighlighted ? "rgba(101,128,225,0.05)" : "transparent",
                       transition: {
                         delay: typeof window !== 'undefined' && window.innerWidth < 768 ? i * 0.1 + 0.2 : i * 0.2 + 0.5,
                         duration: 0.3
                       }
                     }}
                     viewport={{ once: true }}
-                    className={`mt-0 md:mt-24 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${hoveredIndex === i ? 'bg-black/60 backdrop-blur-[32px] saturate-[180%] border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] md:translate-y-[-8px]' : 'bg-white/5 md:bg-transparent'}`}
+                    className={`mt-0 md:mt-24 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${isCardHighlighted ? 'bg-black/60 backdrop-blur-[32px] saturate-[180%] border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] md:translate-y-[-8px]' : 'bg-white/5 md:bg-transparent'}`}
                   >
                     <div className="relative inline-block mb-4 md:mb-6">
                       <motion.span
                         animate={{
-                          color: hoveredIndex === i || isActive || (typeof window !== 'undefined' && window.innerWidth < 768)
+                          color: hoveredIndex === i || isActive
                             ? "hsl(var(--primary))"
                             : "rgba(255,255,255,0.2)"
                         }}
@@ -189,14 +220,14 @@ export function Model() {
                       </motion.span>
                       <motion.div
                         animate={{
-                          opacity: hoveredIndex === i || (typeof window !== 'undefined' && window.innerWidth < 768) ? 1 : 0
+                          opacity: isCardHighlighted ? 1 : 0
                         }}
                         transition={{ duration: 0.3 }}
                         className="absolute inset-0 blur-xl bg-primary/30 pointer-events-none"
                       />
                     </div>
-                    <h4 className={`text-lg md:text-xl font-medium mb-3 md:mb-4 leading-tight transition-colors duration-500 ${hoveredIndex === i ? 'text-white' : 'text-white/80'}`}>{step.title}</h4>
-                    <p className={`font-sans text-xs md:text-sm leading-relaxed transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${hoveredIndex === i ? 'text-white/70' : 'text-white/40'}`}>{step.desc}</p>
+                    <h4 className={`text-lg md:text-xl font-medium mb-3 md:mb-4 leading-tight transition-colors duration-500 ${isCardHighlighted ? 'text-white' : 'text-white/80'}`}>{step.title}</h4>
+                    <p className={`font-sans text-xs md:text-sm leading-relaxed transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isCardHighlighted ? 'text-white/70' : 'text-white/40'}`}>{step.desc}</p>
                   </motion.div>
                 </motion.div>
               );
