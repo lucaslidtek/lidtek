@@ -108,14 +108,14 @@ export function Hero() {
               animate={{ y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
             >
-              {language === 'pt' ? 'Sua empresa já' : 'Your company already'}
+              {t("hero.title1")}
             </motion.span>
             <motion.span
               animate={{ filter: "blur(0px)" }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
               className="italic text-white/60 font-serif"
             >
-              {language === 'pt' ? 'tem tecnologia.' : 'has technology.'}
+              {t("hero.title1_italic")}
             </motion.span>
           </div>
           <motion.div
@@ -124,8 +124,7 @@ export function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
             className="flex flex-col items-start mt-4"
           >
-            <span>{language === 'pt' ? 'A questão é:' : 'The question is:'}</span>
-            <span>{language === 'pt' ? 'ela tem direção?' : 'does it have direction?'}</span>
+            {t("hero.title2")}
           </motion.div>
         </h1>
 
