@@ -22,21 +22,17 @@ export function IdealClient() {
   return (
     <section className="py-24 px-6 md:px-12 bg-[#080808] border-y border-white/5 relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.02),transparent_70%)] pointer-events-none" />
-      
+
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            <span className="text-[10px] uppercase tracking-widest font-bold text-primary/80 font-sans">{t("ideal.tag")}</span>
-          </motion.div>
-          <h2 className="text-4xl md:text-5xl font-display font-light text-white mb-6 tracking-tight">
-            {t("ideal.title1")} <span className="text-primary font-medium italic">{t("ideal.title2")}</span>
+          <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-6 md:mb-8 flex items-center justify-center gap-3">
+            <div className="w-8 h-[1px] bg-primary/40" />
+            {t("ideal.tag")}
+            <div className="w-8 h-[1px] bg-primary/40" />
           </h2>
+          <h3 className="text-4xl md:text-5xl font-display font-light text-white mb-6 tracking-tight">
+            {t("ideal.title1")} <span className="text-primary font-medium italic">{t("ideal.title2")}</span>
+          </h3>
           <p className="text-white/40 text-lg font-light max-w-2xl mx-auto">
             {t("ideal.desc")}
           </p>
@@ -62,10 +58,10 @@ export function IdealClient() {
                   <p className="text-white/40 text-xs uppercase tracking-widest mt-1">{t("ideal.pro.tag")}</p>
                 </div>
               </div>
-              
+
               <ul className="space-y-5">
                 {positiveCriteria.map((item, idx) => (
-                  <motion.li 
+                  <motion.li
                     key={idx}
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -101,10 +97,10 @@ export function IdealClient() {
                   <p className="text-white/40 text-xs uppercase tracking-widest mt-1 font-sans">{t("ideal.con.tag")}</p>
                 </div>
               </div>
-              
+
               <ul className="space-y-5">
                 {negativeCriteria.map((item, idx) => (
-                  <motion.li 
+                  <motion.li
                     key={idx}
                     initial={{ opacity: 0, x: 10 }}
                     whileInView={{ opacity: 1, x: 0 }}

@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionValueEvent } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import { useLanguage } from "@/hooks/use-language";
 
@@ -31,40 +31,51 @@ export function Model() {
   const { t } = useLanguage();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const lineRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start center", "end center"]
+    target: lineRef,
+    offset: ["start end", "center center"]
   });
 
-  // Calculate percentage of progress based on columns (0.1 for first center, 0.9 for last center)
-  const scrollTarget = useTransform(scrollYProgress, [0, 1], [0.1, 0.9]);
+  // Calculate percentage of progress based on columns (0 to 1 for full width)
+  const scrollTarget = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
-  // Custom motion value to handle both scroll and hover
+  // Custom motion values to handle both scroll and hover
   const progressValue = useMotionValue(0.1);
   const smoothProgress = useSpring(progressValue, {
-    damping: 30,
-    stiffness: 150,
+    damping: 24,
+    stiffness: 120,
     mass: 0.5
   });
 
+  // Current display value for reactive UI re-renders, following the spring
+  const [effectiveProgress, setEffectiveProgress] = useState(0.1);
+
+  // Update target progress based on scroll or hover
   useEffect(() => {
     if (hoveredIndex !== null) {
-      // Set to center of corresponding column: 10%, 30%, 50%, 70%, 90%
-      progressValue.set(0.1 + (hoveredIndex * 0.2));
-    } else {
-      progressValue.set(scrollTarget.get());
+      const target = 0.1 + (hoveredIndex * 0.2);
+      progressValue.set(target);
     }
-  }, [hoveredIndex, scrollTarget, progressValue]);
+  }, [hoveredIndex, progressValue]);
 
-  // Ensure scroll updates the value if not hovering
+  // Ensure scroll is constantly tracked when NOT hovering
+  useMotionValueEvent(scrollTarget, "change", (v) => {
+    if (hoveredIndex === null) {
+      progressValue.set(v);
+    }
+  });
+
+  // Synchronize effectiveProgress with the smooth spring value
+  useMotionValueEvent(smoothProgress, "change", (v) => {
+    setEffectiveProgress(v);
+  });
+
+  // Ensure initial sync
   useEffect(() => {
-    return scrollTarget.onChange((v) => {
-      if (hoveredIndex === null) {
-        progressValue.set(v);
-      }
-    });
-  }, [scrollTarget, hoveredIndex, progressValue]);
+    setEffectiveProgress(smoothProgress.get());
+  }, []);
 
   const steps = [
     { step: "I", title: t("model.step1.title"), desc: t("model.step1.desc") },
@@ -80,14 +91,18 @@ export function Model() {
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="mb-16 md:mb-32 text-center flex flex-col items-center">
-          <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-6">{t("model.tag")}</h2>
+          <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-6 md:mb-8 flex items-center justify-center gap-3">
+            <div className="w-8 h-[1px] bg-primary/40" />
+            {t("model.tag")}
+            <div className="w-8 h-[1px] bg-primary/40" />
+          </h2>
           <h3 className="text-3xl md:text-6xl font-display font-light text-white max-w-3xl text-balance mb-6 md:mb-8">{t("model.method")}</h3>
           <p className="text-white/60 max-w-xl font-sans text-base md:text-lg italic font-serif">
             {t("model.subtitle")}
           </p>
         </div>
 
-        <div className="relative">
+        <div className="relative" ref={lineRef}>
           {/* Progress Line Wrapper with precise transparent gaps centered at each column (10%, 30%, 50%, 70%, 90%) */}
           <div
             className="absolute top-8 left-0 w-full h-[2px] hidden md:block overflow-visible"
@@ -110,7 +125,10 @@ export function Model() {
           >
             <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full h-[1px] bg-white/10" />
             <motion.div
-              style={{ scaleX: smoothProgress, transformOrigin: "left" }}
+              style={{
+                scaleX: smoothProgress,
+                transformOrigin: "left"
+              }}
               className="absolute top-1/2 -translate-y-1/2 left-0 w-full h-[2px] bg-primary z-0 shadow-[0_0_10px_rgba(var(--primary-rgb),0.3)]"
             />
           </div>
@@ -119,7 +137,8 @@ export function Model() {
             {steps.map((step, i) => {
               const columnCenter = 0.1 + (i * 0.2);
               // Active if either hovered OR progress is past this dot's center
-              const isActive = hoveredIndex === i || smoothProgress.get() >= (columnCenter - 0.01);
+              // Todas as letras anteriores ao hover devem acender; LIGAÇÃO baseada no scroll fora do hover
+              const isActive = effectiveProgress >= (columnCenter - 0.01);
 
               return (
                 <motion.div

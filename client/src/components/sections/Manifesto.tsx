@@ -8,44 +8,37 @@ export function Manifesto() {
     <section id="manifesto" className="py-32 px-6 md:px-12 bg-background text-white min-h-screen flex items-center relative overflow-hidden">
       <div className="absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay pointer-events-none" />
       <div className="absolute top-1/2 left-1/4 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -translate-y-1/2 pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 relative z-10">
         <div className="lg:col-span-4">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-            <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-primary/80">{t("manifesto.tag")}</h2>
-          </div>
-          <motion.div 
-            initial={{ width: 0 }}
-            whileInView={{ width: 48 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="h-[1px] bg-gradient-to-r from-primary to-transparent" 
-          />
+          <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-6 md:mb-8 flex items-center gap-3">
+            <div className="w-8 h-[1px] bg-primary/40" />
+            {t("manifesto.tag")}
+          </h2>
         </div>
-        
+
         <div className="lg:col-span-8 flex flex-col gap-12">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ 
-              duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, 
-              ease: "easeOut" 
+            transition={{
+              duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8,
+              ease: "easeOut"
             }}
             className="text-2xl sm:text-3xl md:text-5xl font-display font-light leading-[1.3] text-white/90 text-balance"
           >
             {t("manifesto.main")}<span className="font-semibold text-primary">{t("manifesto.main_bold")}</span>.
           </motion.p>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-4 md:mt-8">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
-              transition={{ 
-                duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, 
-                delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.1 : 0.2 
+              transition={{
+                duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8,
+                delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.1 : 0.2
               }}
               className="p-6 md:p-8 liquid-glass-dark rounded-[1.5rem] md:rounded-[2rem] border border-primary/5 relative overflow-hidden group"
             >
@@ -58,14 +51,14 @@ export function Manifesto() {
                 {t("manifesto.precision.desc")}
               </p>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
-              transition={{ 
-                duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8, 
-                delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.2 : 0.4 
+              transition={{
+                duration: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.4 : 0.8,
+                delay: typeof window !== 'undefined' && window.innerWidth < 768 ? 0.2 : 0.4
               }}
               className="p-6 md:p-8 liquid-glass-dark rounded-[1.5rem] md:rounded-[2rem] border border-primary/5 relative overflow-hidden group"
             >

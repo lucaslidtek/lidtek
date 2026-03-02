@@ -70,7 +70,7 @@ export function Approach() {
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="relative">
-            <h2 className="text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-4 flex items-center gap-3">
+            <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-6 md:mb-8 flex items-center gap-3">
               <div className="w-8 h-[1px] bg-primary/40" />
               {t("approach.tag")}
             </h2>
