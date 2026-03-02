@@ -10,14 +10,14 @@ export function Manifesto() {
       <div className="absolute top-1/2 left-1/4 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -translate-y-1/2 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 relative z-10">
-        <div className="lg:col-span-4">
+        <div className="lg:col-span-3">
           <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-6 md:mb-8 flex items-center gap-3">
             <div className="w-8 h-[1px] bg-primary/40" />
             {t("manifesto.tag")}
           </h2>
         </div>
 
-        <div className="lg:col-span-8 flex flex-col gap-12">
+        <div className="lg:col-span-9 flex flex-col gap-12">
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -81,10 +81,10 @@ export function Manifesto() {
             className="mt-12 md:mt-24 pt-8 md:pt-12 border-t border-primary/10 flex justify-center relative"
           >
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-[1px] bg-primary/30 blur-[0.5px]" />
-            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-light text-white/80 italic text-center font-serif leading-tight drop-shadow-sm md:max-w-4xl mx-auto w-full px-4">
-              <span className="text-primary/80">"</span>
+            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-light text-white/80 italic text-center font-serif leading-tight drop-shadow-sm md:max-w-5xl mx-auto w-full px-4 text-balance">
               {t("manifesto.section_quote").split('. ').map((part, i, arr) => (
-                <span key={i}>
+                <span key={i} className="md:inline-block md:whitespace-nowrap">
+                  {i === 0 && <span className="text-primary/80">"</span>}
                   {part}
                   {i < arr.length - 1 && "."}
                   {i < arr.length - 1 && (
@@ -93,9 +93,9 @@ export function Manifesto() {
                       <span className="md:hidden">{" "}</span>
                     </>
                   )}
+                  {i === arr.length - 1 && <span className="text-primary/80">"</span>}
                 </span>
               ))}
-              <span className="text-primary/80">"</span>
             </p>
           </motion.div>
         </div>
