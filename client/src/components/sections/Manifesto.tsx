@@ -28,7 +28,7 @@ export function Manifesto() {
             }}
             className="text-2xl sm:text-3xl md:text-5xl font-display font-light leading-[1.3] text-white/90 text-balance"
           >
-            {t("manifesto.main")}<span className="font-semibold text-primary">{t("manifesto.main_bold")}</span>.
+            {t("manifesto.main")}{" "}<span className="font-semibold text-primary">{t("manifesto.main_bold")}</span>
           </motion.p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-4 md:mt-8">

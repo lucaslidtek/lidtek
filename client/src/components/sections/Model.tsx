@@ -90,7 +90,7 @@ export function Model() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[1000px] h-[400px] md:h-[600px] bg-primary/5 rounded-full blur-[100px] md:blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="mb-16 md:mb-32 text-center flex flex-col items-center">
+        <div className="mb-16 md:mb-20 text-center flex flex-col items-center">
           <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-6 md:mb-8 flex items-center justify-center gap-3">
             <div className="w-8 h-[1px] bg-primary/40" />
             {t("model.tag")}
@@ -204,7 +204,7 @@ export function Model() {
                       }
                     }}
                     viewport={{ once: true }}
-                    className={`mt-0 md:mt-24 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${isCardHighlighted ? 'bg-black/60 backdrop-blur-[32px] saturate-[180%] border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] md:translate-y-[-8px]' : 'bg-white/5 md:bg-transparent'}`}
+                    className={`mt-0 md:mt-8 p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] transition-all duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${isCardHighlighted ? 'bg-black/60 backdrop-blur-[32px] saturate-[180%] border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] md:translate-y-[-8px]' : 'bg-white/5 md:bg-transparent'}`}
                   >
                     <div className="relative inline-block mb-4 md:mb-6">
                       <motion.span
