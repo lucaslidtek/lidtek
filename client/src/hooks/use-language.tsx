@@ -110,7 +110,12 @@ const translations = {
     "history.tag": "Nossa Origem",
     "history.title": "A Lidtek não começou do zero.",
     "history.desc": "Nascemos da fusão da Lution — especialista em desenvolvimento de sistemas — com a RLB Sistemas, com experiência em automação de processos e operações.",
-    "history.footer": "Dois históricos. Uma estrutura. Um compromisso: tecnologia que sustenta quem está crescendo."
+    "history.footer": "Dois históricos. Uma estrutura. Um compromisso: tecnologia que sustenta quem está crescendo.",
+    "testimonials.tag": "Depoimentos",
+    "testimonials.title": "Voz de quem confia na nossa estrutura",
+    "testimonials.quote1.text": "A Lidtek não nos entregou apenas um software, mas sim um braço de tecnologia que entende o nosso negócio. Eles assumiram a responsabilidade que antes era pulverizada e hoje temos clareza total da nossa operação.",
+    "testimonials.quote1.author": "Nome do Cliente",
+    "testimonials.quote1.role": "Diretor de Operações"
   },
   en: {
     "nav.manifesto": "What drives us",
@@ -213,7 +218,12 @@ const translations = {
     "history.tag": "Our Genesis",
     "history.title": "Lidtek didn't start from scratch.",
     "history.desc": "We were born from the merger of Lution — specialized in systems development — and RLB Sistemas, with expertise in process and operations automation.",
-    "history.footer": "Two histories. One structure. One commitment: technology that sustains those who are growing."
+    "history.footer": "Two histories. One structure. One commitment: technology that sustains those who are growing.",
+    "testimonials.tag": "Testimonials",
+    "testimonials.title": "Voices of those who trust our structure",
+    "testimonials.quote1.text": "Lidtek didn't just deliver software, but a technology arm that understands our business. They took over the responsibility that was previously scattered, and today we have complete clarity of our operation.",
+    "testimonials.quote1.author": "Client Name",
+    "testimonials.quote1.role": "Operations Director"
   }
 };
 

@@ -13,6 +13,7 @@ const Approach = lazy(() => import("@/components/sections/Approach").then(m => (
 const Model = lazy(() => import("@/components/sections/Model").then(m => ({ default: m.Model })));
 const Operations = lazy(() => import("@/components/sections/Operations").then(m => ({ default: m.Operations })));
 const IdealClient = lazy(() => import("@/components/sections/IdealClient").then(m => ({ default: m.IdealClient })));
+const Testimonials = lazy(() => import("@/components/sections/Testimonials").then(m => ({ default: m.Testimonials })));
 const CTA = lazy(() => import("@/components/sections/CTA").then(m => ({ default: m.CTA })));
 
 export default function Home() {
@@ -48,6 +49,7 @@ export default function Home() {
           <Model />
           <Operations />
           <IdealClient />
+          <Testimonials />
 
           <div id="footer-container" className="bg-[#050505] relative overflow-hidden">
             <CTA />

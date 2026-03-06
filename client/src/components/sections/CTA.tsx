@@ -32,19 +32,19 @@ export function CTA() {
   }, [mouseX, mouseY]);
 
   return (
-    <section id="contact" className="relative pt-24 md:pt-32 pb-24 px-6 md:px-12 bg-[#F8F9FA] border-t border-black/10 overflow-hidden">
+    <section id="contact" className="relative pt-24 md:pt-32 pb-24 px-6 md:px-12 bg-[#050505] border-t border-white/5 overflow-hidden">
       {/* Background Image & Effects - Liquid Glass Version */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-5%] right-[-5%] w-[800px] h-[800px] bg-primary/[0.15] rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '8s' }} />
-        <div className="absolute bottom-[-15%] left-[-10%] w-[700px] h-[700px] bg-accent/[0.12] rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '12s' }} />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(101,128,225,0.08),transparent_50%)]" />
+        <div className="absolute top-[-5%] right-[-5%] w-[800px] h-[800px] bg-primary/20 rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute bottom-[-15%] left-[-10%] w-[700px] h-[700px] bg-accent/10 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '12s' }} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(101,128,225,0.05),transparent_50%)]" />
       </div>
 
-      {/* Dynamic light following mouse - Adapted for Light Background */}
+      {/* Dynamic light following mouse - Adapted for Dark Background */}
       {isMounted && (
         <motion.div
           style={{ x: springX, y: springY }}
-          className="fixed top-0 left-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none mix-blend-multiply z-0"
+          className="fixed top-0 left-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[160px] pointer-events-none mix-blend-screen z-0 opacity-50"
         />
       )}
 
@@ -58,20 +58,20 @@ export function CTA() {
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="h-[1px] w-8 bg-primary/30" />
-            <h2 className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold text-primary/60">{t("cta.tag")}</h2>
+            <h2 className="text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold text-primary">{t("cta.tag")}</h2>
             <div className="h-[1px] w-8 bg-primary/30" />
           </div>
 
-          <h3 className="text-4xl md:text-6xl lg:text-7xl font-display font-light tracking-tight text-neutral-900 mb-8 max-w-4xl leading-[1.1]">
+          <h3 className="text-4xl md:text-6xl lg:text-7xl font-display font-light tracking-tight text-white mb-8 max-w-4xl leading-[1.1]">
             {t("cta.title")}
           </h3>
 
-          <p className="text-lg md:text-xl text-neutral-600 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
             {t("cta.desc")}
           </p>
 
           <div className="relative group flex flex-col items-center w-full">
-            <div className="absolute -inset-4 bg-primary/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            <div className="absolute -inset-4 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
             <a
               href={whatsappUrl}
@@ -83,7 +83,7 @@ export function CTA() {
               <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </a>
 
-            <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-medium text-center">{t("cta.footer")}</p>
+            <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-white/40 font-medium text-center">{t("cta.footer")}</p>
           </div>
         </motion.div>
       </div>
