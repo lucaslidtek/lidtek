@@ -62,11 +62,15 @@ export function CTA() {
             <div className="h-[1px] w-8 bg-primary/30" />
           </div>
 
-          <h3 className="text-4xl md:text-6xl lg:text-7xl font-display font-light tracking-tight text-neutral-900 mb-10 max-w-4xl leading-[1.1]">
+          <h3 className="text-4xl md:text-6xl lg:text-7xl font-display font-light tracking-tight text-neutral-900 mb-8 max-w-4xl leading-[1.1]">
             {t("cta.title")}
           </h3>
 
-          <div className="relative group">
+          <p className="text-lg md:text-xl text-neutral-600 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+            {t("cta.desc")}
+          </p>
+
+          <div className="relative group flex flex-col items-center w-full">
             <div className="absolute -inset-4 bg-primary/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
             <a
@@ -79,7 +83,7 @@ export function CTA() {
               <div className="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </a>
 
-            <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-medium">{t("cta.footer")}</p>
+            <p className="mt-8 text-[10px] uppercase tracking-[0.2em] text-neutral-400 font-medium text-center">{t("cta.footer")}</p>
           </div>
         </motion.div>
       </div>

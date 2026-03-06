@@ -95,10 +95,10 @@ export function Hero() {
 
       <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col items-start gap-6 md:gap-8">
         <div
-          className="flex items-center gap-3 border border-white/10 rounded-full px-4 py-1.5 liquid-glass-dark"
+          className="flex items-center gap-2 sm:gap-3 border border-white/10 rounded-full px-3 py-1 sm:px-4 sm:py-1.5 liquid-glass-dark"
         >
-          <div className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_hsl(var(--primary))]" />
-          <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium text-white/80">{t("hero.tag")}</span>
+          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_hsl(var(--primary))] shrink-0" />
+          <span className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium text-white/80 whitespace-nowrap overflow-hidden text-ellipsis">{t("hero.tag")}</span>
         </div>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-normal leading-[1.1] tracking-tight text-white max-w-5xl">
