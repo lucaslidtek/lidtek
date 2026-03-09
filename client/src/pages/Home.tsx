@@ -11,8 +11,6 @@ const Manifesto = lazy(() => import("@/components/sections/Manifesto").then(m =>
 const Problem = lazy(() => import("@/components/sections/Problem").then(m => ({ default: m.Problem })));
 const Approach = lazy(() => import("@/components/sections/Approach").then(m => ({ default: m.Approach })));
 const Model = lazy(() => import("@/components/sections/Model").then(m => ({ default: m.Model })));
-const Operations = lazy(() => import("@/components/sections/Operations").then(m => ({ default: m.Operations })));
-const IdealClient = lazy(() => import("@/components/sections/IdealClient").then(m => ({ default: m.IdealClient })));
 const Testimonials = lazy(() => import("@/components/sections/Testimonials").then(m => ({ default: m.Testimonials })));
 const CTA = lazy(() => import("@/components/sections/CTA").then(m => ({ default: m.CTA })));
 
@@ -47,8 +45,6 @@ export default function Home() {
           <Manifesto />
           <Approach />
           <Model />
-          <Operations />
-          <IdealClient />
           <Testimonials />
 
           <div id="footer-container" className="bg-[#050505] relative overflow-hidden">
@@ -91,11 +87,11 @@ export default function Home() {
                       </li>
                       <li>
                         <a
-                          href="#model"
-                          onClick={(e) => handleScrollTo(e, "#model")}
+                          href="#testimonials"
+                          onClick={(e) => handleScrollTo(e, "#testimonials")}
                           className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider"
                         >
-                          {t("nav.model")}
+                          {t("nav.clients")}
                         </a>
                       </li>
                     </ul>

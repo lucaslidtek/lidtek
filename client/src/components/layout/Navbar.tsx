@@ -9,7 +9,7 @@ export function Navbar() {
   const { language, setLanguage, t } = useLanguage();
   const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const whatsappText = language === 'pt' 
+  const whatsappText = language === 'pt'
     ? "Olá Rafael, gostaria de entender melhor como a Lidtek pode atuar como nosso departamento de tecnologia."
     : "Hello Rafael, I would like to understand better how Lidtek can act as our technology department.";
   const whatsappUrl = `https://wa.me/553496840966?text=${encodeURIComponent(whatsappText)}`;
@@ -40,21 +40,21 @@ export function Navbar() {
       const manifestoSection = document.getElementById('manifesto');
       const modelSection = document.getElementById('model');
       const approachSection = document.getElementById('approach');
-      
+
       const manifestoTop = manifestoSection?.offsetTop || 0;
       const modelTop = modelSection?.offsetTop || 0;
       const approachTop = approachSection?.offsetTop || 0;
-      
+
       const threshold = 80;
 
       if (scrollY < (manifestoTop - threshold)) {
-        setIsDark(true); 
+        setIsDark(true);
       } else if (scrollY < (approachTop - threshold)) {
-        setIsDark(false); 
+        setIsDark(false);
       } else if (scrollY < (modelTop - threshold)) {
-        setIsDark(true); 
+        setIsDark(true);
       } else {
-        setIsDark(false); 
+        setIsDark(false);
       }
     };
 
@@ -84,18 +84,18 @@ export function Navbar() {
   const navClass = isDark ? "text-white" : "text-black";
   const borderClass = isDark ? "border-white/20" : "border-black/20";
   const logoClass = isDark ? "" : "invert";
-  const glassClass = isDark 
-    ? "bg-black/40 backdrop-blur-[32px] saturate-[180%] border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]" 
+  const glassClass = isDark
+    ? "bg-black/40 backdrop-blur-[32px] saturate-[180%] border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
     : "bg-white/70 backdrop-blur-[32px] saturate-[180%] border-black/5 shadow-[0_8px_32px_rgba(0,0,0,0.1)]";
 
   return (
     <>
-      <nav 
+      <nav
         className={`fixed top-4 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-[100] px-6 py-2.5 md:py-3 md:px-8 flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] rounded-full border backdrop-blur-md ${navClass} ${glassClass}`}
       >
-        <Link 
-          href="/" 
-          className="z-50 cursor-pointer p-2 transition-transform active:scale-95" 
+        <Link
+          href="/"
+          className="z-50 cursor-pointer p-2 transition-transform active:scale-95"
           onClick={(e) => {
             setIsMenuOpen(false);
             if (window.location.pathname === '/') {
@@ -106,38 +106,38 @@ export function Navbar() {
         >
           <img src={logoWhite} alt="Lidtek Logo" className={`h-5 md:h-7 w-auto transition-all duration-500 ${logoClass}`} />
         </Link>
-        
+
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-10 font-medium text-[13px] z-50">
           <div className="flex items-center gap-8">
-            <a 
-              href="#manifesto" 
+            <a
+              href="#manifesto"
               onClick={(e) => handleScrollTo(e, "#manifesto")}
               className="hover:text-primary transition-colors uppercase tracking-[0.15em]"
             >
               {t("nav.manifesto")}
             </a>
-            <a 
-              href="#approach" 
+            <a
+              href="#approach"
               onClick={(e) => handleScrollTo(e, "#approach")}
               className="hover:text-primary transition-colors uppercase tracking-[0.15em]"
             >
               {t("nav.approach")}
             </a>
-            <a 
-              href="#model" 
-              onClick={(e) => handleScrollTo(e, "#model")}
+            <a
+              href="#testimonials"
+              onClick={(e) => handleScrollTo(e, "#testimonials")}
               className="hover:text-primary transition-colors uppercase tracking-[0.15em]"
             >
-              {t("nav.model")}
+              {t("nav.clients")}
             </a>
           </div>
-          
+
           <div className="flex items-center gap-6">
             <div className={`flex items-center gap-2 border ${borderClass} rounded-full px-3 py-1.5 transition-colors duration-500 ${isDark ? 'bg-white/10' : 'bg-black/5'}`}>
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <button 
+                  <button
                     onClick={() => setLanguage("pt")}
                     className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "pt" ? (isDark ? "text-white font-black" : "text-primary font-black") : (isDark ? "text-white/30 hover:text-white" : "text-black/40 hover:text-black")}`}
                     aria-label="Mudar idioma para Português"
@@ -152,7 +152,7 @@ export function Navbar() {
               <div className={`w-[1px] h-2 ${isDark ? "bg-white/30" : "bg-black/20"}`} />
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <button 
+                  <button
                     onClick={() => setLanguage("en")}
                     className={`text-[10px] cursor-pointer uppercase tracking-tighter transition-all ${language === "en" ? (isDark ? "text-white font-black" : "text-primary font-black") : (isDark ? "text-white/30 hover:text-white" : "text-black/40 hover:text-black")}`}
                     aria-label="Change language to English"
@@ -166,7 +166,7 @@ export function Navbar() {
               </Tooltip>
             </div>
 
-            <a 
+            <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -178,7 +178,7 @@ export function Navbar() {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button 
+        <button
           className="md:hidden z-50 p-2 flex items-center justify-center w-10 h-10 rounded-full transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
@@ -194,7 +194,7 @@ export function Navbar() {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -206,7 +206,7 @@ export function Navbar() {
                 {[
                   { href: "#manifesto", label: t("nav.manifesto") },
                   { href: "#approach", label: t("nav.approach") },
-                  { href: "#model", label: t("nav.model") }
+                  { href: "#testimonials", label: t("nav.clients") }
                 ].map((item, i) => (
                   <motion.a
                     key={item.href}
@@ -221,8 +221,8 @@ export function Navbar() {
                   </motion.a>
                 ))}
               </div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
@@ -233,7 +233,7 @@ export function Navbar() {
                 <button onClick={() => { setLanguage("en"); setIsMenuOpen(false); }} className={`text-[11px] tracking-widest uppercase ${language === "en" ? "text-primary font-bold" : "text-white/40"}`} aria-label="Change language to English">English</button>
               </motion.div>
 
-              <motion.a 
+              <motion.a
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}

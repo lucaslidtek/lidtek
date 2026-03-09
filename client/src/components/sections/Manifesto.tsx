@@ -30,48 +30,7 @@ export function Manifesto() {
           </motion.p>
         </div>
 
-        {/* Meio - Layout dos Cards lado a lado */}
-        <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-30px" }}
-            transition={{
-              duration: 0.8,
-              delay: 0.1
-            }}
-            className="p-8 md:p-10 liquid-glass-dark rounded-[1.5rem] md:rounded-[2rem] border border-primary/5 relative overflow-hidden group flex flex-col h-full justify-between"
-          >
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="flex items-center gap-3 mb-6 relative z-10">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary/80" />
-              <h3 className="text-xl md:text-2xl font-medium text-white/90">{t("manifesto.precision.title")}</h3>
-            </div>
-            <p className="text-base md:text-lg text-white/60 leading-relaxed font-sans relative z-10">
-              {t("manifesto.precision.desc")}
-            </p>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-30px" }}
-            transition={{
-              duration: 0.8,
-              delay: 0.3
-            }}
-            className="p-8 md:p-10 liquid-glass-dark rounded-[1.5rem] md:rounded-[2rem] border border-primary/5 relative overflow-hidden group flex flex-col h-full justify-between"
-          >
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="flex items-center gap-3 mb-6 relative z-10">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary/80" />
-              <h3 className="text-xl md:text-2xl font-medium text-white/90">{t("manifesto.silent.title")}</h3>
-            </div>
-            <p className="text-base md:text-lg text-white/60 leading-relaxed font-sans relative z-10">
-              {t("manifesto.silent.desc")}
-            </p>
-          </motion.div>
-        </div>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -88,44 +47,7 @@ export function Manifesto() {
           </p>
         </motion.div>
 
-        {/* Merged History Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-20px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mt-16 md:mt-24 pt-12 md:pt-16 border-t border-primary/10 flex flex-col justify-center relative items-center text-center w-full"
-        >
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-[1px] bg-primary/30 blur-[0.5px]" />
 
-          <div className="flex flex-col items-center w-full max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-3 mb-8 w-full">
-              <div className="w-8 h-[1px] bg-primary/40" />
-              <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary/80">
-                {t("history.tag")}
-              </h2>
-              <div className="w-8 h-[1px] bg-primary/40" />
-            </div>
-
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-light text-white mb-8 tracking-tight text-balance">
-              {t("history.title")}
-            </h3>
-
-            <div className="p-6 sm:p-8 md:p-12 rounded-[2rem] bg-white/[0.02] border border-white/10 backdrop-blur-xl relative group overflow-hidden w-full">
-              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-              <p className="text-base sm:text-lg md:text-xl text-white/70 font-light leading-relaxed mb-8 md:mb-10 max-w-2xl mx-auto text-balance">
-                {t("history.desc")}
-              </p>
-
-              <div className="h-[1px] w-12 bg-primary/30 mx-auto mb-6 md:mb-8" />
-
-              <p className="text-xs sm:text-sm md:text-base text-primary/80 italic font-serif tracking-wide max-w-xl mx-auto text-balance">
-                {t("history.footer")}
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section >
   );

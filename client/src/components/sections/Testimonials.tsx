@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/use-language";
-import { Quote } from "lucide-react";
+import { Quote, Building2 } from "lucide-react";
 
 export function Testimonials() {
     const { t } = useLanguage();
@@ -63,17 +63,25 @@ export function Testimonials() {
                             </blockquote>
 
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-10 border-t border-black/5">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center text-primary font-display text-xl">
-                                        {t("testimonials.quote1.author").charAt(0)}
+                                <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+                                    {/* Placeholder para Logo do Cliente */}
+                                    <div className="w-24 h-12 md:w-32 md:h-16 rounded-xl bg-black/5 flex items-center justify-center border border-black/10">
+                                        <Building2 className="w-6 h-6 text-black/20" />
+                                        <span className="ml-2 text-xs text-black/30 font-semibold uppercase tracking-widest">Logo</span>
                                     </div>
-                                    <div>
-                                        <cite className="not-italic block text-lg font-medium text-black">
-                                            {t("testimonials.quote1.author")}
-                                        </cite>
-                                        <span className="text-xs text-black/40 uppercase tracking-widest font-semibold">
-                                            {t("testimonials.quote1.role")}
-                                        </span>
+                                    <div className="hidden sm:block w-[1px] h-10 bg-black/10" />
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/20 flex items-center justify-center text-primary font-display text-lg">
+                                            {t("testimonials.quote1.author").charAt(0)}
+                                        </div>
+                                        <div>
+                                            <cite className="not-italic block text-base md:text-lg font-medium text-black">
+                                                {t("testimonials.quote1.author")}
+                                            </cite>
+                                            <span className="text-[10px] md:text-xs text-black/40 uppercase tracking-widest font-semibold">
+                                                {t("testimonials.quote1.role")}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
 

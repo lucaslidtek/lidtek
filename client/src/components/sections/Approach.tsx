@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Code, Database, Shield, Cpu } from "lucide-react";
+import { CheckCircle2, Users, LayoutTemplate } from "lucide-react";
 import { useLanguage } from "@/hooks/use-language";
 import { useRef } from "react";
 
@@ -21,35 +21,19 @@ export function Approach() {
   const y1 = useTransform(scrollYProgress, [0, 1], [-100, 100]);
   const rotate = useTransform(scrollYProgress, [0, 1], [10, -10]);
 
-  const features = [
-    {
-      icon: <Code size={32} />,
-      title: t("approach.code.title"),
-      description: t("approach.code.desc")
-    },
-    {
-      icon: <Database size={32} />,
-      title: t("approach.data.title"),
-      description: t("approach.data.desc")
-    },
-    {
-      icon: <Shield size={32} />,
-      title: t("approach.security.title"),
-      description: t("approach.security.desc")
-    },
-    {
-      icon: <Cpu size={32} />,
-      title: t("approach.perf.title"),
-      description: t("approach.perf.desc")
-    }
+  const whoItems = [
+    t("approach.who.item1"),
+    t("approach.who.item2"),
+    t("approach.who.item3"),
+    t("approach.who.item4"),
+    t("approach.who.item5"),
   ];
 
   return (
-    <section id="approach" ref={ref} className="py-32 px-6 md:px-12 bg-[#F8F9FA] text-black relative border-t border-black/10 overflow-hidden">
+    <section id="approach" ref={ref} className="py-24 md:py-32 px-6 md:px-12 bg-[#F8F9FA] text-black relative border-t border-black/10 overflow-hidden">
       {/* Liquid Glass Background Elements */}
       <div className="absolute top-[-5%] right-[-5%] w-[800px] h-[800px] bg-primary/[0.15] rounded-full blur-[100px] pointer-events-none animate-pulse" style={{ animationDuration: '8s' }} />
       <div className="absolute bottom-[-15%] left-[-10%] w-[700px] h-[700px] bg-accent/[0.12] rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDuration: '12s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(101,128,225,0.08),transparent_50%)] pointer-events-none" />
 
       {/* Logo Icon as background element for Liquid Glass effect */}
       <motion.div
@@ -59,45 +43,69 @@ export function Approach() {
         <LogoIcon className="w-full h-full" />
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        className="absolute bottom-0 right-[5%] w-[500px] h-[500px] text-black/[0.03] pointer-events-none z-0"
-      >
-        <LogoIcon className="w-full h-full rotate-[15deg]" />
-      </motion.div>
-
       <div className="max-w-7xl mx-auto w-full relative z-10">
-        <div className="mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <div className="relative">
-            <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-6 md:mb-8 flex items-center gap-3">
-              <div className="w-8 h-[1px] bg-primary/40" />
-              {t("approach.tag")}
-            </h2>
-            <h3 className="text-4xl md:text-6xl font-display font-light text-black max-w-2xl text-balance relative z-10">
-              {t("approach.title")}
-            </h3>
+
+        {/* Superior part: A Lidtek é para quem? */}
+        <div className="mb-20">
+          <h2 className="text-3xl md:text-5xl font-display font-light text-black mb-10 tracking-tight">
+            {t("approach.who.title")}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+            {whoItems.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="flex items-start gap-4 p-4 rounded-xl hover:bg-black/[0.02] transition-colors"
+              >
+                <CheckCircle2 className="text-primary shrink-0 mt-0.5" size={24} />
+                <span className="text-black/80 text-lg font-sans leading-relaxed">{item}</span>
+              </motion.div>
+            ))}
           </div>
-          <p className="text-black/60 max-w-md font-sans text-lg">
-            {t("approach.desc")}
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {features.map((feature, i) => (
-            <div
-              key={i}
-              className="p-8 md:p-10 bg-white/40 backdrop-blur-[32px] saturate-[180%] border border-white/40 group rounded-[1.5rem] md:rounded-[2rem] relative transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)]"
+        <div className="w-full h-px bg-black/10 mb-20" />
+
+        {/* Inferior part: Nossa Atuação */}
+        <div>
+          <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-8 flex items-center gap-3">
+            <div className="w-8 h-[1px] bg-primary/40" />
+            {t("approach.what.title")}
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="p-8 md:p-12 bg-white/60 backdrop-blur-xl border border-white/40 rounded-[2rem] shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 group"
             >
-              {/* Focal light spot under the card */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform duration-500">
+                <Users size={32} />
+              </div>
+              <h3 className="text-2xl font-medium text-black mb-4">{t("approach.what.item1.title")}</h3>
+              <p className="text-black/60 text-lg leading-relaxed">{t("approach.what.item1.desc")}</p>
+            </motion.div>
 
-              <div className="text-primary md:text-black/30 md:group-hover:text-primary transition-colors duration-500 mb-8 relative z-10">{feature.icon}</div>
-              <h4 className="text-xl font-medium text-black mb-4 relative z-10">{feature.title}</h4>
-              <p className="text-black/60 text-sm leading-relaxed font-sans relative z-10">{feature.description}</p>
-            </div>
-          ))}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="p-8 md:p-12 bg-white/60 backdrop-blur-xl border border-white/40 rounded-[2rem] shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 group"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform duration-500">
+                <LayoutTemplate size={32} />
+              </div>
+              <h3 className="text-2xl font-medium text-black mb-4">{t("approach.what.item2.title")}</h3>
+              <p className="text-black/60 text-lg leading-relaxed">{t("approach.what.item2.desc")}</p>
+            </motion.div>
+          </div>
         </div>
+
       </div>
     </section>
   );
