@@ -66,9 +66,11 @@ export function CTA() {
             {t("cta.title")}
           </h3>
 
-          <p className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-            {t("cta.desc")}
-          </p>
+          {t("cta.desc") && (
+            <p className="text-lg md:text-xl text-white/60 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+              {t("cta.desc")}
+            </p>
+          )}
 
           <div className="relative group flex flex-col items-center w-full">
             <div className="absolute -inset-4 bg-primary/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />

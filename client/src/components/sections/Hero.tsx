@@ -103,29 +103,32 @@ export function Hero() {
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-normal leading-[1.1] tracking-tight text-white max-w-5xl">
           <div className="flex flex-col items-start overflow-hidden">
-            <motion.span
+            <motion.div
               initial={{ y: 20 }}
               animate={{ y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+              className="flex flex-wrap items-center gap-x-3 md:gap-x-4"
             >
-              {t("hero.title1")}
-            </motion.span>
-            <motion.span
-              animate={{ filter: "blur(0px)" }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
-              className="italic text-white/60 font-serif"
-            >
-              {t("hero.title1_italic")}
-            </motion.span>
+              <span>{t("hero.title1")}</span>
+              <motion.span
+                animate={{ filter: "blur(0px)" }}
+                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+                className="italic text-white/60 font-serif"
+              >
+                {t("hero.title1_italic")}
+              </motion.span>
+            </motion.div>
           </div>
-          <motion.div
-            initial={{ y: 40 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-            className="flex flex-col items-start mt-4"
-          >
-            {t("hero.title2")}
-          </motion.div>
+          {t("hero.title2") && (
+            <motion.div
+              initial={{ y: 40 }}
+              animate={{ y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+              className="flex flex-col items-start mt-2 md:mt-4"
+            >
+              {t("hero.title2")}
+            </motion.div>
+          )}
         </h1>
 
         <motion.div

@@ -44,6 +44,10 @@ export function Approach() {
       </motion.div>
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
+        <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-8 flex items-center gap-3">
+          <div className="w-8 h-[1px] bg-primary/40" />
+          {t("approach.what.title")}
+        </h2>
 
         {/* Superior part: A Lidtek é para quem? */}
         <div className="mb-20">
@@ -71,10 +75,6 @@ export function Approach() {
 
         {/* Inferior part: Nossa Atuação */}
         <div>
-          <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-8 flex items-center gap-3">
-            <div className="w-8 h-[1px] bg-primary/40" />
-            {t("approach.what.title")}
-          </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
             <motion.div

@@ -9,12 +9,12 @@ export function Manifesto() {
       <div className="absolute inset-0 bg-noise opacity-[0.03] mix-blend-overlay pointer-events-none" />
       <div className="absolute top-1/2 left-1/4 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[150px] -translate-y-1/2 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto w-full flex flex-col items-center relative z-10 px-4 sm:px-0">
+      <div className="max-w-7xl mx-auto w-full flex flex-col items-start md:items-center relative z-10 px-4 sm:px-0">
 
         {/* Topo - Título Principal Centralizado */}
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 md:mb-24">
+        <div className="flex flex-col items-start md:items-center text-left md:text-center max-w-4xl mx-auto mb-16 md:mb-24">
           <h2 className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-semibold text-primary mb-8 flex items-center gap-3">
-            <div className="w-8 h-[1px] bg-primary/40" />
+            <div className="w-8 h-[1px] bg-primary/40 hidden md:block" />
             {t("manifesto.tag")}
             <div className="w-8 h-[1px] bg-primary/40" />
           </h2>
@@ -37,10 +37,10 @@ export function Manifesto() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-20px" }}
           transition={{ duration: 0.4, ease: "easeOut" }}
-          className="mt-12 md:mt-24 pt-8 md:pt-12 border-t border-primary/10 flex justify-center relative"
+          className="mt-12 md:mt-24 pt-8 md:pt-12 border-t border-primary/10 flex justify-start md:justify-center relative"
         >
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-[1px] bg-primary/30 blur-[0.5px]" />
-          <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-light text-white/80 italic text-center font-serif leading-tight drop-shadow-sm max-w-5xl mx-auto w-full px-4 text-balance">
+          <div className="absolute top-0 left-0 md:left-1/2 md:-translate-x-1/2 -translate-y-1/2 w-8 h-[1px] bg-primary/30 blur-[0.5px]" />
+          <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-light text-white/80 italic text-left md:text-center font-serif leading-tight drop-shadow-sm max-w-5xl mx-auto w-full px-4 text-balance">
             <span className="text-primary/80 mr-1">"</span>
             {t("manifesto.section_quote")}
             <span className="text-primary/80 ml-1">"</span>
