@@ -4,7 +4,6 @@ import { Link } from "wouter";
 import { Hero } from "@/components/sections/Hero";
 import { useLanguage } from "@/hooks/use-language";
 import logoWhite from "@assets/lidtek-primary-logo_white_1771959392591.png";
-import { SmoothScroll } from "@/components/ui/magic/smooth-scroll";
 
 // Lazy load sections below the fold
 const Manifesto = lazy(() => import("@/components/sections/Manifesto").then(m => ({ default: m.Manifesto })));
@@ -13,6 +12,7 @@ const Approach = lazy(() => import("@/components/sections/Approach").then(m => (
 const Model = lazy(() => import("@/components/sections/Model").then(m => ({ default: m.Model })));
 const Testimonials = lazy(() => import("@/components/sections/Testimonials").then(m => ({ default: m.Testimonials })));
 const CTA = lazy(() => import("@/components/sections/CTA").then(m => ({ default: m.CTA })));
+const SmoothScroll = lazy(() => import("@/components/ui/magic/smooth-scroll").then(m => ({ default: m.SmoothScroll })));
 
 export default function Home() {
   const { t, language } = useLanguage();
@@ -35,100 +35,102 @@ export default function Home() {
   };
 
   return (
-    <SmoothScroll>
-      <main className="min-h-screen bg-background w-full overflow-x-hidden">
-        <Navbar />
-        <Hero />
-        <Suspense fallback={<div className="h-96" />}>
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
+      <SmoothScroll>
+        <main className="min-h-screen bg-background w-full overflow-x-hidden">
+          <Navbar />
+          <Hero />
+          <Suspense fallback={<div className="h-96" />}>
 
-          <Problem />
-          <Manifesto />
-          <Approach />
-          <Model />
-          <Testimonials />
+            <Problem />
+            <Manifesto />
+            <Approach />
+            <Model />
+            <Testimonials />
 
-          <div id="footer-container" className="bg-[#050505] relative overflow-hidden">
-            <CTA />
+            <div id="footer-container" className="bg-[#050505] relative overflow-hidden">
+              <CTA />
 
 
-            <footer className="py-20 px-6 md:px-12 border-t border-white/5 relative bg-[#050505]">
-              <div className="max-w-7xl mx-auto relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                  <div className="col-span-1 md:col-span-2">
-                    <img src={logoWhite} alt="Lidtek" className="h-8 w-auto mb-6 opacity-90" loading="lazy" width="128" height="32" decoding="async" />
+              <footer className="py-20 px-6 md:px-12 border-t border-white/5 relative bg-[#050505]">
+                <div className="max-w-7xl mx-auto relative z-10">
+                  <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                    <div className="col-span-1 md:col-span-2">
+                      <img src={logoWhite} alt="Lidtek" className="h-8 w-auto mb-6 opacity-90" loading="lazy" width="128" height="32" decoding="async" />
 
-                    <p className="text-white/50 text-sm max-w-sm leading-relaxed font-sans">
-                      {language === "pt"
-                        ? "Transformamos a complexidade tecnológica em vantagem competitiva. Sua consultoria de elite para operações digitais e desenvolvimento de produto."
-                        : "We transform technological complexity into competitive advantage. Your elite consultancy for digital operations and product development."}
-                    </p>
-                  </div>
+                      <p className="text-white/50 text-sm max-w-sm leading-relaxed font-sans">
+                        {language === "pt"
+                          ? "Transformamos a complexidade tecnológica em vantagem competitiva. Sua consultoria de elite para operações digitais e desenvolvimento de produto."
+                          : "We transform technological complexity into competitive advantage. Your elite consultancy for digital operations and product development."}
+                      </p>
+                    </div>
 
-                  <div>
-                    <h4 className="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">{t("footer.menu")}</h4>
-                    <ul className="space-y-4">
-                      <li>
-                        <a
-                          href="#manifesto"
-                          onClick={(e) => handleScrollTo(e, "#manifesto")}
-                          className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider"
-                        >
-                          {t("nav.manifesto")}
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#approach"
-                          onClick={(e) => handleScrollTo(e, "#approach")}
-                          className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider"
-                        >
-                          {t("nav.approach")}
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#testimonials"
-                          onClick={(e) => handleScrollTo(e, "#testimonials")}
-                          className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider"
-                        >
-                          {t("nav.clients")}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                    <div>
+                      <h4 className="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">{t("footer.menu")}</h4>
+                      <ul className="space-y-4">
+                        <li>
+                          <a
+                            href="#manifesto"
+                            onClick={(e) => handleScrollTo(e, "#manifesto")}
+                            className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider"
+                          >
+                            {t("nav.manifesto")}
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#approach"
+                            onClick={(e) => handleScrollTo(e, "#approach")}
+                            className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider"
+                          >
+                            {t("nav.approach")}
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="#testimonials"
+                            onClick={(e) => handleScrollTo(e, "#testimonials")}
+                            className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider"
+                          >
+                            {t("nav.clients")}
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
 
-                  <div>
-                    <h4 className="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">{t("footer.social")}</h4>
-                    <ul className="space-y-4">
-                      <li><a href="https://linkedin.com/company/lidtek" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider" aria-label="Visitar página do LinkedIn da Lidtek">LinkedIn</a></li>
-                      <li><a href="https://instagram.com/lidtek" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider" aria-label="Visitar perfil do Instagram da Lidtek">Instagram</a></li>
-                      <li><a href="https://wa.me/553496840966" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider" aria-label="Entrar em contato via WhatsApp">WhatsApp</a></li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-                  <div className="text-white/50 text-[10px] uppercase tracking-[0.2em] font-sans text-center md:text-left">
-                    © {new Date().getFullYear()} Lidtek. {language === "pt" ? "Todos os direitos reservados." : "All rights reserved."}
-                    <div className="flex gap-4 justify-center md:hidden mt-4">
-                      <Link href="/privacy-policy" className="text-white/80 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-privacy-mobile">{t("footer.privacy")}</Link>
-                      <Link href="/terms-of-service" className="text-white/80 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-terms-mobile">{t("footer.terms")}</Link>
+                    <div>
+                      <h4 className="text-white text-xs uppercase tracking-[0.2em] font-bold mb-6">{t("footer.social")}</h4>
+                      <ul className="space-y-4">
+                        <li><a href="https://linkedin.com/company/lidtek" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider" aria-label="Visitar página do LinkedIn da Lidtek">LinkedIn</a></li>
+                        <li><a href="https://instagram.com/lidtek" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider" aria-label="Visitar perfil do Instagram da Lidtek">Instagram</a></li>
+                        <li><a href="https://wa.me/553496840966" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-wider" aria-label="Entrar em contato via WhatsApp">WhatsApp</a></li>
+                      </ul>
                     </div>
                   </div>
-                  <div className="hidden md:flex gap-8">
-                    <Link href="/privacy-policy" className="text-white/50 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-privacy">{t("footer.privacy")}</Link>
-                    <Link href="/terms-of-service" className="text-white/50 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-terms">{t("footer.terms")}</Link>
+
+                  <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div className="text-white/50 text-[10px] uppercase tracking-[0.2em] font-sans text-center md:text-left">
+                      © {new Date().getFullYear()} Lidtek. {language === "pt" ? "Todos os direitos reservados." : "All rights reserved."}
+                      <div className="flex gap-4 justify-center md:hidden mt-4">
+                        <Link href="/privacy-policy" className="text-white/80 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-privacy-mobile">{t("footer.privacy")}</Link>
+                        <Link href="/terms-of-service" className="text-white/80 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-terms-mobile">{t("footer.terms")}</Link>
+                      </div>
+                    </div>
+                    <div className="hidden md:flex gap-8">
+                      <Link href="/privacy-policy" className="text-white/50 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-privacy">{t("footer.privacy")}</Link>
+                      <Link href="/terms-of-service" className="text-white/50 hover:text-white transition-colors text-[10px] uppercase tracking-[0.2em]" data-testid="link-terms">{t("footer.terms")}</Link>
+                    </div>
+
                   </div>
-
                 </div>
-              </div>
 
-              {/* Subtle background glow */}
-              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-50" />
-            </footer>
-          </div>
-        </Suspense>
-      </main>
-    </SmoothScroll>
+                {/* Subtle background glow */}
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent opacity-50" />
+              </footer>
+            </div>
+          </Suspense>
+        </main>
+      </SmoothScroll>
+    </Suspense>
   );
 }

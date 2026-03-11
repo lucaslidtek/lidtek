@@ -141,12 +141,12 @@ export function Testimonials() {
                         {/* Row 1 - Left to Right */}
                         <div className="flex whitespace-nowrap overflow-hidden">
                             <motion.div 
-                                className="flex gap-6 w-max"
+                                className="flex gap-4 md:gap-6 w-max"
                                 animate={{ x: ["0%", "-50%"] }}
                                 transition={{ repeat: Infinity, ease: "linear", duration: 35 }}
                             >
                                 {logosRow1.map((logo, i) => (
-                                    <div key={`row1-${i}`} className="flex items-center justify-center px-10 h-20 min-w-[160px] group cursor-default">
+                                    <div key={`row1-${i}`} className="flex items-center justify-center px-4 md:px-10 h-20 min-w-[80px] md:min-w-[160px] group cursor-default">
                                         <img 
                                             src={logo.src} 
                                             alt={logo.name}
@@ -161,12 +161,12 @@ export function Testimonials() {
                         {/* Row 2 - Right to Left */}
                         <div className="flex whitespace-nowrap overflow-hidden">
                             <motion.div 
-                                className="flex gap-6 w-max"
+                                className="flex gap-4 md:gap-6 w-max"
                                 animate={{ x: ["-50%", "0%"] }}
                                 transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
                             >
                                 {logosRow2.map((logo, i) => (
-                                    <div key={`row2-${i}`} className="flex items-center justify-center px-10 h-20 min-w-[160px] group cursor-default">
+                                    <div key={`row2-${i}`} className="flex items-center justify-center px-4 md:px-10 h-20 min-w-[80px] md:min-w-[160px] group cursor-default">
                                         <img 
                                             src={logo.src} 
                                             alt={logo.name}
@@ -181,12 +181,12 @@ export function Testimonials() {
                         {/* Row 3 - Left to Right (Hidden on mobile for space optimization) */}
                         <div className="hidden md:flex whitespace-nowrap overflow-hidden">
                             <motion.div 
-                                className="flex gap-6 w-max"
+                                className="flex gap-4 md:gap-6 w-max"
                                 animate={{ x: ["0%", "-50%"] }}
                                 transition={{ repeat: Infinity, ease: "linear", duration: 30 }}
                             >
                                 {logosRow3.map((logo, i) => (
-                                    <div key={`row3-${i}`} className="flex items-center justify-center px-10 h-20 min-w-[160px] group cursor-default">
+                                    <div key={`row3-${i}`} className="flex items-center justify-center px-4 md:px-10 h-20 min-w-[80px] md:min-w-[160px] group cursor-default">
                                         <img 
                                             src={logo.src} 
                                             alt={logo.name}

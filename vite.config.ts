@@ -70,6 +70,7 @@ export default defineConfig({
         manualChunks: {
           'framer-motion': ['framer-motion'],
           'lucide': ['lucide-react'],
+          'lenis': ['lenis'],
         }
       }
     }

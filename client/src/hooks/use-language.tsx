@@ -128,7 +128,7 @@ const translations = {
     "history.footer": "Dois históricos. Uma estrutura. Um compromisso: tecnologia que sustenta quem está crescendo.",
     "testimonials.tag": "Clientes",
     "testimonials.title": "Voz de quem confia na nossa estrutura",
-    "testimonials.quote1.text": "Trabalhar com a RLB Sistema, tem sido uma experiência muito satisfatória. A equipe demonstra elevado nível de profissionalismo, agilidade e compromisso com resultados, sempre buscando soluções que agregam valor às nossas operações. Sem dúvida, é uma parceria estratégica para o fortalecimento e evolução dos nossos processos tecnológicos.",
+    "testimonials.quote1.text": "Trabalhar com a Lidtek, tem sido uma experiência muito satisfatória. A equipe demonstra elevado nível de profissionalismo, agilidade e compromisso com resultados, sempre buscando soluções que agregam valor às nossas operações. Sem dúvida, é uma parceria estratégica para o fortalecimento e evolução dos nossos processos tecnológicos.",
     "testimonials.quote1.author": "Juliana Cobo",
     "testimonials.quote1.role": "Diretora Financeira - Construtora Italiana"
   },
@@ -251,7 +251,7 @@ const translations = {
     "history.footer": "Two histories. One structure. One commitment: technology that sustains those who are growing.",
     "testimonials.tag": "Testimonials",
     "testimonials.title": "Voices of those who trust our structure",
-    "testimonials.quote1.text": "Working with RLB Sistema has been a very satisfying experience. The team demonstrates a high level of professionalism, agility, and commitment to results, always seeking solutions that add value to our operations. Undoubtedly, it is a strategic partnership for the strengthening and evolution of our technological processes.",
+    "testimonials.quote1.text": "Working with Lidtek has been a very satisfying experience. The team demonstrates a high level of professionalism, agility, and commitment to results, always seeking solutions that add value to our operations. Undoubtedly, it is a strategic partnership for the strengthening and evolution of our technological processes.",
     "testimonials.quote1.author": "Juliana Cobo",
     "testimonials.quote1.role": "Financial Director - Construtora Italiana"
   }
