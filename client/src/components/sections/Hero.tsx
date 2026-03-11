@@ -101,35 +101,42 @@ export function Hero() {
           <span className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium text-white/80 whitespace-nowrap overflow-hidden text-ellipsis">{t("hero.tag")}</span>
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-normal leading-[1.1] tracking-tight text-white max-w-5xl">
-          <div className="flex flex-col items-start overflow-hidden">
-            <motion.div
-              initial={{ y: 20 }}
-              animate={{ y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-              className="flex flex-wrap items-center gap-x-3 md:gap-x-4"
+        <h1 className="text-[clamp(1.2rem,5.5vw,4.5rem)] font-display font-normal leading-[1.1] tracking-tight text-white max-w-[100vw]">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            className="block whitespace-nowrap overflow-visible"
+          >
+            <span>{t("hero.title1")} </span>
+            <motion.span
+              animate={{ filter: "blur(0px)" }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+              className="italic text-white/60 font-serif pr-1 md:pr-4"
             >
-              <span>{t("hero.title1")}</span>
-              <motion.span
-                animate={{ filter: "blur(0px)" }}
-                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
-                className="italic text-white/60 font-serif"
-              >
-                {t("hero.title1_italic")}
-              </motion.span>
-            </motion.div>
-          </div>
+              {t("hero.title1_italic")}
+            </motion.span>
+          </motion.div>
           {t("hero.title2") && (
             <motion.div
-              initial={{ y: 40 }}
-              animate={{ y: 0 }}
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-              className="flex flex-col items-start mt-2 md:mt-4"
+              className="block mt-2 md:mt-4 whitespace-nowrap overflow-visible"
             >
               {t("hero.title2")}
             </motion.div>
           )}
         </h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="text-sm sm:text-lg md:text-xl text-white/70 max-w-3xl mt-4 md:mt-6 font-light leading-relaxed"
+        >
+          {t("hero.desc")}
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0 }}

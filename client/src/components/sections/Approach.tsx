@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { CheckCircle2, Users, LayoutTemplate } from "lucide-react";
 import { useLanguage } from "@/hooks/use-language";
-import { useRef } from "react";
+import { useState, useRef } from "react";
+import { Users, ServerCrash, Wrench, BrainCircuit, RotateCw } from "lucide-react";
 
 const LogoIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 1080 942" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
@@ -9,6 +9,56 @@ const LogoIcon = ({ className }: { className?: string }) => (
     <path d="M537.071 255.669C540.273 258.871 545.467 258.866 548.663 255.658L800.908 2.42914C806.062 -2.7451 814.899 0.905115 814.899 8.20842L814.899 157.826C814.899 160.046 813.997 162.172 812.4 163.715L578.529 389.735C573.234 394.852 577.198 402.538 584.561 402.538L1072.15 402.538C1076.68 402.538 1080 407.479 1080 412.002L1080 530.585C1080 535.108 1075.79 539.321 1071.26 539.321L660.528 539.321C658.356 539.321 656.821 537.911 655.285 536.376L283.782 164.871C282.246 163.335 281.384 161.253 281.384 159.081L281.384 19.7508C281.384 12.4552 290.204 8.80153 295.363 13.9603L537.071 255.669Z" fill="currentColor" />
   </svg>
 );
+
+const ApproachCard = ({ card, idx, activeCard, setActiveCard }: any) => {
+  const isFlipped = activeCard === idx;
+
+  return (
+    <div 
+      className="group relative min-h-[300px] w-full cursor-pointer h-full"
+      style={{ perspective: 1000 }}
+      onMouseEnter={() => setActiveCard(idx)}
+      onMouseLeave={() => setActiveCard(null)}
+      onClick={() => setActiveCard(isFlipped ? null : idx)}
+    >
+      <motion.div
+        className="w-full h-full relative"
+        initial={false}
+        animate={{ rotateY: isFlipped ? 180 : 0 }}
+        transition={{ duration: 0.6, type: "spring", stiffness: 260, damping: 20 }}
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        {/* Front */}
+        <div 
+          className="absolute inset-0 bg-white/40 backdrop-blur-xl border border-white/40 rounded-[2rem] p-6 lg:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.05)] transition-shadow flex flex-col justify-center"
+          style={{ backfaceVisibility: "hidden" }}
+        >
+          <div className="flex items-center gap-4 mb-4 lg:mb-6">
+            <div className={`w-12 h-12 lg:w-14 lg:h-14 rounded-2xl ${card.iconBgClass} flex items-center justify-center shrink-0`}>
+                <card.icon className={`${card.iconColorClass}`} size={24} />
+            </div>
+            <h3 className="text-xl lg:text-2xl font-medium text-black">{card.title}</h3>
+          </div>
+          <p className="text-black/60 text-base lg:text-lg leading-relaxed">{card.desc}</p>
+          
+          <div className="mt-auto flex items-center gap-2 text-primary/60 md:hidden text-sm font-medium">
+             <RotateCw size={14} />
+             <span>Gire para ver a solução</span>
+          </div>
+        </div>
+
+        {/* Back */}
+        <div 
+          className={`absolute inset-0 rounded-[2rem] p-6 lg:p-8 shadow-xl flex flex-col justify-center ${card.bgClass}`}
+          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+        >
+          <h3 className="text-xl lg:text-2xl font-medium mb-3 lg:mb-4 text-white">{card.hoverTitle}</h3>
+          <p className="text-base lg:text-lg leading-relaxed text-white/90">{card.hoverDesc}</p>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
 
 export function Approach() {
   const { t } = useLanguage();
@@ -21,12 +71,49 @@ export function Approach() {
   const y1 = useTransform(scrollYProgress, [0, 1], [-100, 100]);
   const rotate = useTransform(scrollYProgress, [0, 1], [10, -10]);
 
-  const whoItems = [
-    t("approach.who.item1"),
-    t("approach.who.item2"),
-    t("approach.who.item3"),
-    t("approach.who.item4"),
-    t("approach.who.item5"),
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+
+  const cards = [
+    {
+      icon: ServerCrash,
+      title: t("approach.who.card1.title"),
+      desc: t("approach.who.card1.desc"),
+      hoverTitle: t("approach.who.card1.hover_title"),
+      hoverDesc: t("approach.who.card1.hover_desc"),
+      bgClass: "bg-primary text-white",
+      iconBgClass: "bg-primary/20",
+      iconColorClass: "text-primary"
+    },
+    {
+      icon: Wrench,
+      title: t("approach.who.card2.title"),
+      desc: t("approach.who.card2.desc"),
+      hoverTitle: t("approach.who.card2.hover_title"),
+      hoverDesc: t("approach.who.card2.hover_desc"),
+      bgClass: "bg-accent text-white",
+      iconBgClass: "bg-accent/20",
+      iconColorClass: "text-accent"
+    },
+    {
+      icon: Users,
+      title: t("approach.who.card3.title"),
+      desc: t("approach.who.card3.desc"),
+      hoverTitle: t("approach.who.card3.hover_title"),
+      hoverDesc: t("approach.who.card3.hover_desc"),
+      bgClass: "bg-gradient-to-br from-primary to-accent text-white",
+      iconBgClass: "bg-primary/20",
+      iconColorClass: "text-primary"
+    },
+    {
+      icon: BrainCircuit,
+      title: t("approach.who.card4.title"),
+      desc: t("approach.who.card4.desc"),
+      hoverTitle: t("approach.who.card4.hover_title"),
+      hoverDesc: t("approach.who.card4.hover_desc"),
+      bgClass: "bg-black text-white",
+      iconBgClass: "bg-black/10",
+      iconColorClass: "text-black"
+    }
   ];
 
   return (
@@ -50,62 +137,29 @@ export function Approach() {
         </h2>
 
         {/* Superior part: A Lidtek é para quem? */}
-        <div className="mb-20">
+        <div className="mb-24">
           <h2 className="text-3xl md:text-5xl font-display font-light text-black mb-10 tracking-tight">
             {t("approach.who.title")}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
-            {whoItems.map((item, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {cards.map((card, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="flex items-start gap-4 p-4 rounded-xl hover:bg-black/[0.02] transition-colors"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
               >
-                <CheckCircle2 className="text-primary shrink-0 mt-0.5" size={24} />
-                <span className="text-black/80 text-lg font-sans leading-relaxed">{item}</span>
+                  <ApproachCard 
+                     card={card} 
+                     idx={idx} 
+                     activeCard={activeCard} 
+                     setActiveCard={setActiveCard} 
+                  />
               </motion.div>
             ))}
           </div>
         </div>
-
-        <div className="w-full h-px bg-black/10 mb-20" />
-
-        {/* Inferior part: Nossa Atuação */}
-        <div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="p-8 md:p-12 bg-white/60 backdrop-blur-xl border border-white/40 rounded-[2rem] shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 group"
-            >
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform duration-500">
-                <Users size={32} />
-              </div>
-              <h3 className="text-2xl font-medium text-black mb-4">{t("approach.what.item1.title")}</h3>
-              <p className="text-black/60 text-lg leading-relaxed">{t("approach.what.item1.desc")}</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="p-8 md:p-12 bg-white/60 backdrop-blur-xl border border-white/40 rounded-[2rem] shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 group"
-            >
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-8 group-hover:scale-110 transition-transform duration-500">
-                <LayoutTemplate size={32} />
-              </div>
-              <h3 className="text-2xl font-medium text-black mb-4">{t("approach.what.item2.title")}</h3>
-              <p className="text-black/60 text-lg leading-relaxed">{t("approach.what.item2.desc")}</p>
-            </motion.div>
-          </div>
-        </div>
-
       </div>
     </section>
   );
