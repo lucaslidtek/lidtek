@@ -101,39 +101,55 @@ export function Hero() {
           <span className="text-[9px] sm:text-[10px] md:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] font-medium text-white/80 whitespace-nowrap overflow-hidden text-ellipsis">{t("hero.tag")}</span>
         </div>
 
-        <h1 className="text-[clamp(1.2rem,5.5vw,4.5rem)] font-display font-normal leading-[1.1] tracking-tight text-white max-w-[100vw]">
-          <motion.div
+        <h1 className="text-[clamp(2.5rem,8.5vw,4.5rem)] font-display font-normal leading-none tracking-tight text-white max-w-[100vw] flex flex-col gap-1 md:block md:leading-[1.1]">
+          <motion.span
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-            className="block whitespace-nowrap overflow-visible"
+            className="block md:inline"
           >
-            <span>{t("hero.title1")} </span>
-            <motion.span
-              animate={{ filter: "blur(0px)" }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
-              className="italic text-white/60 font-serif pr-1 md:pr-4"
-            >
-              {t("hero.title1_italic")}
-            </motion.span>
-          </motion.div>
-          {t("hero.title2") && (
-            <motion.div
-              initial={{ y: 40, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
-              className="block mt-2 md:mt-4 whitespace-nowrap overflow-visible"
-            >
-              {t("hero.title2")}
-            </motion.div>
-          )}
+            {t("hero.title1.p1")}{" "}
+          </motion.span>
+          <motion.span
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+            className="block md:inline"
+          >
+            <span className="md:inline">
+              {t("hero.title1.p2") && <span>{t("hero.title1.p2")} </span>}
+              <motion.span
+                animate={{ filter: "blur(0px)" }}
+                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+                className="italic text-white/60 font-serif pr-1 md:pr-4"
+              >
+                {t("hero.title1_italic")}
+              </motion.span>
+            </span>
+          </motion.span>
+          <motion.span
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+            className="block md:inline md:ml-4"
+          >
+            {t("hero.title2.p1")}{" "}
+          </motion.span>
+          <motion.span
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+            className="block md:inline"
+          >
+            {t("hero.title2.p2")}
+          </motion.span>
         </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="text-sm sm:text-lg md:text-xl text-white/70 max-w-3xl mt-4 md:mt-6 font-light leading-relaxed"
+          className="text-lg sm:text-xl md:text-2xl text-white/70 max-w-3xl mt-4 md:mt-6 font-light leading-relaxed"
         >
           {t("hero.desc")}
         </motion.p>

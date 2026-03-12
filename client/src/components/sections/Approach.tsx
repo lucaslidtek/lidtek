@@ -43,7 +43,7 @@ const ApproachCard = ({ card, idx, activeCard, setActiveCard }: any) => {
           
           <div className="mt-auto flex items-center gap-2 text-primary/60 md:hidden text-sm font-medium">
              <RotateCw size={14} />
-             <span>Gire para ver a solução</span>
+             <span>Clique para ver a solução</span>
           </div>
         </div>
 
